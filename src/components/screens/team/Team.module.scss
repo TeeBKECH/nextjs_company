@@ -1,0 +1,48 @@
+.team {
+  width: 100%;
+  padding: 0 40px 50px;
+}
+
+.cards {
+  max-width: 1100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: 30px;
+  margin: 30px auto;
+}
+
+.card {
+  .img {
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &_body {
+    padding: 15px 0;
+
+    h4 {
+      font-size: 18px;
+    }
+
+    p {
+      color: rgba(#000, 0.4);
+    }
+  }
+
+  &_links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}

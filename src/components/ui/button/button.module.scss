@@ -1,0 +1,20 @@
+.button {
+  display: inline-block;
+  padding: 10px 25px;
+  outline: none;
+  border: 1px solid rgba(#ac8c3c, 0.5);
+  background: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #ac8c3c;
+  cursor: pointer;
+  transition: all 0.2s linear;
+
+  &:hover {
+    background: #ac8c3c;
+    color: #fff;
+  }
+}
+
+.prime {
+}

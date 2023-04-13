@@ -1,0 +1,38 @@
+.breadcrumbs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 150px 60px 0;
+  background: rgba(#fff, 0.6);
+
+  @media (max-width: 1100px) {
+    padding: 200px 20px 0;
+  }
+
+  @media (max-width: 991px) {
+    padding: 150px 20px 0;
+  }
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.link {
+  a {
+    text-decoration: underline;
+    color: #000;
+  }
+}
+.devider {
+  color: darken(#fff, 40);
+}
+.current {
+  span {
+    color: darken(#fff, 45);
+  }
+}

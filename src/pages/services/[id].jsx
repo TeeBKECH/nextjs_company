@@ -1,0 +1,25 @@
+import { useRouter } from 'next/router'
+
+import Service from '@/components/screens/service/Service'
+
+const ServicePage = ({ data }) => {
+  return <Service data={data} />
+}
+
+export async function getServerSideProps(context) {
+  const { id } = context.params
+  const res = await fetch(`http://localhost:3000/api/services?id=${id}`)
+  const data = await res.json()
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: { ...data }, // will be passed to the page component as props
+  }
+}
+
+export default ServicePage
