@@ -5,7 +5,7 @@ const ServicesPage = ({ servicesCards }) => {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`http://localhost:3000/api/services`)
+  const res = await fetch(`${process.env.API_URL}/services`)
   const data = await res.json()
 
   if (!data) {

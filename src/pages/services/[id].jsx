@@ -8,7 +8,7 @@ const ServicePage = ({ data }) => {
 
 export async function getServerSideProps(context) {
   const { id } = context.params
-  const res = await fetch(`http://localhost:3000/api/services?id=${id}`)
+  const res = await fetch(`${process.env.API_URL}/services?id=${id}`)
   const data = await res.json()
 
   if (!data) {
