@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
         <div className={styles.footer_col}>
           <div className={styles.footer_links}>
-            <h2>Активные ссылки</h2>
+            <h2>Меню</h2>
             <ul className={styles.footer_links_list}>
               <li>
                 <Link href='/about'>&#187; О нас</Link>
@@ -70,14 +70,14 @@ const Footer = () => {
                 <a href='tel:+79581119055'>+7 (958) 111-90-55</a>
               </li>
               <li>
-                <a href='mailto:mail@mail.com'>mail@mail.com</a>
+                <a href='mailto:hotel@friendlyinn.ru'>hotel@friendlyinn.ru</a>
               </li>
             </ul>
           </div>
         </div>
       </div>
       <div className={styles.footer_copy}>
-        <p>&copy; 2017-{new Date().getFullYear()} Все права защищены! | FriendlyInn Group</p>
+        <p>&copy; 2017-{new Date().getFullYear()} Все права защищены | FriendlyInn Group</p>
       </div>
     </footer>
   )

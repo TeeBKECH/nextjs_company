@@ -19,7 +19,6 @@ const Service = ({ data }) => {
         <TitleSec
           text={data?.title}
           subTitle={data?.subTitle}
-          position={'left'}
         />
 
         <div className={styles.cards}>

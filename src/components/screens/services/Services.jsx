@@ -19,7 +19,6 @@ const Services = ({ data }) => {
         <TitleSec
           text={'Наши Услуги'}
           subTitle='Полный перечень услуг вы можете получить оставив заявку'
-          position={'left'}
         />
 
         <div className={styles.cards}>

@@ -79,5 +79,30 @@
 
     span {
     }
+
+    &_submit {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      p {
+        font-size: 12px;
+        color: lighten(#000, 40);
+
+        span {
+          font-weight: 700;
+          color: lighten(#000, 20);
+        }
+
+        a {
+          color: #ac8c3c;
+          text-decoration: underline;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
   }
 }

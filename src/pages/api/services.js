@@ -13,27 +13,27 @@ const servicesCards = [
     text: 'Наша компания осуществляет полное управление отелем, это включает',
     list: [
       {
-        text: 'продажи и маркетинг',
+        text: 'Продажи и маркетинг',
         img: 'https://sateengroup.ru/local/templates/main/assets/images/set.jpg',
       },
       {
-        text: 'персонал',
+        text: 'Персонал',
         img: 'https://sateengroup.ru/local/templates/main/assets/images/it-solutions-p-500.jpeg',
       },
       {
-        text: 'внедрение стандартов гостиничного сервиса',
+        text: 'Внедрение стандартов гостиничного сервиса',
         img: 'https://sateengroup.ru/local/templates/main/assets/images/personal-p-500.jpeg',
       },
       {
-        text: 'техническая эксплуатация',
+        text: 'Техническая эксплуатация',
         img: 'https://sateengroup.ru/local/templates/main/assets/images/marketing-p-500.jpeg',
       },
       {
-        text: 'подключение к партнерской программе',
+        text: 'Подключение к партнерской программе',
         img: 'https://sateengroup.ru/local/templates/main/assets/images/accounting-2.jpg',
       },
       {
-        text: 'управленческий и бухгалтерский учет',
+        text: 'Управленческий и бухгалтерский учет',
         img: 'https://sateengroup.ru/local/templates/main/assets/images/standarts-p-500.jpeg',
       },
     ],

@@ -12,11 +12,11 @@ import changesImg from '@/assets/img/changes.svg'
 import capitalImg from '@/assets/img/capital.svg'
 import safetyImg from '@/assets/img/safety.svg'
 
-import aboutImg1 from '@/assets/img/jpg/img1-min.jpg'
-import aboutImg2 from '@/assets/img/jpg/img2-min.jpg'
-import aboutImg3 from '@/assets/img/jpg/img3-min.jpg'
-import aboutImg4 from '@/assets/img/jpg/img4-min.jpg'
-import aboutImg5 from '@/assets/img/jpg/img5-min.jpg'
+import aboutImg1 from '@/assets/img/jpg/5.jpg'
+import aboutImg2 from '@/assets/img/jpg/2.jpg'
+import aboutImg3 from '@/assets/img/jpg/3.jpg'
+import aboutImg4 from '@/assets/img/jpg/4.jpg'
+import aboutImg5 from '@/assets/img/jpg/1.jpg'
 
 import styles from './Home.module.scss'
 

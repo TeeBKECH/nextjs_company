@@ -22,7 +22,7 @@
     padding: 2rem 3rem;
 
     p {
-      margin-bottom: 1rem;
+      margin-bottom: 15px;
       font-size: 18px;
       color: #000;
     }
@@ -33,14 +33,21 @@
     }
 
     ol {
-      ul {
+      li {
+        margin-top: 8px;
+
+        ul {
+          padding-bottom: 10px;
+        }
       }
     }
 
     ul {
       list-style: disc;
       list-style-position: inside;
+
       li {
+        margin-top: 5px;
       }
     }
   }

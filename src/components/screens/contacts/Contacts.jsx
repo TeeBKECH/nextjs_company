@@ -1,3 +1,6 @@
+import Link from 'next/link'
+import clsx from 'clsx'
+
 import Layout from '@/components/layout/Layout'
 import Breadcrumbs from '@/components/ui/breadcrumbs'
 import TitleSec from '@/components/ui/title'
@@ -64,8 +67,12 @@ const Contacts = () => {
                 <textarea placeholder='Оставьте сообщение...'></textarea>
                 <span></span>
               </div>
-              <div className={styles.form_control}>
+              <div className={clsx(styles.form_control, styles.form_control_submit)}>
                 <Button type={'submit'}>Отправить</Button>
+                <p>
+                  Нажимая <span>Отправить</span> Вы соглашаетесь с <br />
+                  <Link href='#'>правилами обработки персональных данных</Link>
+                </p>
               </div>
             </form>
           </div>
