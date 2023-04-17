@@ -4,7 +4,8 @@ import clsx from 'clsx'
 import Layout from '@/components/layout/Layout'
 import Breadcrumbs from '@/components/ui/breadcrumbs'
 import TitleSec from '@/components/ui/title'
-import Button from '@/components/ui/button'
+
+import FormComponent from '@/components/ui/form'
 
 import styles from './Contacts.module.scss'
 
@@ -31,47 +32,7 @@ const Contacts = () => {
             ></iframe>
           </div>
           <div className={styles.content_form}>
-            <form
-              className={styles.form}
-              action=''
-            >
-              <div className={styles.form_title}>
-                <h3>Отправьте свои данные</h3>
-                <p>Наш менеджер свяжется с Вами в самое ближайшее время</p>
-              </div>
-              <div className={styles.form_control}>
-                <input
-                  type='text'
-                  placeholder='Имя*'
-                />
-                <span></span>
-              </div>
-              <div className={styles.form_control}>
-                <input
-                  type='text'
-                  placeholder='Телефон*'
-                />
-                <span></span>
-              </div>
-              <div className={styles.form_control}>
-                <input
-                  type='text'
-                  placeholder='Почта*'
-                />
-                <span></span>
-              </div>
-              <div className={styles.form_control}>
-                <textarea placeholder='Оставьте сообщение...'></textarea>
-                <span></span>
-              </div>
-              <div className={clsx(styles.form_control, styles.form_control_submit)}>
-                <Button type={'submit'}>Отправить</Button>
-                <p>
-                  Нажимая <span>Отправить</span> Вы соглашаетесь с <br />
-                  <Link href='#'>правилами обработки персональных данных</Link>
-                </p>
-              </div>
-            </form>
+            <FormComponent />
           </div>
         </div>
       </section>

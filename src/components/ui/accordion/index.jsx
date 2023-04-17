@@ -7,7 +7,7 @@ import {
   AccordionItemPanel,
 } from 'react-accessible-accordion'
 
-import TitleSec from '../title'
+import FormComponent from '@/components/ui/form'
 
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css'
@@ -80,6 +80,7 @@ const Accordion = () => {
           </AccordionItemHeading>
           <AccordionItemPanel className={clsx(`accordion__panel`, styles.accordion_panel)}>
             <p>Оставьте свои контакты и напишите какая услуга Вас интересует</p>
+            <FormComponent />
           </AccordionItemPanel>
         </AccordionItem>
         <AccordionItem>
@@ -93,6 +94,7 @@ const Accordion = () => {
               Управляющая компания имеет большой опыт в прохождении проверок, подготовке к ним.
               Такие услуги мы также оказываем.
             </p>
+            <FormComponent />
           </AccordionItemPanel>
         </AccordionItem>
       </AccordionContainer>

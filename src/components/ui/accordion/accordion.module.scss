@@ -9,6 +9,10 @@
   padding: 20px;
   border: 1px solid rgba(#000, 0.07);
 
+  @media (max-width: 700px) {
+    padding: 10px;
+  }
+
   &_button {
     background: #faf7ed;
     color: #000;
@@ -19,7 +23,11 @@
   }
 
   &_panel {
-    padding: 2rem 3rem;
+    padding: 20px 30px;
+
+    @media (max-width: 700px) {
+      padding: 10px;
+    }
 
     p {
       margin-bottom: 15px;
