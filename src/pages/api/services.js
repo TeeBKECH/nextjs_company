@@ -1,13 +1,16 @@
-import stonksImg from '@/assets/img/stonks.svg'
-import projectsImg from '@/assets/img/projects.svg'
-import changesImg from '@/assets/img/changes.svg'
-import capitalImg from '@/assets/img/capital.svg'
-import safetyImg from '@/assets/img/safety.svg'
+import hotelManagementIcon from '@/assets/img/projects.svg'
+import restaurantIcon from '@/assets/img/restaurant.svg'
+import hotelBuildIcon from '@/assets/img/hotel_build.svg'
+import renovationIcon from '@/assets/img/renovation.svg'
+import designIcon from '@/assets/img/design.svg'
+import auditIcon from '@/assets/img/audit.svg'
+import consaltIcon from '@/assets/img/consalt.svg'
+import franchiseIcon from '@/assets/img/franchise.svg'
 
 const servicesCards = [
   {
     id: 1,
-    iconImg: projectsImg,
+    iconImg: hotelManagementIcon,
     title: 'Управлением отелем',
     subTitle: 'Мы работаем, чтобы Вы отдыхали.',
     text: 'Наша компания осуществляет полное управление отелем, это включает',
@@ -40,7 +43,7 @@ const servicesCards = [
   },
   {
     id: 2,
-    iconImg: stonksImg,
+    iconImg: restaurantIcon,
     title: 'Управление рестораном',
     subTitle: 'Вкусно и со вкусом.',
     text: 'Осуществляем весь цикл',
@@ -56,7 +59,7 @@ const servicesCards = [
   },
   {
     id: 3,
-    iconImg: capitalImg,
+    iconImg: hotelBuildIcon,
     title: 'Строительство отеля',
     subTitle: 'Полный цикл запуска объекта от выбора места локации до ввода здания в эксплуатацию.',
     text: 'Наша компания осуществляет полное управление отелем, это включает',
@@ -74,7 +77,7 @@ const servicesCards = [
   },
   {
     id: 4,
-    iconImg: safetyImg,
+    iconImg: renovationIcon,
     title: 'Реновация отеля',
     subTitle: 'Вдохнуть современность и инновации в работающий объект ',
     text: 'Состоит из нескольких этапов ',
@@ -89,7 +92,7 @@ const servicesCards = [
   },
   {
     id: 5,
-    iconImg: projectsImg,
+    iconImg: designIcon,
     title: 'Дизайн проект отеля',
     subTitle: 'Мы работаем, чтобы Вы отдыхали.',
     text: 'Наша компания осуществляет полное управление отелем, это включает',
@@ -110,7 +113,7 @@ const servicesCards = [
   },
   {
     id: 6,
-    iconImg: changesImg,
+    iconImg: auditIcon,
     title: 'Аудит',
     subTitle: 'Проверка и разработка рекомендаций по оптимизации работы.',
     text: '',
@@ -122,7 +125,7 @@ const servicesCards = [
   },
   {
     id: 7,
-    iconImg: projectsImg,
+    iconImg: consaltIcon,
     title: 'Консалтинг',
     subTitle: 'Оказание консультаций действующим отелям по различным вопросам',
     text: '',
@@ -138,7 +141,7 @@ const servicesCards = [
   },
   {
     id: 8,
-    iconImg: capitalImg,
+    iconImg: franchiseIcon,
     title: 'Франшиза',
     subTitle: 'Возможно, лучшая инвестиция, о которой Вы когда-либо думали.',
     text: 'Обладатель франшизы Friendly Inn получает ',
