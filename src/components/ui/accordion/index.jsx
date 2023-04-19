@@ -80,7 +80,22 @@ const Accordion = () => {
           </AccordionItemHeading>
           <AccordionItemPanel className={clsx(`accordion__panel`, styles.accordion_panel)}>
             <p>Оставьте свои контакты и напишите какая услуга Вас интересует</p>
-            <FormComponent />
+            <FormComponent
+              direction='row'
+              title='Оставьте заявку'
+              inputs={[
+                {
+                  type: 'text',
+                  name: 'name',
+                  placeholder: 'Имя*',
+                },
+                {
+                  type: 'text',
+                  name: 'mail',
+                  placeholder: 'Почта*',
+                },
+              ]}
+            />
           </AccordionItemPanel>
         </AccordionItem>
         <AccordionItem>
@@ -94,7 +109,22 @@ const Accordion = () => {
               Управляющая компания имеет большой опыт в прохождении проверок, подготовке к ним.
               Такие услуги мы также оказываем.
             </p>
-            <FormComponent />
+            <FormComponent
+              direction='row'
+              title='Оставьте заявку'
+              inputs={[
+                {
+                  type: 'text',
+                  name: 'name',
+                  placeholder: 'Имя*',
+                },
+                {
+                  type: 'text',
+                  name: 'mail',
+                  placeholder: 'Почта*',
+                },
+              ]}
+            />
           </AccordionItemPanel>
         </AccordionItem>
       </AccordionContainer>
