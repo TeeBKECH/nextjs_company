@@ -5,6 +5,7 @@ import Layout from '@/components/layout/Layout'
 import Breadcrumbs from '@/components/ui/breadcrumbs'
 import TitleSec from '@/components/ui/title'
 import Button from '@/components/ui/button'
+import FormComponent from '@/components/ui/form'
 
 import styles from './Services.module.scss'
 
@@ -20,7 +21,25 @@ const Services = ({ data }) => {
           text={'Наши Услуги'}
           subTitle='Полный перечень услуг вы можете получить оставив заявку'
         />
-
+        <div className={styles.form}>
+          <FormComponent
+            direction='row'
+            title='Укажите свои данные'
+            description='_____'
+            inputs={[
+              {
+                type: 'text',
+                name: 'name',
+                placeholder: 'Имя*',
+              },
+              {
+                type: 'text',
+                name: 'mail',
+                placeholder: 'Почта*',
+              },
+            ]}
+          />
+        </div>
         <div className={styles.cards}>
           {data.map((card) => {
             return (
