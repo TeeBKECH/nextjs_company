@@ -75,11 +75,15 @@ const Header = ({ headerRef, sticky, pathname }) => {
         </div>
       </div>
       <nav className={clsx(styles.menu_mobile, toggleMenu && styles.menu_mobile_active)}>
-        <Link href='/'>Главная</Link>
-        <Link href='/about'>О нас</Link>
-        <Link href='/team'>Команда</Link>
-        <Link href='/services'>Услуги</Link>
-        <Link href='/contacts'>Контакты</Link>
+        {links.map((el) => (
+          <Link
+            key={el.slug}
+            href={`/${el.slug}`}
+            className={clsx(styles.link, activeClass(el.slug) && styles.link_active)}
+          >
+            {el.title}
+          </Link>
+        ))}
       </nav>
     </header>
   )
