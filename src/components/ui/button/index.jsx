@@ -3,13 +3,14 @@ import clsx from 'clsx'
 
 import styles from './button.module.scss'
 
-const Button = ({ type, disabled, loading, children, view = 'prime' }) => {
+const Button = ({ type, onClick, disabled, loading, children, view = 'prime' }) => {
   return (
     <button
       className={clsx(styles.button, styles[view])}
       type={type}
       disabled={disabled}
       loading={loading}
+      onClick={onClick}
     >
       {children}
     </button>

@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 import TitleSec from '@/components/ui/title'
 import Accordion from '@/components/ui/accordion'
+import Button from '@/components/ui/button'
 
 import mainBg from '../../../../public/main_bg_3.jpg'
 import stonksImg from '@/assets/img/stonks.svg'
@@ -100,6 +101,10 @@ const Home = () => {
     },
   ]
 
+  const openModal = () => {
+    return
+  }
+
   return (
     <Layout title={'Главная'}>
       <section className={styles.hero}>
@@ -119,7 +124,13 @@ const Home = () => {
             Управление отелями, апартаментами
             <br /> и ресторанами
           </h2>
-          <button className={styles.callback}>Позвонить мне</button>
+          <Button
+            type={'button'}
+            className={styles.callback}
+            onClick={openModal}
+          >
+            Позвонить мне
+          </Button>
         </div>
         <div className={styles.social}>
           <a href='mailto:hotel@friendlyinn.ru'>
