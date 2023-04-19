@@ -47,7 +47,10 @@ const FormComponent = ({
       <div className={clsx(styles.inputs, direction === 'col' ? styles.col : styles.row)}>
         {inputs.map((el) => {
           return (
-            <div className={styles.form_control}>
+            <div
+              key={el.name}
+              className={styles.form_control}
+            >
               {el.type === 'text' ? (
                 <input
                   type='text'
