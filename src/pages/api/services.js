@@ -7,6 +7,27 @@ import auditIcon from '@/assets/img/audit.svg'
 import consaltIcon from '@/assets/img/consalt.svg'
 import franchiseIcon from '@/assets/img/franchise.svg'
 
+import service1Img1 from '@/assets/img/jpg/services/sales_marketing.jpg'
+import service1Img2 from '@/assets/img/jpg/services/personal.jpg'
+import service1Img3 from '@/assets/img/jpg/services/standarts.jpg'
+import service1Img4 from '@/assets/img/jpg/services/tech.jpg'
+import service1Img5 from '@/assets/img/jpg/services/program.jpg'
+import service1Img6 from '@/assets/img/jpg/services/management.jpg'
+
+import service2Img1 from '@/assets/img/jpg/services/restaurant.jpg'
+import service2Img2 from '@/assets/img/jpg/services/rest_services.jpg'
+import service2Img3 from '@/assets/img/jpg/services/rest_start.jpg'
+import service2Img5 from '@/assets/img/jpg/services/rest_crew.jpg'
+
+import service3Img1 from '@/assets/img/jpg/services/place.jpg'
+import service3Img2 from '@/assets/img/jpg/services/concept.jpg'
+import service3Img3 from '@/assets/img/jpg/services/plan.jpg'
+import service3Img4 from '@/assets/img/jpg/services/project.jpg'
+import service3Img5 from '@/assets/img/jpg/services/building.jpg'
+import service3Img6 from '@/assets/img/jpg/services/take.jpg'
+import service3Img7 from '@/assets/img/jpg/services/interior.jpg'
+import service3Img8 from '@/assets/img/jpg/services/crew_management.jpg'
+
 const servicesCards = [
   {
     id: 1,
@@ -17,27 +38,27 @@ const servicesCards = [
     list: [
       {
         text: 'Продажи и маркетинг',
-        img: 'https://sateengroup.ru/local/templates/main/assets/images/set.jpg',
+        img: service1Img1,
       },
       {
         text: 'Персонал',
-        img: 'https://sateengroup.ru/local/templates/main/assets/images/it-solutions-p-500.jpeg',
+        img: service1Img2,
       },
       {
         text: 'Внедрение стандартов гостиничного сервиса',
-        img: 'https://sateengroup.ru/local/templates/main/assets/images/personal-p-500.jpeg',
+        img: service1Img3,
       },
       {
         text: 'Техническая эксплуатация',
-        img: 'https://sateengroup.ru/local/templates/main/assets/images/marketing-p-500.jpeg',
+        img: service1Img4,
       },
       {
         text: 'Подключение к партнерской программе',
-        img: 'https://sateengroup.ru/local/templates/main/assets/images/accounting-2.jpg',
+        img: service1Img5,
       },
       {
         text: 'Управленческий и бухгалтерский учет',
-        img: 'https://sateengroup.ru/local/templates/main/assets/images/standarts-p-500.jpeg',
+        img: service1Img6,
       },
     ],
   },
@@ -48,13 +69,13 @@ const servicesCards = [
     subTitle: 'Вкусно и со вкусом.',
     text: 'Осуществляем весь цикл',
     list: [
-      { text: 'разработка концепции', img: '' },
-      { text: 'оснащение ', img: '' },
-      { text: 'запуск ресторана', img: '' },
-      { text: 'продажи и маркетинг', img: '' },
-      { text: 'персонал', img: '' },
-      { text: 'техническая эксплуатация', img: '' },
-      { text: 'управленческий и бухгалтерский учет', img: '' },
+      { text: 'Разработка концепции', img: service2Img1 },
+      { text: 'Оснащение ', img: service2Img2 },
+      { text: 'Запуск ресторана', img: service2Img3 },
+      { text: 'Продажи и маркетинг', img: service1Img1 },
+      { text: 'Персонал', img: service2Img5 },
+      { text: 'Техническая эксплуатация', img: service1Img4 },
+      { text: 'Управленческий и бухгалтерский учет', img: service1Img6 },
     ],
   },
   {
@@ -64,15 +85,15 @@ const servicesCards = [
     subTitle: 'Полный цикл запуска объекта от выбора места локации до ввода здания в эксплуатацию.',
     text: 'Наша компания осуществляет полное управление отелем, это включает',
     list: [
-      { text: 'Выбор локации', img: '' },
-      { text: 'Разработка концепции', img: '' },
-      { text: 'Бизнес-план', img: '' },
-      { text: 'Проект объекта', img: '' },
-      { text: 'Сопровождение строительства', img: '' },
-      { text: 'Прием объекта у подрядчиков', img: '' },
-      { text: 'Оснащение объекта', img: '' },
-      { text: 'Подбор и обучение персонала', img: '' },
-      { text: 'Запуск объекта', img: '' },
+      { text: 'Выбор локации', img: service3Img1 },
+      { text: 'Разработка концепции', img: service3Img2 },
+      { text: 'Бизнес-план', img: service3Img3 },
+      { text: 'Проект объекта', img: service3Img4 },
+      { text: 'Сопровождение строительства', img: service3Img5 },
+      { text: 'Прием объекта у подрядчиков', img: service3Img6 },
+      { text: 'Оснащение объекта', img: service3Img7 },
+      { text: 'Подбор и обучение персонала', img: service3Img8 },
+      { text: 'Запуск объекта', img: service2Img3 },
     ],
   },
   {
