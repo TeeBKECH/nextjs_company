@@ -16,7 +16,6 @@ const Faq = () => {
         <TitleSec
           text={'FAQ'}
           subTitle={'Частые вопросы'}
-          position={'left'}
         />
         <Accordion />
       </section>
