@@ -28,6 +28,31 @@ import service3Img6 from '@/assets/img/jpg/services/take.jpg'
 import service3Img7 from '@/assets/img/jpg/services/interior.jpg'
 import service3Img8 from '@/assets/img/jpg/services/crew_management.jpg'
 
+import service4Icon2 from '@/assets/img/approval.svg'
+import service4Icon3 from '@/assets/img/list.svg'
+import service4Icon4 from '@/assets/img/search.svg'
+import service4Icon5 from '@/assets/img/escort.svg'
+import service4Icon6 from '@/assets/img/take.svg'
+
+import service6Icon1 from '@/assets/img/analisis.svg'
+import service6Icon3 from '@/assets/img/recomendations.svg'
+
+import service7Icon1 from '@/assets/img/documents.svg'
+import service7Icon2 from '@/assets/img/crew.svg'
+import service7Icon3 from '@/assets/img/marketing.svg'
+import service7Icon4 from '@/assets/img/booking.svg'
+import service7Icon5 from '@/assets/img/web.svg'
+import service7Icon6 from '@/assets/img/juridical.svg'
+
+import service8Icon1 from '@/assets/img/keep_hands.svg'
+import service8Icon2 from '@/assets/img/include.svg'
+import service8Icon3 from '@/assets/img/standarts.svg'
+import service8Icon4 from '@/assets/img/hotel_audit.svg'
+import service8Icon5 from '@/assets/img/crew_teaching.svg'
+import service8Icon7 from '@/assets/img/money.svg'
+import service8Icon8 from '@/assets/img/questions.svg'
+import service8Icon9 from '@/assets/img/system.svg'
+
 const servicesCards = [
   {
     id: 1,
@@ -103,12 +128,12 @@ const servicesCards = [
     subTitle: 'Вдохнуть современность и инновации в работающий объект ',
     text: 'Состоит из нескольких этапов ',
     list: [
-      { text: 'Аудит объекта', img: '' },
-      { text: 'Подготовка и согласование проекта ', img: '' },
-      { text: 'Построение плана работ', img: '' },
-      { text: 'Подбор поставщиков для оснащения', img: '' },
-      { text: 'Сопровождение работ', img: '' },
-      { text: 'Приме работ у подрядчика ', img: '' },
+      { text: 'Аудит объекта', icon: auditIcon },
+      { text: 'Подготовка и согласование проекта ', icon: service4Icon2 },
+      { text: 'Построение плана работ', icon: service4Icon3 },
+      { text: 'Подбор поставщиков для оснащения', icon: service4Icon4 },
+      { text: 'Сопровождение работ', icon: service4Icon5 },
+      { text: 'Приём работ у подрядчика ', icon: service4Icon6 },
     ],
   },
   {
@@ -120,15 +145,15 @@ const servicesCards = [
     list: [
       {
         text: 'Команда наших дизайнеров создаст проект с учетом Ваших пожеланий, специфики здания. ',
-        img: '',
+        icon: designIcon,
       },
       {
         text: 'Будет разработана концепция, также учтены все требования для дальнейшего прохождения классификации объекта.',
-        img: '',
+        icon: designIcon,
       },
       {
         text: 'Большой опыт проектирования позволяет учесть все нюансы – от удобства при эксплуатации объекта до эргономики в пространстве.',
-        img: '',
+        icon: designIcon,
       },
     ],
   },
@@ -139,9 +164,9 @@ const servicesCards = [
     subTitle: 'Проверка и разработка рекомендаций по оптимизации работы.',
     text: '',
     list: [
-      { text: 'Анализ работы всех служб отеля ', img: '' },
-      { text: 'Проверка документации ', img: '' },
-      { text: 'Разработка рекомендаций ', img: '' },
+      { text: 'Анализ работы всех служб отеля ', icon: service6Icon1 },
+      { text: 'Проверка документации ', icon: auditIcon },
+      { text: 'Разработка рекомендаций ', icon: service6Icon3 },
     ],
   },
   {
@@ -151,13 +176,13 @@ const servicesCards = [
     subTitle: 'Оказание консультаций действующим отелям по различным вопросам',
     text: '',
     list: [
-      { text: 'документация', img: '' },
-      { text: 'персонал', img: '' },
-      { text: 'реклама и продвижение', img: '' },
-      { text: 'настройка и подключение площадок бронирования', img: '' },
-      { text: 'разработка сайта', img: '' },
-      { text: 'юридические вопросы ', img: '' },
-      { text: 'другое  ', img: '' },
+      { text: 'Документация', icon: service7Icon1 },
+      { text: 'Персонал', icon: service7Icon2 },
+      { text: 'Реклама и продвижение', icon: service7Icon3 },
+      { text: 'Настройка и подключение площадок бронирования', icon: service7Icon4 },
+      { text: 'Разработка сайта', icon: service7Icon5 },
+      { text: 'Юридические вопросы ', icon: service7Icon6 },
+      { text: 'Другое  ', icon: service4Icon3 },
     ],
   },
   {
@@ -167,15 +192,18 @@ const servicesCards = [
     subTitle: 'Возможно, лучшая инвестиция, о которой Вы когда-либо думали.',
     text: 'Обладатель франшизы Friendly Inn получает ',
     list: [
-      { text: 'право на использование бренда Friendly Inn', img: '' },
-      { text: 'включение в пул объектов Friendly inn – размещение на сайте компании', img: '' },
-      { text: 'стандарты работы отеля', img: '' },
-      { text: 'аудит отеля и разработка рекомендаций ', img: '' },
-      { text: 'обучение персонала', img: '' },
-      { text: 'рабочие инструменты продвижения', img: '' },
-      { text: 'оптимизация денежных потоков', img: '' },
-      { text: 'консультации по работе отеля и другим вопросам', img: '' },
-      { text: 'систему контроля соблюдения стандартов', img: '' },
+      { text: 'Право на использование бренда Friendly Inn', icon: service8Icon1 },
+      {
+        text: 'Включение в пул объектов Friendly inn – размещение на сайте компании',
+        icon: service8Icon2,
+      },
+      { text: 'Стандарты работы отеля', icon: service8Icon3 },
+      { text: 'Аудит отеля и разработка рекомендаций ', icon: service8Icon4 },
+      { text: 'Обучение персонала', icon: service8Icon5 },
+      { text: 'Рабочие инструменты продвижения', icon: service7Icon3 },
+      { text: 'Оптимизация денежных потоков', icon: service8Icon7 },
+      { text: 'Консультации по работе отеля и другим вопросам', icon: service8Icon8 },
+      { text: 'Систему контроля соблюдения стандартов', icon: service8Icon9 },
     ],
   },
 ]

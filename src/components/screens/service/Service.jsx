@@ -23,21 +23,35 @@ const Service = ({ data }) => {
 
         <div className={styles.cards}>
           {list.map((card) => {
+            const { text, img, icon } = card
             return (
               <div
-                key={card.text}
+                key={text}
                 className={styles.card}
               >
-                <div className={styles.img}>
-                  <Image
-                    width={320}
-                    height={320}
-                    src={card.img}
-                    alt={card.text}
-                  />
-                </div>
+                {img && (
+                  <div className={styles.img}>
+                    <Image
+                      width={320}
+                      height={280}
+                      src={img}
+                      alt={text}
+                      placeholder='blur'
+                    />
+                  </div>
+                )}
+                {icon && (
+                  <div className={styles.icon}>
+                    <Image
+                      width={120}
+                      height={120}
+                      src={icon}
+                      alt={text}
+                    />
+                  </div>
+                )}
                 <div className={styles.text}>
-                  <h4>{card.text}</h4>
+                  <h4>{text}</h4>
                 </div>
               </div>
             )
