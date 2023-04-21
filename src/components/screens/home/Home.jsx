@@ -143,18 +143,7 @@ const Home = () => {
             <FormComponent
               direction='col'
               title='Введите свои данные'
-              inputs={[
-                {
-                  type: 'text',
-                  name: 'name',
-                  placeholder: 'Имя*',
-                },
-                {
-                  type: 'text',
-                  name: 'phone',
-                  placeholder: 'Телефон*',
-                },
-              ]}
+              inputs={['name', 'phone']}
             />
           </Modal>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import getConfig from 'next/config'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -58,7 +58,7 @@ const initialInputs = [
 
 const FormComponent = ({
   direction = 'col',
-  inputs = initialInputs,
+  inputs,
   title = 'Отправьте свои данные',
   description = 'Наш менеджер свяжется с Вами в самое ближайшее время',
 }) => {
@@ -67,13 +67,9 @@ const FormComponent = ({
     reset,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    defaultValues: {
-      name: '',
-    },
-  })
+  } = useForm()
+
   const onSubmit = async (fieldsData) => {
-    console.log(fieldsData)
     try {
       const res = await fetch(`${API_URL}/mailer`, {
         method: 'POST',
@@ -83,13 +79,15 @@ const FormComponent = ({
         },
         body: JSON.stringify(fieldsData),
       })
-      const data = await res.json()
       reset()
-      console.log(data)
     } catch (error) {
       console.log(error)
     }
   }
+
+  useEffect(() => {
+    console.log(errors)
+  }, [errors])
 
   return (
     <form
@@ -102,42 +100,45 @@ const FormComponent = ({
       </div>
       <div className={clsx(styles.inputs, direction === 'col' ? styles.col : styles.row)}>
         {inputs.map((el) => {
-          return (
-            <div
-              key={el.name}
-              className={styles.form_control}
-            >
-              {el.type === 'text' ? (
-                <>
-                  <input
-                    {...register(el.name, {
-                      required: el.required,
-                      minLength: el.minLength,
-                      pattern: el.pattern,
-                      maxLength: el.maxLength,
-                    })}
-                    type='text'
-                    placeholder={el.placeholder}
-                  />
-                  {errors[el.name] && (
-                    <span className={styles.error}>{errors[el.name].message}</span>
-                  )}
-                </>
-              ) : (
-                <>
-                  <textarea
-                    {...register(el.name, {
-                      maxLength: el.maxLength,
-                    })}
-                    placeholder={el.placeholder}
-                  ></textarea>
-                  {errors[el.name] && (
-                    <span className={styles.error}>{errors[el.name].message}</span>
-                  )}
-                </>
-              )}
-            </div>
-          )
+          const input = initialInputs.find((item) => item.name === el)
+          if (input) {
+            return (
+              <div
+                key={input.name}
+                className={styles.form_control}
+              >
+                {input.type === 'text' ? (
+                  <>
+                    <input
+                      {...register(input.name, {
+                        required: input.required,
+                        minLength: input.minLength,
+                        pattern: input.pattern,
+                        maxLength: input.maxLength,
+                      })}
+                      type='text'
+                      placeholder={input.placeholder}
+                    />
+                    {errors[input.name] && (
+                      <span className={styles.error}>{errors[input.name].message}</span>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    <textarea
+                      {...register(input.name, {
+                        maxLength: input.maxLength,
+                      })}
+                      placeholder={input.placeholder}
+                    ></textarea>
+                    {errors[input.name] && (
+                      <span className={styles.error}>{errors[input.name].message}</span>
+                    )}
+                  </>
+                )}
+              </div>
+            )
+          }
         })}
         <div className={clsx(styles.form_control, styles.form_control_submit)}>
           <Button type={'submit'}>Отправить</Button>

@@ -26,18 +26,7 @@ const Services = ({ data }) => {
             direction='row'
             title='Укажите свои данные'
             description='_____'
-            inputs={[
-              {
-                type: 'text',
-                name: 'name',
-                placeholder: 'Имя*',
-              },
-              {
-                type: 'text',
-                name: 'email',
-                placeholder: 'Почта*',
-              },
-            ]}
+            inputs={['name', 'email']}
           />
         </div>
         <div className={styles.cards}>

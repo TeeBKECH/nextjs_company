@@ -83,18 +83,7 @@ const Accordion = () => {
             <FormComponent
               direction='row'
               title='Оставьте заявку'
-              inputs={[
-                {
-                  type: 'text',
-                  name: 'name',
-                  placeholder: 'Имя*',
-                },
-                {
-                  type: 'text',
-                  name: 'email',
-                  placeholder: 'Почта*',
-                },
-              ]}
+              inputs={['name', 'email']}
             />
           </AccordionItemPanel>
         </AccordionItem>
@@ -112,18 +101,7 @@ const Accordion = () => {
             <FormComponent
               direction='row'
               title='Оставьте заявку'
-              inputs={[
-                {
-                  type: 'text',
-                  name: 'name',
-                  placeholder: 'Имя*',
-                },
-                {
-                  type: 'text',
-                  name: 'email',
-                  placeholder: 'Почта*',
-                },
-              ]}
+              inputs={['name', 'email']}
             />
           </AccordionItemPanel>
         </AccordionItem>

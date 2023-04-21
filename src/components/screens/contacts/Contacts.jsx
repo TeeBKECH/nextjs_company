@@ -32,7 +32,7 @@ const Contacts = () => {
             ></iframe>
           </div>
           <div className={styles.content_form}>
-            <FormComponent />
+            <FormComponent inputs={['name', 'phone', 'email', 'message']} />
           </div>
         </div>
       </section>
