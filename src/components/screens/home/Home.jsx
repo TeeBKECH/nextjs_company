@@ -278,9 +278,8 @@ const Home = () => {
           <div className={styles.about_images}>
             {projectImages.length &&
               projectImages.map((image, i) => (
-                <Link
+                <div
                   key={i}
-                  href={`/projects${image.link}`}
                   className={styles.about_images_item}
                 >
                   <Image
@@ -288,10 +287,10 @@ const Home = () => {
                     alt={image.alt}
                     fill={true}
                     sizes='(max-width: 768px) 100vw,
-                    (max-width: 1200px) 50vw,
-                    33vw'
+                  (max-width: 1200px) 50vw,
+                  33vw'
                   />
-                </Link>
+                </div>
               ))}
           </div>
         </div>

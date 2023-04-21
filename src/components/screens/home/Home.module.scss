@@ -258,6 +258,15 @@
         transition: all 0.2s linear;
       }
 
+      &:hover {
+        z-index: 5;
+        transform: scale(1.02);
+
+        img {
+          opacity: 1;
+        }
+      }
+
       &:nth-child(5) {
         position: absolute;
         top: 50%;
@@ -268,13 +277,7 @@
         height: 50%;
 
         &:hover {
-          transform: translate(-50%, -50%) scale(1.02);
-        }
-      }
-
-      &:hover {
-        img {
-          opacity: 1;
+          transform: translate(-50%, -50%) scale(1.04);
         }
       }
     }
