@@ -1,10 +1,15 @@
 import React from 'react'
+import getConfig from 'next/config'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { useForm } from 'react-hook-form'
 
 import Button from '@/components/ui/button'
 
 import styles from './Form.module.scss'
+
+const { publicRuntimeConfig } = getConfig()
+const { API_URL } = publicRuntimeConfig
 
 const initialInputs = [
   {
@@ -14,12 +19,12 @@ const initialInputs = [
   },
   {
     type: 'text',
-    name: 'tel',
+    name: 'phone',
     placeholder: 'Телефон*',
   },
   {
     type: 'text',
-    name: 'mail',
+    name: 'email',
     placeholder: 'Почта*',
   },
   {
@@ -35,10 +40,39 @@ const FormComponent = ({
   title = 'Отправьте свои данные',
   description = 'Наш менеджер свяжется с Вами в самое ближайшее время',
 }) => {
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      name: '',
+    },
+  })
+  const onSubmit = async (fieldsData) => {
+    console.log(fieldsData)
+    try {
+      const res = await fetch(`${API_URL}/mailer`, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(fieldsData),
+      })
+      const data = await res.json()
+      reset()
+      console.log(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <form
       className={styles.form}
-      action=''
+      onSubmit={handleSubmit(onSubmit)}
     >
       <div className={styles.form_title}>
         <h3>{title}</h3>
@@ -53,12 +87,15 @@ const FormComponent = ({
             >
               {el.type === 'text' ? (
                 <input
+                  {...register(el.name)}
                   type='text'
-                  name={el.name}
                   placeholder={el.placeholder}
                 />
               ) : (
-                <textarea placeholder={el.placeholder}></textarea>
+                <textarea
+                  {...register(el.name)}
+                  placeholder={el.placeholder}
+                ></textarea>
               )}
             </div>
           )

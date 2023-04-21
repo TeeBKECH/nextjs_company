@@ -34,7 +34,7 @@ const Services = ({ data }) => {
               },
               {
                 type: 'text',
-                name: 'mail',
+                name: 'email',
                 placeholder: 'Почта*',
               },
             ]}

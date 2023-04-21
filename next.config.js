@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 module.exports = nextConfig = {
   reactStrictMode: false,
-  images: {},
+  publicRuntimeConfig: {
+    API_URL: process.env.API_URL,
+  },
 }

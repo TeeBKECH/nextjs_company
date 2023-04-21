@@ -91,7 +91,7 @@ const Accordion = () => {
                 },
                 {
                   type: 'text',
-                  name: 'mail',
+                  name: 'email',
                   placeholder: 'Почта*',
                 },
               ]}
@@ -120,7 +120,7 @@ const Accordion = () => {
                 },
                 {
                   type: 'text',
-                  name: 'mail',
+                  name: 'email',
                   placeholder: 'Почта*',
                 },
               ]}
