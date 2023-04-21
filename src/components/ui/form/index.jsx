@@ -85,10 +85,6 @@ const FormComponent = ({
     }
   }
 
-  useEffect(() => {
-    console.log(errors)
-  }, [errors])
-
   return (
     <form
       className={styles.form}
