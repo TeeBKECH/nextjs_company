@@ -1,10 +1,12 @@
-import Layout from '@/components/layout/Layout'
-import Image from 'next/image'
+import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
+import Layout from '@/components/layout/Layout'
 import TitleSec from '@/components/ui/title'
 import Accordion from '@/components/ui/accordion'
 import Button from '@/components/ui/button'
+import Modal from '@/components/ui/modal'
 
 import mainBg from '../../../../public/main_bg_3.jpg'
 import stonksImg from '@/assets/img/stonks.svg'
@@ -20,8 +22,11 @@ import aboutImg4 from '@/assets/img/jpg/4.jpg'
 import aboutImg5 from '@/assets/img/jpg/1.jpg'
 
 import styles from './Home.module.scss'
+import FormComponent from '@/components/ui/form'
 
 const Home = () => {
+  const [showModal, setShowModal] = useState(false)
+
   const weCards = [
     {
       img: stonksImg,
@@ -127,10 +132,31 @@ const Home = () => {
           <Button
             type={'button'}
             className={styles.callback}
-            onClick={openModal}
+            onClick={() => setShowModal(true)}
           >
             Позвонить мне
           </Button>
+          <Modal
+            onClose={() => setShowModal(false)}
+            show={showModal}
+          >
+            <FormComponent
+              direction='col'
+              title='Введите свои данные'
+              inputs={[
+                {
+                  type: 'text',
+                  name: 'name',
+                  placeholder: 'Имя*',
+                },
+                {
+                  type: 'text',
+                  name: 'phone',
+                  placeholder: 'Телефон*',
+                },
+              ]}
+            />
+          </Modal>
         </div>
         <div className={styles.social}>
           <a href='mailto:hotel@friendlyinn.ru'>

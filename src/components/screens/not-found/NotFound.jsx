@@ -1,6 +1,8 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import Layout from '@/components/layout/Layout'
 import TitleSec from '@/components/ui/title'
+import Button from '@/components/ui/button'
 
 import styles from './NotFound.module.scss'
 
@@ -12,6 +14,9 @@ const NotFound = () => {
           text={'404'}
           subTitle={'Страница не найдена!'}
         />
+        <Link href={'/'}>
+          <Button>Вернуться на главную</Button>
+        </Link>
       </section>
     </Layout>
   )

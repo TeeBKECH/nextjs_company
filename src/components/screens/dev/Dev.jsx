@@ -24,6 +24,7 @@ const Dev = ({ title }) => {
             src={sadIcon}
             width={120}
             height={120}
+            alt='Раздел в разработке'
           />
         </div>
         <TitleSec

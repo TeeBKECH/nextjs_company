@@ -4,9 +4,10 @@ export default function Document() {
   return (
     <Html lang='ru'>
       <Head />
-      <body>
+      <body id='body_id'>
         <Main />
         <NextScript />
+        <div id='modal-root'></div>
       </body>
     </Html>
   )
