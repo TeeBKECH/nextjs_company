@@ -1,7 +1,8 @@
+import Dev from '@/components/screens/dev/Dev'
 import Partners from '@/components/screens/partners/Partners'
 
 const PartnersPage = () => {
-  return <Partners />
+  return <Dev title={'Партнерская программа'} />
 }
 
 export default PartnersPage

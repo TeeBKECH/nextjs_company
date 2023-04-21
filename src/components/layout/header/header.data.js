@@ -15,10 +15,10 @@ export default [
     slug: 'projects',
     title: 'Наши проекты',
   },
-  {
-    slug: 'team',
-    title: 'Команда',
-  },
+  // {
+  //   slug: 'team',
+  //   title: 'Команда',
+  // },
   {
     slug: 'faq',
     title: 'FAQ',

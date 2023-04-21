@@ -244,15 +244,18 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      opacity: 0.7;
+
       transition: all 0.2s linear;
       box-shadow: 0 0 10px 0.5px rgba(#000, 0.7);
       border-radius: 5px;
       border: 2px solid #fff;
+      background: #fff;
       $item: &;
 
       img {
         object-fit: cover;
+        opacity: 0.7;
+        transition: all 0.2s linear;
       }
 
       &:nth-child(5) {
@@ -261,9 +264,8 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 2;
-        width: 160px;
-        height: 240px;
-        opacity: 1;
+        width: 50%;
+        height: 50%;
 
         &:hover {
           transform: translate(-50%, -50%) scale(1.02);
@@ -271,7 +273,9 @@
       }
 
       &:hover {
-        opacity: 1;
+        img {
+          opacity: 1;
+        }
       }
     }
   }

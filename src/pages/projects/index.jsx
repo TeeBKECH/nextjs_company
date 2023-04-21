@@ -1,7 +1,8 @@
+import Dev from '@/components/screens/dev/Dev'
 import Hotels from '@/components/screens/projects/Projects'
 
 const HotelsPage = () => {
-  return <Hotels />
+  return <Dev title={'Наши проекты'} />
 }
 
 export default HotelsPage
