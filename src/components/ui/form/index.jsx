@@ -4,6 +4,8 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { useForm } from 'react-hook-form'
 
+import { notify } from '@/utils/notify'
+
 import Button from '@/components/ui/button'
 
 import styles from './Form.module.scss'
@@ -61,6 +63,7 @@ const FormComponent = ({
   inputs,
   title = 'Отправьте свои данные',
   description = 'Наш менеджер свяжется с Вами в самое ближайшее время',
+  modal,
 }) => {
   const {
     register,
@@ -79,9 +82,16 @@ const FormComponent = ({
         },
         body: JSON.stringify(fieldsData),
       })
-      reset()
+      const data = await res.json()
+      if (data?.code === 200) {
+        reset()
+        notify(data?.message, 'success')
+        modal && modal(false)
+      } else {
+        notify(data?.message, 'error')
+      }
     } catch (error) {
-      console.log(error)
+      notify('Сообщение не отправлено', 'error')
     }
   }
 

@@ -144,6 +144,7 @@ const Home = () => {
               direction='col'
               title='Введите свои данные'
               inputs={['name', 'phone']}
+              modal={setShowModal}
             />
           </Modal>
         </div>
@@ -182,7 +183,7 @@ const Home = () => {
             </svg>
           </a>
           <a
-            href='#'
+            href='https://wa.me/+79266385055'
             target='_blank'
           >
             <svg
@@ -204,7 +205,7 @@ const Home = () => {
             </svg>
           </a>
           <a
-            href='#'
+            href='https://t.me/foxovskiy'
             target='_blank'
           >
             <svg

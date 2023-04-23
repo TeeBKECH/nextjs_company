@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { Suspense } from 'react'
 
 import Footer from './footer/Footer'
 import Header from './header/Header'
@@ -82,6 +81,7 @@ const Layout = ({ children, title, description }) => {
         pathname={pathname}
       />
       <main className={styles.main}>{children}</main>
+
       <Footer />
     </>
   )

@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
+import { useRouter } from 'next/router'
 
 import styles from './Modal.module.scss'
 
 const Modal = ({ show, onClose, children }) => {
   const modalOverlayRef = useRef(null)
+  const router = useRouter()
 
   const backDropHandler = (e) => {
     if (modalOverlayRef?.current === e.target || e.keyCode === 27) {
@@ -30,6 +32,15 @@ const Modal = ({ show, onClose, children }) => {
     const bodyTag = document.getElementById('body_id')
     show ? bodyTag.classList.add('show_modal') : bodyTag.classList.remove('show_modal')
   }, [show])
+
+  useEffect(() => {
+    const bodyStyles = () => document.getElementById('body_id').classList.remove('show_modal')
+    router.events.on('routeChangeComplete', bodyStyles)
+
+    return () => {
+      router.events.off('routeChangeComplete', bodyStyles)
+    }
+  }, [router.events])
 
   const modalContent = (
     <>

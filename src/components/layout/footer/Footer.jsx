@@ -50,13 +50,28 @@ const Footer = () => {
             <h2>Наши соц. сети</h2>
             <ul className={styles.footer_social_list}>
               <li>
-                <Link href='#'>Вконтакте</Link>
+                <a
+                  href='https://vk.com/idfriendlyinn'
+                  target='_blank'
+                >
+                  Вконтакте
+                </a>
               </li>
               <li>
-                <Link href='#'>WhatsApp</Link>
+                <a
+                  href='https://wa.me/+79266385055'
+                  target='_blank'
+                >
+                  WhatsApp
+                </a>
               </li>
               <li>
-                <Link href='#'>Telegram</Link>
+                <a
+                  href='https://t.me/foxovskiy'
+                  target='_blank'
+                >
+                  Telegram
+                </a>
               </li>
             </ul>
           </div>

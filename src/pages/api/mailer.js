@@ -26,13 +26,13 @@ const mailer = async (req, res) => {
   try {
     await transporter.sendMail({
       from: `Friendlyinn Group | <${process.env.SMTP_USER}>`,
-      to: 'hotel@friendlyinn.ru',
+      to: 'nickolaybuzinov@gmail.com',
       subject: `Заявка с сайта FriendlyInn Group`,
       text: mailContent,
     })
-    res.status(200).json({ message: 'Сообщение успешно отправлено' })
+    res.status(200).json({ message: 'Сообщение успешно отправлено', code: 200 })
   } catch (error) {
-    res.status(500).json({ message: 'Ошибка при отправке формы', error })
+    res.status(500).json({ message: 'Ошибка при отправке формы', code: 500, error })
   }
 }
 
