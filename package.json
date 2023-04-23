@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 5678",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next build && next start -p 5678",
+    "start": "next start",
     "lint": "next lint",
     "static": "next build && next export"
   },
@@ -17,7 +17,8 @@
     "react-accessible-accordion": "^5.0.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.9",
-    "react-toastify": "^9.1.2"
+    "react-toastify": "^9.1.2",
+    "sharp": "^0.32.0"
   },
   "devDependencies": {
     "sass": "^1.59.3"
