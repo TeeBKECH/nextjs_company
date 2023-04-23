@@ -69,7 +69,7 @@ const FormComponent = ({
     register,
     reset,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting, isValid },
   } = useForm()
 
   const onSubmit = async (fieldsData) => {
@@ -147,7 +147,13 @@ const FormComponent = ({
           }
         })}
         <div className={clsx(styles.form_control, styles.form_control_submit)}>
-          <Button type={'submit'}>Отправить</Button>
+          <Button
+            disabled={!isValid}
+            loading={isSubmitting}
+            type={'submit'}
+          >
+            Отправить
+          </Button>
           <p className={styles.privacy}>
             Нажимая <span>Отправить</span> Вы соглашаетесь с <br />
             <Link href='/privacy'>правилами обработки персональных данных</Link>

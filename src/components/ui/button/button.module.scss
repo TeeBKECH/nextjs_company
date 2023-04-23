@@ -1,5 +1,5 @@
 .button {
-  display: inline-block;
+  gap: 10px;
   padding: 10px 25px;
   outline: none;
   border: 1px solid rgba(#ac8c3c, 0.5);
@@ -9,10 +9,37 @@
   color: #ac8c3c;
   cursor: pointer;
   transition: all 0.2s linear;
+  position: relative;
 
   &:hover {
     background: #ac8c3c;
     color: #fff;
+  }
+
+  &.loading {
+    padding-right: 40px;
+  }
+
+  &:disabled {
+    color: #585858;
+    background: #dfdfdf;
+    cursor: default;
+
+    &:hover {
+      color: #585858;
+      background: #dfdfdf;
+    }
+  }
+
+  svg {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: block;
+    margin: auto;
+    background: none;
   }
 }
 
