@@ -32,21 +32,23 @@ import service4Icon3 from '@/assets/img/list.svg'
 
 import service5Img1 from '@/assets/img/jpg/services/designers.jpg'
 
-import service7Icon1 from '@/assets/img/documents.svg'
-import service7Icon2 from '@/assets/img/crew.svg'
-import service7Icon3 from '@/assets/img/marketing.svg'
-import service7Icon4 from '@/assets/img/booking.svg'
-import service7Icon5 from '@/assets/img/web.svg'
-import service7Icon6 from '@/assets/img/juridical.svg'
+import service7Img1 from '@/assets/img/jpg/services/docs.jpg'
+import service7Img2 from '@/assets/img/jpg/services/crew1.jpg'
+import service7Img3 from '@/assets/img/jpg/services/marketing.jpg'
+import service7Img4 from '@/assets/img/jpg/services/settings1.jpg'
+import service7Img5 from '@/assets/img/jpg/services/web_dev.jpg'
+import service7Img6 from '@/assets/img/jpg/services/justice1.jpg'
+import service7Img7 from '@/assets/img/jpg/services/another.jpg'
 
-import service8Icon1 from '@/assets/img/keep_hands.svg'
-import service8Icon2 from '@/assets/img/include.svg'
-import service8Icon3 from '@/assets/img/standarts.svg'
-import service8Icon4 from '@/assets/img/hotel_audit.svg'
-import service8Icon5 from '@/assets/img/crew_teaching.svg'
-import service8Icon7 from '@/assets/img/money.svg'
-import service8Icon8 from '@/assets/img/questions.svg'
-import service8Icon9 from '@/assets/img/system.svg'
+import service8Img1 from '@/assets/img/jpg/services/use_rights.jpg'
+import service8Img2 from '@/assets/img/jpg/services/crew_management.jpg'
+import service8Img3 from '@/assets/img/jpg/services/work_standarts.jpg'
+import service8Img4 from '@/assets/img/jpg/services/audit_recomendations.jpg'
+import service8Img5 from '@/assets/img/jpg/services/crew1.jpg'
+import service8Img6 from '@/assets/img/jpg/services/work_things.jpg'
+import service8Img7 from '@/assets/img/jpg/services/money_ways.jpg'
+import service8Img8 from '@/assets/img/jpg/services/consult2.jpg'
+import service8Img9 from '@/assets/img/jpg/services/controle_system.jpg'
 
 const servicesCards = [
   {
@@ -171,13 +173,13 @@ const servicesCards = [
     subTitle: 'Оказание консультаций действующим отелям по различным вопросам',
     text: '',
     list: [
-      { text: 'Документация', icon: service7Icon1 },
-      { text: 'Персонал', icon: service7Icon2 },
-      { text: 'Реклама и продвижение', icon: service7Icon3 },
-      { text: 'Настройка и подключение площадок бронирования', icon: service7Icon4 },
-      { text: 'Разработка сайта', icon: service7Icon5 },
-      { text: 'Юридические вопросы ', icon: service7Icon6 },
-      { text: 'Другое  ', icon: service4Icon3 },
+      { text: 'Документация', img: service7Img1 },
+      { text: 'Персонал', img: service7Img2 },
+      { text: 'Реклама и продвижение', img: service7Img3 },
+      { text: 'Настройка и подключение площадок бронирования', img: service7Img4 },
+      { text: 'Разработка сайта', img: service7Img5 },
+      { text: 'Юридические вопросы', img: service7Img6 },
+      { text: 'Другое', img: service7Img7 },
     ],
   },
   {
@@ -187,18 +189,18 @@ const servicesCards = [
     subTitle: 'Возможно, лучшая инвестиция, о которой Вы когда-либо думали.',
     text: 'Обладатель франшизы Friendly Inn получает ',
     list: [
-      { text: 'Право на использование бренда Friendly Inn', icon: service8Icon1 },
+      { text: 'Право на использование бренда Friendly Inn', img: service8Img1 },
       {
-        text: 'Включение в пул объектов Friendly inn – размещение на сайте компании',
-        icon: service8Icon2,
+        text: 'Включение в пулл объектов Friendly inn – размещение на сайте компании',
+        img: service8Img2,
       },
-      { text: 'Стандарты работы отеля', icon: service8Icon3 },
-      { text: 'Аудит отеля и разработка рекомендаций ', icon: service8Icon4 },
-      { text: 'Обучение персонала', icon: service8Icon5 },
-      { text: 'Рабочие инструменты продвижения', icon: service7Icon3 },
-      { text: 'Оптимизация денежных потоков', icon: service8Icon7 },
-      { text: 'Консультации по работе отеля и другим вопросам', icon: service8Icon8 },
-      { text: 'Систему контроля соблюдения стандартов', icon: service8Icon9 },
+      { text: 'Стандарты работы отеля', img: service8Img3 },
+      { text: 'Аудит отеля и разработка рекомендаций ', img: service8Img4 },
+      { text: 'Обучение персонала', img: service8Img5 },
+      { text: 'Рабочие инструменты продвижения', img: service8Img6 },
+      { text: 'Оптимизация денежных потоков', img: service8Img7 },
+      { text: 'Консультации по работе отеля и другим вопросам', img: service8Img8 },
+      { text: 'Систему контроля соблюдения стандартов', img: service8Img9 },
     ],
   },
 ]
