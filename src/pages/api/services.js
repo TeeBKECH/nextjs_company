@@ -1,11 +1,11 @@
-import hotelManagementIcon from '@/assets/img/projects.svg'
-import restaurantIcon from '@/assets/img/restaurant.svg'
-import hotelBuildIcon from '@/assets/img/hotel_build.svg'
-import renovationIcon from '@/assets/img/renovation.svg'
-import designIcon from '@/assets/img/design.svg'
-import auditIcon from '@/assets/img/audit.svg'
-import consaltIcon from '@/assets/img/consalt.svg'
-import franchiseIcon from '@/assets/img/franchise.svg'
+import hotelManagementImg from '@/assets/img/jpg/hotel_management.jpg'
+import restaurantImg from '@/assets/img/jpg/rest_management.jpg'
+import hotelBuildImg from '@/assets/img/jpg/hotel_build.jpg'
+import renovationImg from '@/assets/img/jpg/renovation.jpg'
+import designImg from '@/assets/img/jpg/hotel_design.jpg'
+import auditImg from '@/assets/img/jpg/audit.jpg'
+import consaltImg from '@/assets/img/jpg/consult.jpg'
+import franchiseImg from '@/assets/img/jpg/franchise.jpg'
 
 import service1Img1 from '@/assets/img/jpg/services/sales_marketing.jpg'
 import service1Img2 from '@/assets/img/jpg/services/personal.jpg'
@@ -28,14 +28,9 @@ import service3Img6 from '@/assets/img/jpg/services/take.jpg'
 import service3Img7 from '@/assets/img/jpg/services/interior.jpg'
 import service3Img8 from '@/assets/img/jpg/services/crew_management.jpg'
 
-import service4Icon2 from '@/assets/img/approval.svg'
 import service4Icon3 from '@/assets/img/list.svg'
-import service4Icon4 from '@/assets/img/search.svg'
-import service4Icon5 from '@/assets/img/escort.svg'
-import service4Icon6 from '@/assets/img/take.svg'
 
-import service6Icon1 from '@/assets/img/analisis.svg'
-import service6Icon3 from '@/assets/img/recomendations.svg'
+import service5Img1 from '@/assets/img/jpg/services/designers.jpg'
 
 import service7Icon1 from '@/assets/img/documents.svg'
 import service7Icon2 from '@/assets/img/crew.svg'
@@ -56,7 +51,7 @@ import service8Icon9 from '@/assets/img/system.svg'
 const servicesCards = [
   {
     id: 1,
-    iconImg: hotelManagementIcon,
+    img: hotelManagementImg,
     title: 'Управлением отелем',
     subTitle: 'Мы работаем, чтобы Вы отдыхали.',
     text: 'Наша компания осуществляет полное управление отелем, это включает',
@@ -89,7 +84,7 @@ const servicesCards = [
   },
   {
     id: 2,
-    iconImg: restaurantIcon,
+    img: restaurantImg,
     title: 'Управление рестораном',
     subTitle: 'Вкусно и со вкусом.',
     text: 'Осуществляем весь цикл',
@@ -105,7 +100,7 @@ const servicesCards = [
   },
   {
     id: 3,
-    iconImg: hotelBuildIcon,
+    img: hotelBuildImg,
     title: 'Строительство отеля',
     subTitle: 'Полный цикл запуска объекта от выбора места локации до ввода здания в эксплуатацию.',
     text: 'Наша компания осуществляет полное управление отелем, это включает',
@@ -123,7 +118,7 @@ const servicesCards = [
   },
   {
     id: 4,
-    iconImg: renovationIcon,
+    img: renovationImg,
     title: 'Реновация отеля',
     subTitle: 'Вдохнуть современность и инновации в работающий объект ',
     text: 'Состоит из нескольких этапов ',
@@ -138,14 +133,14 @@ const servicesCards = [
   },
   {
     id: 5,
-    iconImg: designIcon,
-    title: 'Дизайн проект отеля',
+    img: designImg,
+    title: 'Дизайн-проект отеля',
     subTitle: 'Мы работаем, чтобы Вы отдыхали.',
     text: 'Наша компания осуществляет полное управление отелем, это включает',
     list: [
       {
         text: 'Команда наших дизайнеров создаст проект с учетом Ваших пожеланий, специфики здания.',
-        img: service3Img3,
+        img: service5Img1,
       },
       {
         text: 'Будет разработана концепция, также учтены все требования для дальнейшего прохождения классификации объекта.',
@@ -159,7 +154,7 @@ const servicesCards = [
   },
   {
     id: 6,
-    iconImg: auditIcon,
+    img: auditImg,
     title: 'Аудит',
     subTitle: 'Проверка и разработка рекомендаций по оптимизации работы.',
     text: '',
@@ -171,7 +166,7 @@ const servicesCards = [
   },
   {
     id: 7,
-    iconImg: consaltIcon,
+    img: consaltImg,
     title: 'Консалтинг',
     subTitle: 'Оказание консультаций действующим отелям по различным вопросам',
     text: '',
@@ -187,7 +182,7 @@ const servicesCards = [
   },
   {
     id: 8,
-    iconImg: franchiseIcon,
+    img: franchiseImg,
     title: 'Франшиза',
     subTitle: 'Возможно, лучшая инвестиция, о которой Вы когда-либо думали.',
     text: 'Обладатель франшизы Friendly Inn получает ',

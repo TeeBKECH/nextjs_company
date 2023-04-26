@@ -21,14 +21,6 @@ const Services = ({ data }) => {
           text={'Наши Услуги'}
           subTitle='Полный перечень услуг вы можете получить оставив заявку'
         />
-        <div className={styles.form}>
-          <FormComponent
-            direction='row'
-            title='Укажите свои данные'
-            description='_____'
-            inputs={['name', 'email']}
-          />
-        </div>
         <div className={styles.cards}>
           {data.map((card) => {
             return (
@@ -38,10 +30,11 @@ const Services = ({ data }) => {
               >
                 <div className={styles.img}>
                   <Image
-                    width={120}
-                    height={120}
-                    src={card.iconImg}
+                    width={320}
+                    height={280}
+                    src={card.img}
                     alt={card.title}
+                    placeholder='blur'
                   />
                 </div>
                 <p className={styles.text}>{card.title}</p>
@@ -51,6 +44,14 @@ const Services = ({ data }) => {
               </div>
             )
           })}
+        </div>
+        <div className={styles.form}>
+          <FormComponent
+            direction='row'
+            title='Укажите свои данные'
+            description='_____'
+            inputs={['name', 'email']}
+          />
         </div>
       </section>
     </Layout>
