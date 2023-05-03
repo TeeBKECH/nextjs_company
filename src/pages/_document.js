@@ -10,6 +10,10 @@ export default function Document() {
   return (
     <Html lang='ru'>
       <Head>
+        <meta
+          name='yandex-verification'
+          content='441b1a9197945299'
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `

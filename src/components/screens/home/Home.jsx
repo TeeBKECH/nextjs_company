@@ -111,7 +111,12 @@ const Home = () => {
   }
 
   return (
-    <Layout title={'Главная'}>
+    <Layout
+      title={'Главная'}
+      description={
+        'FriendlyInn — это сеть бутиковых и авторских отелей, а также управляющая компания. Гостеприимство — на ша миссия'
+      }
+    >
       <section className={styles.hero}>
         <div className={styles.bg}>
           <Image
