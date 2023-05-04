@@ -6,6 +6,7 @@
   padding: 0;
   width: 100%;
   position: relative;
+  $self: &;
 
   &.left {
     align-items: flex-start;
@@ -45,6 +46,16 @@
 
     @media (max-width: 768px) {
       font-size: 32px;
+    }
+  }
+
+  &.small {
+    #{$self}_text {
+      font-size: 30px;
+
+      @media (max-width: 768px) {
+        font-size: 22px;
+      }
     }
   }
 

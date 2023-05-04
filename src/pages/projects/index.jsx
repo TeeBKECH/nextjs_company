@@ -1,8 +1,22 @@
-import Dev from '@/components/screens/dev/Dev'
-import Hotels from '@/components/screens/projects/Projects'
+import Projects from '@/components/screens/projects/Projects'
 
-const HotelsPage = () => {
-  return <Dev title={'Наши проекты'} />
+const ProjectsPage = ({ projectCards }) => {
+  return <Projects data={projectCards} />
 }
 
-export default HotelsPage
+export async function getServerSideProps(context) {
+  const res = await fetch(`${process.env.API_URL}/projects`)
+  const data = await res.json()
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: { ...data }, // will be passed to the page component as props
+  }
+}
+
+export default ProjectsPage

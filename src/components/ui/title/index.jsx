@@ -5,9 +5,9 @@ import clsx from 'clsx'
 import titleDecor from '@/assets/img/title_decor.svg'
 import styles from './title.module.scss'
 
-const TitleSec = ({ text, subTitle, position }) => {
+const TitleSec = ({ text, subTitle, position, size }) => {
   return (
-    <div className={clsx(styles.title, position && styles[position])}>
+    <div className={clsx(styles.title, position && styles[position], size && styles[size])}>
       <h2>
         {/* <div className={styles.title_decor}>
           <Image

@@ -37,6 +37,7 @@
     ol,
     ul {
       color: lighten(#000, 40);
+      list-style-position: inside;
     }
 
     ol {
@@ -45,6 +46,7 @@
 
         ul {
           padding-bottom: 10px;
+          padding-left: 10px;
         }
       }
     }
