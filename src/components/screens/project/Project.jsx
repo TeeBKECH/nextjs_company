@@ -10,8 +10,8 @@ import starIcon from '@/assets/img/star.svg'
 import styles from './Project.module.scss'
 
 const Project = ({ data }) => {
-  console.log(data)
-  // const { list } = data
+  // console.log(data)
+  const { images } = data
 
   return (
     <Layout title={`${data?.projectType} ${data?.projectName}`}>
@@ -39,7 +39,7 @@ const Project = ({ data }) => {
               <Image
                 src={data.logo}
                 width={80}
-                height={70}
+                height={80}
                 alt={data.projectName}
               />
             </div>
@@ -71,46 +71,62 @@ const Project = ({ data }) => {
       </section>
       <section className={styles.project}>
         <TitleSec
-          text={'До/После'}
+          text={'До / После'}
           subTitle='Сравните представление дизайнера с конечным результатом'
-          position={'left'}
         />
-        {/* <div className={styles.cards}>
-          {list.map((card) => {
-            const { text, img, icon } = card
-            return (
-              <div
-                key={text}
-                className={styles.card}
-              >
-                {img && (
-                  <div className={styles.img}>
-                    <Image
-                      width={320}
-                      height={280}
-                      src={img}
-                      alt={text}
-                      placeholder='blur'
-                    />
-                  </div>
-                )}
-                {icon && (
-                  <div className={styles.icon}>
-                    <Image
-                      width={120}
-                      height={120}
-                      src={icon}
-                      alt={text}
-                    />
-                  </div>
-                )}
-                <div className={styles.text}>
-                  <h4>{text}</h4>
+        {images &&
+          images.map((image, i) => (
+            <div
+              className={styles.images}
+              key={i}
+            >
+              <div className={styles.images_title}>
+                <h3>{image.text}</h3>
+              </div>
+              <div className={styles.before}>
+                <div className={styles.images_img}>
+                  <Image
+                    src={image.beforeImg}
+                    fill={true}
+                    alt={`${image.text} Визуализация`}
+                  />
+                </div>
+                <div className={styles.images_text}>
+                  <p>{image.beforeText}</p>
+                </div>
+                <div className={styles.arrow}>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    viewBox='0 0 107.2 90.2'
+                  >
+                    <g
+                      id='Слой_2'
+                      data-name='Слой 2'
+                    >
+                      <g
+                        id='Слой_1-2'
+                        data-name='Слой 1'
+                      >
+                        <polygon points='65.6 32 43.1 0 75.5 0 107.2 45.1 75.5 90.2 43.1 90.2 65.6 58.2 0 58.2 0 32 65.6 32 65.6 32' />
+                      </g>
+                    </g>
+                  </svg>
                 </div>
               </div>
-            )
-          })}
-        </div> */}
+              <div className={styles.after}>
+                <div className={styles.images_img}>
+                  <Image
+                    src={image.afterImg}
+                    fill={true}
+                    alt={`${image.text} Результат`}
+                  />
+                </div>
+                <div className={styles.images_text}>
+                  <p>{image.afterText}</p>
+                </div>
+              </div>
+            </div>
+          ))}
       </section>
     </Layout>
   )
