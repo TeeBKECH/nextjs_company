@@ -8,7 +8,6 @@ import Accordion from '@/components/ui/accordion'
 import Button from '@/components/ui/button'
 import Modal from '@/components/ui/modal'
 
-import mainBg from '../../../../public/main_bg_3.jpg'
 import stonksImg from '@/assets/img/stonks.svg'
 import projectsImg from '@/assets/img/projects.svg'
 import changesImg from '@/assets/img/changes.svg'
@@ -21,11 +20,147 @@ import aboutImg3 from '@/assets/img/jpg/3.jpg'
 import aboutImg4 from '@/assets/img/jpg/4.jpg'
 import aboutImg5 from '@/assets/img/jpg/1.jpg'
 
+import menPlaceholder from '@/assets/img/jpg/men.jpg'
+import womenPlaceholder from '@/assets/img/jpg/women.jpg'
+
 import styles from './Home.module.scss'
 import FormComponent from '@/components/ui/form'
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false)
+
+  const advCards = [
+    {
+      img: stonksImg,
+      title: 'Рост прибыли',
+      text: 'Прирост прибыли каждый год 15%',
+    },
+    {
+      img: projectsImg,
+      title: 'Рост капитализации',
+      text: 'Увеличение капитализации объекта 10% годовых',
+    },
+    {
+      img: changesImg,
+      title: 'Надежность и гарантии',
+      text: 'Детальные отчеты и полнаяпрозрачность всей нашей деятельности',
+    },
+  ]
+
+  const adventagesCards = [
+    {
+      img: '/experience.jpg',
+      title: 'Опыт',
+      text: 'Прирост прибыли каждый год 15%',
+    },
+    {
+      img: '/profit.jpg',
+      title: 'Выгодно',
+      text: 'Увеличение капитализации объекта 10% годовых',
+    },
+    {
+      img: '/guests.jpg',
+      title: 'База гостей',
+      text: 'Детальные отчеты и полнаяпрозрачность всей нашей деятельности',
+    },
+    {
+      img: '/loyalty.jpg',
+      title: 'Программа лояльности',
+      text: 'Детальные отчеты и полнаяпрозрачность всей нашей деятельности',
+    },
+    {
+      img: '/audit.jpg',
+      title: 'Проверка гос органами',
+      text: 'Детальные отчеты и полнаяпрозрачность всей нашей деятельности',
+    },
+    {
+      img: '/standarts.jpg',
+      title: 'Стандарты качества',
+      text: 'Детальные отчеты и полнаяпрозрачность всей нашей деятельности',
+    },
+  ]
+
+  const teamCards = [
+    {
+      img: menPlaceholder,
+      male: 0,
+      name: 'Красовский Александр',
+      position: 'Генереальный директор',
+      options: 'Обработка целей общества и планов по их реализации. Стратегическое управление.',
+    },
+    {
+      img: womenPlaceholder,
+      male: 1,
+      name: 'Стречень Ирина',
+      position: 'Исполнительный директор',
+      options:
+        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+    },
+    {
+      img: menPlaceholder,
+      male: 0,
+      name: 'Сивцев Антон',
+      position: 'Исполнительный директор',
+      options:
+        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+    },
+    {
+      img: womenPlaceholder,
+      male: 1,
+      name: 'Стречень Ирина',
+      position: 'Исполнительный директор',
+      options:
+        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+    },
+    {
+      img: womenPlaceholder,
+      male: 1,
+      name: 'Стречень Ирина',
+      position: 'Исполнительный директор',
+      options:
+        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+    },
+    {
+      img: menPlaceholder,
+      male: 0,
+      name: 'Стречень Ирина',
+      position: 'Исполнительный директор',
+      options:
+        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+    },
+    {
+      img: womenPlaceholder,
+      male: 0,
+      name: 'Стречень Ирина',
+      position: 'Исполнительный директор',
+      options:
+        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+    },
+    {
+      img: menPlaceholder,
+      male: 0,
+      name: 'Стречень Ирина',
+      position: 'Исполнительный директор',
+      options:
+        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+    },
+    {
+      img: womenPlaceholder,
+      male: 0,
+      name: 'Стречень Ирина',
+      position: 'Исполнительный директор',
+      options:
+        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+    },
+    {
+      img: menPlaceholder,
+      male: 0,
+      name: 'Стречень Ирина',
+      position: 'Исполнительный директор',
+      options:
+        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+    },
+  ]
 
   const weCards = [
     {
@@ -106,21 +241,17 @@ const Home = () => {
     },
   ]
 
-  const openModal = () => {
-    return
-  }
-
   return (
     <Layout
       title={'Главная'}
       description={
-        'FriendlyInn — это сеть бутиковых и авторских отелей, а также управляющая компания. Гостеприимство — на ша миссия'
+        'FriendlyInn — это сеть бутиковых и авторских отелей, а также управляющая компания. Гостеприимство — наша миссия'
       }
     >
       <section className={styles.hero}>
         <div className={styles.bg}>
           <Image
-            src={mainBg}
+            src='/main_bg_3.jpg'
             alt='FriendlyInn Group'
             priority={true}
             fill={true}
@@ -128,18 +259,19 @@ const Home = () => {
         </div>
         <div className={styles.content}>
           <h1>
-            <span>FriendlyInn</span> Group
+            Эффективное управление от <br />
+            <span> FriendlyInn</span> Group
           </h1>
           <h2>
-            Управление отелями, апартаментами
-            <br /> и ресторанами
+            Увеличим прибыль и капитализацию вашего отеля, ресторана, <br /> апратментов с гарантией
+            результата
           </h2>
           <Button
             type={'button'}
             className={styles.callback}
             onClick={() => setShowModal(true)}
           >
-            Позвонить мне
+            Заказать звонок
           </Button>
           <Modal
             onClose={() => setShowModal(false)}
@@ -223,7 +355,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className={styles.we}>
+      {/* <section className={styles.we}>
         <TitleSec text={'Почему Мы?'} />
 
         <div className={styles.cards}>
@@ -246,9 +378,36 @@ const Home = () => {
             )
           })}
         </div>
+      </section> */}
+
+      <section className={styles.advents}>
+        <div className={styles.advents_cards}>
+          {advCards.map((card) => {
+            return (
+              <div
+                key={card.text}
+                className={styles.advents_card}
+              >
+                <div className={styles.img}>
+                  <Image
+                    width={100}
+                    height={100}
+                    src={card.img}
+                    alt={card.text}
+                  />
+                </div>
+                <h5 className={styles.advents_title}>{card.title}</h5>
+                <p className={styles.advents_text}>{card.text}</p>
+              </div>
+            )
+          })}
+        </div>
       </section>
 
-      <section className={styles.about}>
+      {/* <section
+        id='about'
+        className={styles.about}
+      >
         <div className={styles.about_content}>
           <div className={styles.about_text}>
             <TitleSec
@@ -289,9 +448,68 @@ const Home = () => {
               ))}
           </div>
         </div>
+      </section> */}
+
+      <section
+        id='team'
+        className={styles.team}
+      >
+        <div className={styles.team_title}>
+          <TitleSec
+            text={'Команда опытных профессионалов'}
+            size={'small'}
+          />
+          <p>
+            Мы — управляющая компания <span>FriendlyInn Group.</span>
+            <br /> Управляем собственными отелями и ресторанами{' '}
+            <a
+              href='https://friendlyinn.ru'
+              target='_blank'
+            >
+              FriendlyInn
+            </a>
+          </p>
+          <p>
+            Предоставляем команду отлично зарекомендовавших управленцев, которые будут рабоать над
+            достижением поставленных задач в любой точке России
+          </p>
+        </div>
+        <div className={styles.team_cards}>
+          {teamCards.map((el, i) => {
+            return (
+              <div
+                key={i}
+                className={styles.team_card}
+              >
+                <div className={styles.team_card_img}>
+                  {i < 2 ? (
+                    <Image
+                      src={el.img}
+                      width={200}
+                      height={300}
+                      alt={el.name}
+                    />
+                  ) : (
+                    <Image
+                      src={el.img}
+                      width={100}
+                      height={150}
+                      alt={el.name}
+                    />
+                  )}
+                </div>
+                <div className={styles.team_card_text}>
+                  <h4>{el.name}</h4>
+                  <p>{el.position}</p>
+                  <span>{el.options}</span>
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </section>
 
-      <section className={styles.who}>
+      {/* <section className={styles.who}>
         <TitleSec text={'Для кого наши услуги?'} />
 
         <div className={styles.who_cards}>
@@ -310,6 +528,43 @@ const Home = () => {
                   />
                 </div>
                 <p className={styles.who_text}>{card.text}</p>
+              </div>
+            )
+          })}
+        </div>
+      </section> */}
+
+      <section
+        id='adventages'
+        className={styles.adventages}
+      >
+        <div className={styles.adventages_title}>
+          <TitleSec
+            text={'Наши преимущества'}
+            size={'small'}
+            subTitle={
+              'Помогаем выжать максимум из отеля и ресторана. Оптимизируем все процессы и наладим все цепочки взаимодействия. С нашей помощью вы станете зарабатывать больше.'
+            }
+          />
+        </div>
+        <div className={styles.adventages_cards}>
+          {adventagesCards.map((card, i) => {
+            return (
+              <div
+                key={i}
+                className={styles.adventages_card}
+              >
+                <div className={styles.adventages_card_img}>
+                  <Image
+                    fill={true}
+                    src={card.img}
+                    alt={card.text}
+                  />
+                </div>
+                <div className={styles.adventages_card_content}>
+                  <h5 className={styles.adventages_card_title}>{card.title}</h5>
+                  <p className={styles.adventages_card_text}>{card.text}</p>
+                </div>
               </div>
             )
           })}

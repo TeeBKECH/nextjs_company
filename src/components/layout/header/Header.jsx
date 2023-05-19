@@ -46,17 +46,31 @@ const Header = ({ headerRef, sticky, pathname }) => {
           <span className={styles.line}></span>
         </div>
         <nav className={clsx(styles.menu, toggleMenu && styles.menu_active)}>
-          {links.map((el) => (
-            <Link
-              key={el.slug}
-              href={`/${el.slug}`}
-              className={clsx(styles.link, activeClass(el.slug) && styles.link_active)}
-            >
-              {el.title}
-            </Link>
-          ))}
+          {links.map((el) => {
+            if (el.slug[0] === '#' || el.target) {
+              return (
+                <a
+                  key={el.slug}
+                  href={el.slug}
+                  target={el.target}
+                >
+                  {el.title}
+                </a>
+              )
+            } else {
+              return (
+                <Link
+                  key={el.slug}
+                  href={`/${el.slug}`}
+                  className={clsx(styles.link, activeClass(el.slug) && styles.link_active)}
+                >
+                  {el.title}
+                </Link>
+              )
+            }
+          })}
         </nav>
-        <div className={styles.phone}>
+        {/* <div className={styles.phone}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             xmlnsXlink='http://www.w3.org/1999/xlink'
@@ -72,18 +86,32 @@ const Header = ({ headerRef, sticky, pathname }) => {
             </g>
           </svg>
           <a href='tel:+79581119055'>+7 (958) 111-90-55</a>
-        </div>
+        </div> */}
       </div>
       <nav className={clsx(styles.menu_mobile, toggleMenu && styles.menu_mobile_active)}>
-        {links.map((el) => (
-          <Link
-            key={el.slug}
-            href={`/${el.slug}`}
-            className={clsx(styles.link, activeClass(el.slug) && styles.link_active)}
-          >
-            {el.title}
-          </Link>
-        ))}
+        {links.map((el) => {
+          if (el.slug[0] === '#' || el.target) {
+            return (
+              <a
+                key={el.slug}
+                href={el.slug}
+                target={el.target}
+              >
+                {el.title}
+              </a>
+            )
+          } else {
+            return (
+              <Link
+                key={el.slug}
+                href={`/${el.slug}`}
+                className={clsx(styles.link, activeClass(el.slug) && styles.link_active)}
+              >
+                {el.title}
+              </Link>
+            )
+          }
+        })}
       </nav>
     </header>
   )

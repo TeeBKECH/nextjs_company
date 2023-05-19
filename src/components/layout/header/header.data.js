@@ -1,27 +1,20 @@
 export default [
   {
-    slug: 'about',
-    title: 'О нас',
+    slug: '',
+    title: 'Главная',
   },
   {
-    slug: 'services',
-    title: 'Услуги',
+    slug: '#team',
+    title: 'Команда',
   },
   {
-    slug: 'partners',
-    title: 'Партнерская программа',
+    slug: '#adventages',
+    title: 'Преимущества',
   },
   {
-    slug: 'projects',
-    title: 'Наши проекты',
-  },
-  // {
-  //   slug: 'team',
-  //   title: 'Команда',
-  // },
-  {
-    slug: 'faq',
-    title: 'FAQ',
+    slug: 'https://friendlyinn.club',
+    title: 'Франшиза',
+    target: '_blank',
   },
   {
     slug: 'contacts',
