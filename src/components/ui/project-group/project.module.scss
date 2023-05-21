@@ -20,6 +20,11 @@
     @media (max-width: 768px) {
       max-width: 500px;
     }
+
+    @media (max-width: 576px) {
+      max-width: 300px;
+      padding: 70px 10px;
+    }
   }
 }
 
