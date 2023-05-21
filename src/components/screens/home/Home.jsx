@@ -7,6 +7,8 @@ import TitleSec from '@/components/ui/title'
 import Accordion from '@/components/ui/accordion'
 import Button from '@/components/ui/button'
 import Modal from '@/components/ui/modal'
+import FormComponent from '@/components/ui/form'
+import ProjectGroup from '@/components/ui/project-group'
 
 import stonksImg from '@/assets/img/stonks.svg'
 import projectsImg from '@/assets/img/projects.svg'
@@ -24,9 +26,8 @@ import menPlaceholder from '@/assets/img/jpg/men.jpg'
 import womenPlaceholder from '@/assets/img/jpg/women.jpg'
 
 import styles from './Home.module.scss'
-import FormComponent from '@/components/ui/form'
 
-const Home = () => {
+const Home = ({ data }) => {
   const [showModal, setShowModal] = useState(false)
 
   const advCards = [
@@ -570,6 +571,192 @@ const Home = () => {
           })}
         </div>
       </section>
+
+      <section
+        id='cost'
+        className={styles.cost}
+      >
+        <div className={styles.cost_text}>
+          <h2>Сколько стоят наши услуги?</h2>
+          <p>
+            Стоимость наших услуг зависит от множества факторов. Оставляйте заявку и мы свяжемся с
+            вами и все обсудим. Чем мы можем быть полезны вашему бизнесу
+          </p>
+        </div>
+        <div className={styles.cost_actions}>
+          <Button
+            type={'button'}
+            className={styles.callback}
+            onClick={() => setShowModal(true)}
+          >
+            Оставить заявку
+          </Button>
+          <Modal
+            onClose={() => setShowModal(false)}
+            show={showModal}
+          >
+            <FormComponent
+              direction='col'
+              title='Введите свои данные'
+              inputs={['name', 'phone']}
+              modal={setShowModal}
+            />
+          </Modal>
+        </div>
+      </section>
+
+      <section
+        id='work'
+        className={styles.work}
+      >
+        <div className={styles.work_title}>
+          <TitleSec
+            text={'С кем мы работаем'}
+            size={'small'}
+          />
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 40 40'
+          >
+            <g
+              id='Слой_2'
+              data-name='Слой 2'
+            >
+              <g
+                id='Слой_1-2'
+                data-name='Слой 1'
+              >
+                <path
+                  fill='none'
+                  d='M0,0H40V40H0Z'
+                />
+                <path
+                  fill='#009640'
+                  d='M20,36.67A16.67,16.67,0,1,1,36.67,20,16.67,16.67,0,0,1,20,36.67Zm0-3.34A13.33,13.33,0,1,0,6.67,20,13.33,13.33,0,0,0,20,33.33Zm-1.66-6.66-7.07-7.08,2.35-2.35L18.34,22l9.43-9.42,2.35,2.35Z'
+                />
+                <circle
+                  fill='none'
+                  stroke='#009640'
+                  strokeMiterlimit='10'
+                  cx='20'
+                  cy='20'
+                  r='19.2'
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div className={styles.work_cards}>
+          {advCards.map((card, i) => {
+            return (
+              <div
+                key={i}
+                className={styles.work_card}
+              >
+                <div className={styles.img}>
+                  <Image
+                    width={80}
+                    height={80}
+                    src={card.img}
+                    alt={card.text}
+                  />
+                </div>
+                <p className={styles.advents_text}>{card.text}</p>
+              </div>
+            )
+          })}
+          {advCards.map((card, i) => {
+            return (
+              <div
+                key={i}
+                className={styles.work_card}
+              >
+                <div className={styles.img}>
+                  <Image
+                    width={80}
+                    height={80}
+                    src={card.img}
+                    alt={card.text}
+                  />
+                </div>
+                <p className={styles.advents_text}>{card.text}</p>
+              </div>
+            )
+          })}
+          {advCards.map((card, i) => {
+            return (
+              <div
+                key={i}
+                className={styles.work_card}
+              >
+                <div className={styles.img}>
+                  <Image
+                    width={80}
+                    height={80}
+                    src={card.img}
+                    alt={card.text}
+                  />
+                </div>
+                <p className={styles.advents_text}>{card.text}</p>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      <section
+        id='work'
+        className={styles.work}
+      >
+        <div className={styles.work_title}>
+          <TitleSec
+            text={'С кем мы НЕ работаем'}
+            size={'small'}
+          />
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 40 40'
+            fill='#c11718'
+          >
+            <defs></defs>
+            <g
+              id='Слой_2'
+              data-name='Слой 2'
+            >
+              <g
+                id='Слой_1-2'
+                data-name='Слой 1'
+              >
+                <g id='cross'>
+                  <path d='M26,20,38.76,7.22a4.23,4.23,0,0,0-6-6L20,14,7.22,1.24a4.23,4.23,0,0,0-6,6L14,20,1.24,32.78a4.23,4.23,0,0,0,6,6L20,26,32.78,38.76a4.23,4.23,0,0,0,6-6Z' />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div className={styles.work_cards}>
+          {advCards.map((card, i) => {
+            return (
+              <div
+                key={i}
+                className={styles.work_card}
+              >
+                <div className={styles.img}>
+                  <Image
+                    width={80}
+                    height={80}
+                    src={card.img}
+                    alt={card.text}
+                  />
+                </div>
+                <p className={styles.advents_text}>{card.text}</p>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      <ProjectGroup data={data} />
 
       <section className={styles.accordion}>
         <TitleSec
