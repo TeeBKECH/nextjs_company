@@ -1,9 +1,5 @@
 export default [
   {
-    slug: '',
-    title: 'Главная',
-  },
-  {
     slug: '#team',
     title: 'Команда',
   },

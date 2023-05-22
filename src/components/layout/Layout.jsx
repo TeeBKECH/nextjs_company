@@ -12,7 +12,6 @@ const getTitle = (title) => `${title} | FriendlyInn Group`
 const Layout = ({ children, title, description }) => {
   const [sticky, setSticky] = useState({ isSticky: false, offset: 0 })
   const headerRef = useRef(null)
-  const { pathname } = useRouter()
 
   // handle scroll event
   const handleScroll = (elTopOffset, elHeight) => {
@@ -78,7 +77,6 @@ const Layout = ({ children, title, description }) => {
       <Header
         headerRef={headerRef}
         sticky={sticky.isSticky}
-        pathname={pathname}
       />
       <main className={styles.main}>{children}</main>
 
