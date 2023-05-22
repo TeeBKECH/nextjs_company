@@ -104,23 +104,6 @@
   bottom: 30px;
   right: 30px;
   z-index: 10;
-
-  @media (max-width: 430px) {
-    flex-direction: row;
-  }
-
-  a {
-    display: block;
-    width: 30px;
-    height: 30px;
-
-    svg {
-      display: block;
-      fill: #fff;
-      width: 100%;
-      height: 100%;
-    }
-  }
 }
 
 .advents {

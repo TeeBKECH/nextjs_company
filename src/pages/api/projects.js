@@ -25,18 +25,24 @@ const projectCards = [
     text: 'Ниже вы найдете информацию по данному проекту',
     images: [
       {
-        beforeImg: project1Before1,
-        afterImg: project1image1,
-        beforeText: 'Визуализация',
-        afterText: 'Результат',
-        text: 'Какой то текст (например название помещения)',
+        src: project1Before1,
+        alt: 'Какой то текст (например название помещения)',
       },
       {
-        beforeImg: project1Before2,
-        afterImg: project1After2,
-        beforeText: 'Визуализация',
-        afterText: 'Результат',
-        text: 'Какой то текст (например название помещения)',
+        src: project1Before2,
+        alt: 'Какой то текст (например название помещения)',
+      },
+      {
+        src: project1After2,
+        alt: 'Какой то текст (например название помещения)',
+      },
+      {
+        src: project1Before1,
+        alt: 'Какой то текст (например название помещения)',
+      },
+      {
+        src: project1After2,
+        alt: 'Какой то текст (например название помещения)',
       },
     ],
   },

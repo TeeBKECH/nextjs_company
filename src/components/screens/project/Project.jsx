@@ -1,16 +1,20 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from 'swiper'
 
 import Layout from '@/components/layout/Layout'
 import TitleSec from '@/components/ui/title'
 import Breadcrumbs from '@/components/ui/breadcrumbs'
+import ProjectGroup from '@/components/ui/project-group'
 
 import starIcon from '@/assets/img/star.svg'
 
+import 'swiper/scss'
+import 'swiper/scss/navigation'
 import styles from './Project.module.scss'
 
 const Project = ({ data }) => {
-  // console.log(data)
   const { images } = data
 
   return (
@@ -71,62 +75,58 @@ const Project = ({ data }) => {
       </section>
       <section className={styles.project}>
         <TitleSec
-          text={'До / После'}
+          text={'Как добились результатов'}
           subTitle='Сравните представление дизайнера с конечным результатом'
         />
-        {images &&
-          images.map((image, i) => (
-            <div
-              className={styles.images}
-              key={i}
-            >
-              <div className={styles.images_title}>
-                <h3>{image.text}</h3>
-              </div>
-              <div className={styles.before}>
-                <div className={styles.images_img}>
+        <div className={styles.project_swiper}>
+          <Swiper
+            modules={[Navigation]}
+            navigation={true}
+            spaceBetween={30}
+            slidesPerView={3.5}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+            breakpoints={{
+              1400: {
+                slidesPerView: 3.5,
+                spaceBetween: 30,
+              },
+              1100: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              991: {
+                slidesPerView: 2.5,
+                spaceBetween: 20,
+              },
+              750: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              450: {
+                slidesPerView: 1.5,
+                spaceBetween: 20,
+              },
+              320: {
+                slidesPerView: 1.1,
+                spaceBetween: 10,
+              },
+            }}
+          >
+            {images.map((img, i) => (
+              <SwiperSlide key={i}>
+                <div className={styles.project_swiper_img}>
                   <Image
-                    src={image.beforeImg}
+                    src={img.src}
+                    alt={img.alt}
                     fill={true}
-                    alt={`${image.text} Визуализация`}
                   />
+                  <p>{img.alt}</p>
                 </div>
-                <div className={styles.images_text}>
-                  <p>{image.beforeText}</p>
-                </div>
-                <div className={styles.arrow}>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 107.2 90.2'
-                  >
-                    <g
-                      id='Слой_2'
-                      data-name='Слой 2'
-                    >
-                      <g
-                        id='Слой_1-2'
-                        data-name='Слой 1'
-                      >
-                        <polygon points='65.6 32 43.1 0 75.5 0 107.2 45.1 75.5 90.2 43.1 90.2 65.6 58.2 0 58.2 0 32 65.6 32 65.6 32' />
-                      </g>
-                    </g>
-                  </svg>
-                </div>
-              </div>
-              <div className={styles.after}>
-                <div className={styles.images_img}>
-                  <Image
-                    src={image.afterImg}
-                    fill={true}
-                    alt={`${image.text} Результат`}
-                  />
-                </div>
-                <div className={styles.images_text}>
-                  <p>{image.afterText}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </section>
     </Layout>
   )

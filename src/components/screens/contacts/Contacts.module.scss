@@ -14,9 +14,25 @@
   gap: 30px;
 
   @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+
+  &_info {
     display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    @media (max-width: 991px) {
+      grid-column-start: unset;
+      grid-column-end: unset;
+    }
+
+    ul {
+      list-style: none;
+    }
   }
 
   &_form {
