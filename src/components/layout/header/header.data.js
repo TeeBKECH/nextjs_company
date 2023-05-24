@@ -8,12 +8,12 @@ export default [
     title: 'Преимущества',
   },
   {
+    slug: 'contacts',
+    title: 'Контакты',
+  },
+  {
     slug: 'https://friendlyinn.club',
     title: 'Франшиза',
     target: '_blank',
-  },
-  {
-    slug: 'contacts',
-    title: 'Контакты',
   },
 ]

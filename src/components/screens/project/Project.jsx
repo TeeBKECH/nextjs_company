@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -13,8 +14,11 @@ import starIcon from '@/assets/img/star.svg'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import styles from './Project.module.scss'
+import WaitingBlock from '@/components/ui/waiting'
 
 const Project = ({ data }) => {
+  const [showModal, setShowModal] = useState(false)
+
   const { images } = data
 
   return (
@@ -74,10 +78,16 @@ const Project = ({ data }) => {
         </div>
       </section>
       <section className={styles.project}>
-        <TitleSec
-          text={'Как добились результатов'}
-          subTitle='Сравните представление дизайнера с конечным результатом'
-        />
+        <div className={styles.project_title}>
+          <TitleSec
+            text={'Как добились результатов'}
+            subTitle='Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Злых
+          свою, но собрал заманивший назад предупредила коварный рукописи. Вершину реторический это
+          то не пустился. Бросил силуэт пунктуация возвращайся переписывается деревни использовало
+          буквоград, гор текстов вопрос великий он назад, рукописи переписали даже текста взгляд
+          скатился?'
+          />
+        </div>
         <div className={styles.project_swiper}>
           <Swiper
             modules={[Navigation]}
@@ -128,6 +138,10 @@ const Project = ({ data }) => {
           </Swiper>
         </div>
       </section>
+      <WaitingBlock
+        setShowModal={setShowModal}
+        showModal={showModal}
+      />
     </Layout>
   )
 }

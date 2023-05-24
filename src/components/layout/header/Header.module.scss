@@ -251,6 +251,26 @@
   }
 }
 
+.link {
+  &_target {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    svg {
+      width: 12px;
+      height: 12px;
+      stroke: #868686;
+    }
+
+    &:hover {
+      svg {
+        stroke: #ac8c3c;
+      }
+    }
+  }
+}
+
 @keyframes smoothScroll {
   0% {
     transform: translateY(-142px);

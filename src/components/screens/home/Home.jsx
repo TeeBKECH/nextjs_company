@@ -9,12 +9,16 @@ import Button from '@/components/ui/button'
 import Modal from '@/components/ui/modal'
 import FormComponent from '@/components/ui/form'
 import ProjectGroup from '@/components/ui/project-group'
+import Socials from '@/components/ui/socials'
+import WaitingBlock from '@/components/ui/waiting'
 
 import stonksImg from '@/assets/img/stonks.svg'
 import projectsImg from '@/assets/img/projects.svg'
 import changesImg from '@/assets/img/changes.svg'
 import capitalImg from '@/assets/img/capital.svg'
 import safetyImg from '@/assets/img/safety.svg'
+
+import numDecor from '@/assets/img/numDecor.svg'
 
 import aboutImg1 from '@/assets/img/jpg/5.jpg'
 import aboutImg2 from '@/assets/img/jpg/2.jpg'
@@ -26,7 +30,6 @@ import menPlaceholder from '@/assets/img/jpg/men.jpg'
 import womenPlaceholder from '@/assets/img/jpg/women.jpg'
 
 import styles from './Home.module.scss'
-import Socials from '@/components/ui/socials'
 
 const Home = ({ data }) => {
   const [showModal, setShowModal] = useState(false)
@@ -102,65 +105,115 @@ const Home = ({ data }) => {
       img: menPlaceholder,
       male: 0,
       name: 'Сивцев Антон',
-      position: 'Исполнительный директор',
+      position: 'Управляющий отелями',
       options:
-        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+        'Контроль всех служб и персонала. Присутствует на объекте в соответствии с утвержденным графиком.',
     },
     {
       img: womenPlaceholder,
       male: 1,
       name: 'Стречень Ирина',
-      position: 'Исполнительный директор',
+      position: 'Revenue manager',
+      options: 'Организация динамического ценообразования и его контроль. Работает удаленно.',
+    },
+    {
+      img: menPlaceholder,
+      male: 0,
+      name: 'Сивцев Антон',
+      position: 'HR',
+      options: 'Организация динамического ценообразования и его контроль. Работает удаленно.',
+    },
+    {
+      img: womenPlaceholder,
+      male: 1,
+      name: 'Бахитгуль',
+      position: 'Супервайзер',
       options:
-        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+        'Организация службу хаускипинга. Контроль за чистотой и порядком. Присутствует на объекте в соответствии с утвержденным графиком.',
     },
     {
       img: womenPlaceholder,
       male: 1,
       name: 'Стречень Ирина',
-      position: 'Исполнительный директор',
-      options:
-        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+      position: 'Маркетолог',
+      options: 'Организация динамического ценообразования и его контроль. Работает удаленно.',
     },
     {
       img: menPlaceholder,
       male: 0,
-      name: 'Стречень Ирина',
-      position: 'Исполнительный директор',
+      name: 'Кравчук Роман',
+      position: 'Технический работник',
       options:
-        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
-    },
-    {
-      img: womenPlaceholder,
-      male: 0,
-      name: 'Стречень Ирина',
-      position: 'Исполнительный директор',
-      options:
-        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+        'Вся техника будет работать как швейцарские часы. Специалист приезжает в заранее обговоренные даты, но чаще при необходимости.',
     },
     {
       img: menPlaceholder,
       male: 0,
-      name: 'Стречень Ирина',
-      position: 'Исполнительный директор',
-      options:
-        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
-    },
-    {
-      img: womenPlaceholder,
-      male: 0,
-      name: 'Стречень Ирина',
-      position: 'Исполнительный директор',
-      options:
-        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+      name: 'Хоменко Иван и Хоменко Раиса',
+      position: 'Юристы',
+      options: 'Консультации, работа с документами "на удаленке"',
     },
     {
       img: menPlaceholder,
       male: 0,
-      name: 'Стречень Ирина',
-      position: 'Исполнительный директор',
+      name: 'Бузинов Николай',
+      position: 'IT специалист',
       options:
-        'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
+        'Настройка и контроль оборудования и ПО "на удаленке". Возможен приезд при необходимости.',
+    },
+  ]
+
+  const workWithCards = [
+    {
+      img: numDecor,
+      text: 'Владельцы зданий и помещений кто не знает, как использовать помещения, но хочет получать больше денег, чем от аренды.',
+    },
+    {
+      img: numDecor,
+      text: 'Владельцы существующих отелей (номерной фонд от 30 номеров), которые хотят увеличения своего дохода, но не знают, как оптимизировать процессы.',
+    },
+    {
+      img: numDecor,
+      text: 'Владельцы загородной недвижимости и земли (кроме ИЖС), кто не знает, как использовать площади.',
+    },
+    {
+      img: numDecor,
+      text: 'Кто строит отель, но не знает кто будет им управлять.',
+    },
+    {
+      img: numDecor,
+      text: 'Кто хочет вложиться в отельный бизнес и открыть отель.',
+    },
+    {
+      img: numDecor,
+      text: 'Собственник здания, помещения, который хочет повысить капитализацию объекта',
+    },
+    {
+      img: numDecor,
+      text: 'Собственник, кто сдавал в аренду помещения под отель, но арендатор ушел из этого помещения.',
+    },
+    {
+      img: numDecor,
+      text: 'Кто разрабатывает концепцию отеля или ресторана, но не специалист в этом (например, дизайнеры или архитекторы, к которым обратились или строители).',
+    },
+    {
+      img: numDecor,
+      text: 'Владельцы отелей или ресторанов, кто хочет повысить уровень сервиса.',
+    },
+  ]
+
+  const workOutCards = [
+    {
+      img: numDecor,
+      text: 'Отели менее 12 номеров',
+    },
+    {
+      img: numDecor,
+      text: 'Хостелы',
+    },
+    {
+      img: numDecor,
+      text: 'Рестораны менее 25 посадочных мест',
     },
   ]
 
@@ -533,7 +586,7 @@ const Home = ({ data }) => {
           <h2>Сколько стоят наши услуги?</h2>
           <p>
             Стоимость наших услуг зависит от множества факторов. Оставляйте заявку и мы свяжемся с
-            вами и все обсудим. Чем мы можем быть полезны вашему бизнесу
+            вами и обсудим, чем мы можем быть полезны вашему бизнесу
           </p>
         </div>
         <div className={styles.cost_actions}>
@@ -600,55 +653,20 @@ const Home = ({ data }) => {
           </svg>
         </div>
         <div className={styles.work_cards}>
-          {advCards.map((card, i) => {
+          {workWithCards.map((card, i) => {
             return (
               <div
                 key={i}
                 className={styles.work_card}
               >
-                <div className={styles.img}>
+                <div className={styles.work_card_img}>
                   <Image
-                    width={80}
+                    width={100}
                     height={80}
                     src={card.img}
                     alt={card.text}
                   />
-                </div>
-                <p className={styles.advents_text}>{card.text}</p>
-              </div>
-            )
-          })}
-          {advCards.map((card, i) => {
-            return (
-              <div
-                key={i}
-                className={styles.work_card}
-              >
-                <div className={styles.img}>
-                  <Image
-                    width={80}
-                    height={80}
-                    src={card.img}
-                    alt={card.text}
-                  />
-                </div>
-                <p className={styles.advents_text}>{card.text}</p>
-              </div>
-            )
-          })}
-          {advCards.map((card, i) => {
-            return (
-              <div
-                key={i}
-                className={styles.work_card}
-              >
-                <div className={styles.img}>
-                  <Image
-                    width={80}
-                    height={80}
-                    src={card.img}
-                    alt={card.text}
-                  />
+                  <p>{i + 1}</p>
                 </div>
                 <p className={styles.advents_text}>{card.text}</p>
               </div>
@@ -688,19 +706,20 @@ const Home = ({ data }) => {
           </svg>
         </div>
         <div className={styles.work_cards}>
-          {advCards.map((card, i) => {
+          {workOutCards.map((card, i) => {
             return (
               <div
                 key={i}
                 className={styles.work_card}
               >
-                <div className={styles.img}>
+                <div className={styles.work_card_img}>
                   <Image
-                    width={80}
+                    width={100}
                     height={80}
                     src={card.img}
                     alt={card.text}
                   />
+                  <p>-</p>
                 </div>
                 <p className={styles.advents_text}>{card.text}</p>
               </div>
@@ -711,58 +730,18 @@ const Home = ({ data }) => {
 
       <ProjectGroup data={data} />
 
-      <section
-        id='wait'
-        className={styles.wait}
-      >
-        <div className={styles.wait_title}>
-          <TitleSec
-            text={'Ждём вас в гости'}
-            size={'small'}
-          />
-        </div>
-        <div className={styles.wait_content}>
-          <div className={styles.wait_img}>
-            <Image
-              src={'/main_bg_4.jpg'}
-              fill={true}
-              alt='Ждем вас в гости | FriendlyInn Group'
-            />
-          </div>
-          <div className={styles.wait_actions}>
-            <p>
-              Приглашаем вас посетить любой из наших отелей и ресторанов, где мы в реальном времени
-              покажем, как у нас все работает. Познакомим с нашей командой и ответим на ваши вопросы
-            </p>
-            <Button
-              type={'button'}
-              className={styles.callback}
-              onClick={() => setShowModal(true)}
-            >
-              Записаться
-            </Button>
-            <Modal
-              onClose={() => setShowModal(false)}
-              show={showModal}
-            >
-              <FormComponent
-                direction='col'
-                title='Введите свои данные'
-                inputs={['name', 'phone']}
-                modal={setShowModal}
-              />
-            </Modal>
-          </div>
-        </div>
-      </section>
+      <WaitingBlock
+        setShowModal={setShowModal}
+        showModal={showModal}
+      />
 
-      <section className={styles.accordion}>
+      {/* <section className={styles.accordion}>
         <TitleSec
           text={'FAQ'}
           subTitle={'Частые вопросы'}
         />
         <Accordion />
-      </section>
+      </section> */}
     </Layout>
   )
 }
