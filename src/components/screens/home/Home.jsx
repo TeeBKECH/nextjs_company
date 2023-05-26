@@ -61,7 +61,7 @@ const Home = ({ data }) => {
     {
       img: '/profit.jpg',
       title: 'Выгодно',
-      text: 'Увеличение капитализации объекта 10% годовых',
+      text: 'Увеличение капитализации объекта до 80% годовых',
     },
     {
       img: '/guests.jpg',
@@ -675,7 +675,7 @@ const Home = ({ data }) => {
         </div>
       </section>
 
-      <section
+      {/* <section
         id='work'
         className={styles.work}
       >
@@ -726,7 +726,7 @@ const Home = ({ data }) => {
             )
           })}
         </div>
-      </section>
+      </section> */}
 
       <ProjectGroup data={data} />
 
