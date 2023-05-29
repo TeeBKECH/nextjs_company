@@ -15,7 +15,12 @@ import styles from './Contacts.module.scss'
 const Contacts = () => {
   const [showModal, setShowModal] = useState(false)
   return (
-    <Layout title={'Контакты'}>
+    <Layout
+      title={'Контакты'}
+      description={
+        'Связаться с нами можете по телефону +7... Или оставьте заяввку и мы вам перезвоним!'
+      }
+    >
       <Breadcrumbs
         backLink={{ text: 'Главная', link: '/' }}
         currentLink={'Контакты'}

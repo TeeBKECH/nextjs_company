@@ -22,7 +22,10 @@ const Project = ({ data }) => {
   const { images } = data
 
   return (
-    <Layout title={`${data?.projectType} ${data?.projectName}`}>
+    <Layout
+      title={`${data?.projectType} ${data?.projectName}`}
+      description={data?.subTitle}
+    >
       <Breadcrumbs
         backLink={{ text: 'Наши проекты', link: '/projects' }}
         currentLink={`${data?.projectType} ${data?.projectName}`}
