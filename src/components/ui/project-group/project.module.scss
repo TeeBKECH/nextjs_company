@@ -1,34 +1,64 @@
 .projects {
-  padding: 70px 30px 20px;
+  padding: 120px 60px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
   width: 100%;
+  box-shadow: 0 0 2rem rgba(#000, 0.4);
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  z-index: 2;
+  background: #fff;
 
-  @media (max-width: 576px) {
-    padding: 70px 10px 10px;
+  @media (max-width: 768px) {
+    padding: 120px 10px 10px;
     gap: 10px;
   }
 
   &_cards {
-    max-width: 1420px;
+    max-width: 1690px;
     width: 100%;
+    position: relative;
+    padding: 20px 120px;
 
     @media (max-width: 1200px) {
       max-width: unset;
     }
 
-    @media (max-width: 991px) {
-      // max-width: 700px;
-    }
-
     @media (max-width: 768px) {
-      // max-width: 500px;
+      padding: 10px 40px;
     }
 
-    @media (max-width: 576px) {
-      // max-width: 300px;
+    @media (max-width: 568px) {
+      padding: 10px;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      border: 1px solid transparent;
+      background: #eec89c;
+      font-size: 24px;
+      color: #000;
+      cursor: pointer;
+      transition: all 0.2s linear;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px 2px rgba(#000, 0.5);
+
+      &_prev {
+        left: 0;
+      }
+      &_next {
+        right: 0;
+      }
     }
   }
 }
@@ -38,16 +68,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    box-shadow: 0 0 10px rgba(#000, 0.1);
+    gap: 30px;
     padding: 0 0 15px;
-    background: #fff;
+    background: #ffffff;
+    border-bottom: 1px solid #eec89c;
+    box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.4);
   }
 
   &_img {
     position: relative;
     width: 100%;
-    height: 320px;
+    height: 270px;
 
     img {
       object-fit: cover;
@@ -58,9 +89,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eec89c;
+    border-left: 1px solid #eec89c;
+    border-right: 1px solid #eec89c;
+    width: calc(100% - 40px);
   }
 
   &_text {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 400;
+
+    span {
+      color: #eec89c;
+    }
   }
 }

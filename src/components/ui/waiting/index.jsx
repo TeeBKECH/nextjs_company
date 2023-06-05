@@ -16,18 +16,11 @@ const WaitingBlock = ({ setShowModal, showModal }) => {
     >
       <div className={styles.wait_title}>
         <TitleSec
-          text={'Ждём вас в гости'}
-          size={'small'}
+          title={'Ждём вас'}
+          subTitle={'в гости'}
         />
       </div>
       <div className={styles.wait_content}>
-        <div className={styles.wait_img}>
-          <Image
-            src={'/main_bg_4.jpg'}
-            fill={true}
-            alt='Ждем вас в гости | FriendlyInn Group'
-          />
-        </div>
         <div className={styles.wait_actions}>
           <p>
             Приглашаем вас посетить любой из наших отелей и ресторанов, где мы в реальном времени

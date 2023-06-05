@@ -18,7 +18,10 @@ const ProjectItem = ({ card }) => {
         />
       </div>
       <div className={styles.project_content}>
-        <h4 className={styles.project_text}>{`${card.projectType} ${card.projectName}`}</h4>
+        <h4 className={styles.project_text}>
+          {card.projectType} <br />
+          <span>{card.projectName}</span>
+        </h4>
         <Link href={`/projects/${card.slug}`}>
           <Button>Подробнее</Button>
         </Link>
