@@ -137,42 +137,48 @@
 
 .team {
   width: 100%;
-  padding: 65px 40px;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
-  background: #fff;
-  box-shadow: 0 0 2rem rgba(#000, 0.4);
+  padding: 120px 60px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
 
   @media (max-width: 768px) {
-    padding: 65px 10px;
+    padding: 120px 10px 40px;
   }
 
   &_title {
-    max-width: 600px;
-    text-align: center;
+    max-width: 940px;
 
-    p {
-      color: #555555;
-      font-size: 15px;
-      margin-top: 15px;
+    &_sub {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 15px;
 
       span {
-        font-weight: 700;
-        font-size: 18px;
+        font-weight: 800;
+        font-size: 22px;
         text-transform: uppercase;
+        color: #000;
 
         @media (max-width: 550px) {
-          font-size: 15px;
+          font-size: 18px;
         }
+      }
+    }
+
+    p {
+      &:not(.team_title_sub) {
+        color: #555555;
+        font-size: 18px;
+        margin-bottom: 5px;
       }
 
       a {
-        color: #000;
+        color: #eec89c;
         text-decoration: underline;
+        font-weight: 700;
+        text-transform: uppercase;
 
         &:hover {
           text-decoration: none;
@@ -307,166 +313,144 @@
   }
 }
 
-.who {
-  width: 100%;
-  padding: 70px 150px;
-
-  @media (max-width: 991px) {
-    padding: 50px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 50px 20px;
-  }
-
-  &_cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding: 40px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  &_card {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 15px;
-    padding: 20px;
-    background: lighten(#d3af53, 38%);
-    border: 2px solid darken(#d3af53, 15%);
-    border-radius: 5px;
-    transition: all 0.2s linear;
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 10px rgba(#000, 0.2);
-      background: lighten(#d3af53, 45%);
-    }
-
-    @media (max-width: 700px) {
-      min-height: unset;
-    }
-
-    .img {
-    }
-
-    .text {
-      text-align: center;
-      font-size: 20px;
-    }
-  }
-}
-
 .adventages {
-  width: 100%;
-  padding: 65px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-
-  @media (max-width: 1200px) {
-    padding: 65px 20px;
-  }
+  width: 100%;
+  padding: 120px 60px 100px;
+  box-shadow: 0 0 2rem rgba(#000, 0.4);
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 
   @media (max-width: 991px) {
-    padding: 65px 10px;
-    gap: 10px;
+    padding: 120px 20px 60px;
   }
 
-  @media (max-width: 768px) {
-    padding: 65px 5px;
+  .decor {
+    background-image: url(../../../assets/img/adv_decor1.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+
+    &:nth-child(1) {
+      left: -200px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1300px;
+      height: 1100px;
+    }
+
+    &:nth-child(2) {
+      right: -40px;
+      bottom: -30px;
+      width: 600px;
+      height: 500px;
+      transform: scale(-1, 1);
+    }
   }
 
   &_title {
-    max-width: 700px;
-    text-align: center;
+    max-width: 940px;
+
+    p {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-shadow: 0px 3px 2px rgba(0, 0, 0, 0.4);
+
+      @media (max-width: 550px) {
+        font-size: 18px;
+      }
+
+      span {
+        color: #eec89c;
+        font-weight: 700;
+      }
+    }
   }
 
   &_cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, 340px);
+    justify-content: center;
+    gap: 50px;
     padding: 20px 10px;
-    max-width: 1100px;
+    max-width: 1200px;
+    position: relative;
+    z-index: 2;
 
-    @media (max-width: 991px) {
-      gap: 20px 10px;
+    @media (max-width: 1200px) {
+      gap: 30px;
+      grid-template-columns: repeat(3, 300px);
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 991px) {
+      gap: 20px;
+      grid-template-columns: repeat(3, 240px);
+    }
+
+    @media (max-width: 800px) {
+      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 550px) {
       grid-template-columns: repeat(1, 1fr);
-      gap: 30px;
+      gap: 20px;
     }
   }
 
   &_card {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 40px;
     width: 100%;
+    min-height: 420px;
+    background: #ffffff;
+    box-shadow: 0px 2px 5px 1px rgba(#000, 0.3);
+    backdrop-filter: blur(2.5px);
+    border-radius: 10px;
     transition: all 0.2s linear;
+    padding: 30px 25px;
+    $card_item: &;
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 10px rgba(#000, 0.2);
-      background: lighten(#d3af53, 45%);
-    }
-
-    @media (max-width: 700px) {
+    @media (max-width: 991px) {
       min-height: unset;
     }
 
     @media (max-width: 600px) {
-      gap: 0;
-    }
-
-    &_content {
-      padding: 10px;
+      gap: 20px;
     }
 
     &_img {
-      width: 340px;
-      height: 340px;
-      overflow: hidden;
-      position: relative;
-
-      @media (max-width: 1200px) {
-        width: 100%;
-        height: 260px;
-      }
-
-      @media (max-width: 991px) {
-        height: 200px;
-      }
-
-      @media (max-width: 600px) {
-        height: 400px;
-      }
-
-      @media (max-width: 500px) {
-        height: 300px;
-      }
-
-      @media (max-width: 500px) {
-        height: 200px;
-      }
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       img {
-        object-fit: cover;
+        width: 100%;
+        height: auto;
+
+        &:nth-child(2) {
+          display: none;
+        }
       }
     }
 
     &_title {
-      font-size: 22px;
-      color: #000;
+      font-size: 20px;
+      color: #eec89c;
       text-align: center;
+      margin-bottom: 10px;
     }
 
     &_text {
@@ -474,32 +458,58 @@
       color: #3d3d3d;
       text-align: center;
     }
+
+    &:hover {
+      box-shadow: 0px 6px 15px 3px rgba(0, 0, 0, 0.7);
+      background: linear-gradient(213.24deg, rgba(215, 215, 215, 0.2) 0%, rgba(0, 0, 0, 0.16) 100%),
+        #181919;
+
+      #{$card_item}_img {
+        img {
+          &:nth-child(1) {
+            display: none;
+          }
+
+          &:nth-child(2) {
+            display: block;
+          }
+        }
+      }
+
+      #{$card_item}_text {
+        color: #fff;
+      }
+    }
   }
 }
 
 .cost {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 40px;
-  padding: 100px 30px;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
-  background: #fff;
-  box-shadow: 0 0 2rem rgba(#000, 0.4);
+  padding: 150px 60px;
+  background-image: url(../../../assets/img/jpg/footer_bg.jpg);
+  background-position: center;
+  background-size: cover;
   width: 100%;
 
   @media (max-width: 768px) {
     flex-direction: column;
   }
 
-  &_text {
-    max-width: 700px;
-    font-size: 18px;
-    color: #666666;
+  &_title {
+    max-width: 800px;
 
     @media (max-width: 768px) {
       text-align: center;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 20px;
     }
   }
 
@@ -508,11 +518,11 @@
 }
 
 .work {
-  padding: 70px 20px 20px;
+  padding: 120px 60px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 70px;
   width: 100%;
 
   &_title {
@@ -541,7 +551,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 50px;
     max-width: 1100px;
     width: 100%;
   }
@@ -551,7 +561,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 350px;
+    width: 270px;
 
     &_img {
       position: relative;
@@ -562,10 +572,15 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 2;
-        font-size: 30px;
+        font-size: 50px;
         font-weight: 700;
         color: rgba(#000, 0.7);
       }
+    }
+
+    &_text {
+      font-size: 16px;
+      text-align: justify;
     }
   }
 }

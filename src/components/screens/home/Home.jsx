@@ -4,27 +4,28 @@ import Image from 'next/image'
 
 import Layout from '@/components/layout/Layout'
 import TitleSec from '@/components/ui/title'
-import Accordion from '@/components/ui/accordion'
 import Button from '@/components/ui/button'
 import Modal from '@/components/ui/modal'
 import FormComponent from '@/components/ui/form'
 import ProjectGroup from '@/components/ui/project-group'
-import Socials from '@/components/ui/socials'
 import WaitingBlock from '@/components/ui/waiting'
-
-import stonksImg from '@/assets/img/stonks.svg'
-import projectsImg from '@/assets/img/projects.svg'
-import changesImg from '@/assets/img/changes.svg'
-import capitalImg from '@/assets/img/capital.svg'
-import safetyImg from '@/assets/img/safety.svg'
 
 import numDecor from '@/assets/img/numDecor.svg'
 
-import aboutImg1 from '@/assets/img/jpg/5.jpg'
-import aboutImg2 from '@/assets/img/jpg/2.jpg'
-import aboutImg3 from '@/assets/img/jpg/3.jpg'
-import aboutImg4 from '@/assets/img/jpg/4.jpg'
-import aboutImg5 from '@/assets/img/jpg/1.jpg'
+import adv1_1 from '@/assets/img/exp1.svg'
+import adv1_2 from '@/assets/img/exp2.svg'
+import adv2_1 from '@/assets/img/profit1.svg'
+import adv2_2 from '@/assets/img/profit2.svg'
+import adv3_1 from '@/assets/img/data1.svg'
+import adv3_2 from '@/assets/img/data2.svg'
+import adv4_1 from '@/assets/img/loyalty1.svg'
+import adv4_2 from '@/assets/img/loyalty2.svg'
+import adv5_1 from '@/assets/img/verify1.svg'
+import adv5_2 from '@/assets/img/verify2.svg'
+import adv6_1 from '@/assets/img/quality1.svg'
+import adv6_2 from '@/assets/img/quality2.svg'
+
+import workIcon from '@/assets/img/work_icon.svg'
 
 import menPlaceholder from '@/assets/img/jpg/men.jpg'
 import womenPlaceholder from '@/assets/img/jpg/women.jpg'
@@ -36,32 +37,38 @@ const Home = ({ data }) => {
 
   const adventagesCards = [
     {
-      img: '/experience.jpg',
+      img: adv1_1,
+      img_alt: adv1_2,
       title: 'Опыт',
       text: 'Прирост прибыли каждый год 15%',
     },
     {
-      img: '/profit.jpg',
+      img: adv2_1,
+      img_alt: adv2_2,
       title: 'Выгодно',
       text: 'Увеличение капитализации объекта до 80% годовых',
     },
     {
-      img: '/guests.jpg',
+      img: adv3_1,
+      img_alt: adv3_2,
       title: 'База гостей',
       text: 'Детальные отчеты и полнаяпрозрачность всей нашей деятельности',
     },
     {
-      img: '/loyalty.jpg',
+      img: adv4_1,
+      img_alt: adv4_2,
       title: 'Программа лояльности',
       text: 'Детальные отчеты и полнаяпрозрачность всей нашей деятельности',
     },
     {
-      img: '/audit.jpg',
+      img: adv5_1,
+      img_alt: adv5_2,
       title: 'Проверка гос органами',
       text: 'Детальные отчеты и полнаяпрозрачность всей нашей деятельности',
     },
     {
-      img: '/standarts.jpg',
+      img: adv6_1,
+      img_alt: adv6_2,
       title: 'Стандарты качества',
       text: 'Детальные отчеты и полнаяпрозрачность всей нашей деятельности',
     },
@@ -147,134 +154,40 @@ const Home = ({ data }) => {
 
   const workWithCards = [
     {
-      img: numDecor,
+      img: workIcon,
       text: 'Владельцы зданий и помещений кто не знает, как использовать помещения, но хочет получать больше денег, чем от аренды.',
     },
     {
-      img: numDecor,
+      img: workIcon,
       text: 'Владельцы существующих отелей (номерной фонд от 30 номеров), которые хотят увеличения своего дохода, но не знают, как оптимизировать процессы.',
     },
     {
-      img: numDecor,
+      img: workIcon,
       text: 'Владельцы загородной недвижимости и земли (кроме ИЖС), кто не знает, как использовать площади.',
     },
     {
-      img: numDecor,
+      img: workIcon,
       text: 'Кто строит отель, но не знает кто будет им управлять.',
     },
     {
-      img: numDecor,
+      img: workIcon,
       text: 'Кто хочет вложиться в отельный бизнес и открыть отель.',
     },
     {
-      img: numDecor,
+      img: workIcon,
       text: 'Собственник здания, помещения, который хочет повысить капитализацию объекта',
     },
     {
-      img: numDecor,
+      img: workIcon,
       text: 'Собственник, кто сдавал в аренду помещения под отель, но арендатор ушел из этого помещения.',
     },
     {
-      img: numDecor,
+      img: workIcon,
       text: 'Кто разрабатывает концепцию отеля или ресторана, но не специалист в этом (например, дизайнеры или архитекторы, к которым обратились или строители).',
     },
     {
-      img: numDecor,
+      img: workIcon,
       text: 'Владельцы отелей или ресторанов, кто хочет повысить уровень сервиса.',
-    },
-  ]
-
-  const workOutCards = [
-    {
-      img: numDecor,
-      text: 'Отели менее 12 номеров',
-    },
-    {
-      img: numDecor,
-      text: 'Хостелы',
-    },
-    {
-      img: numDecor,
-      text: 'Рестораны менее 25 посадочных мест',
-    },
-  ]
-
-  const weCards = [
-    {
-      img: stonksImg,
-      text: 'Увеличим выручку отеля на 30% за 2 месяца',
-      link: '',
-    },
-    {
-      img: projectsImg,
-      text: 'Мы практики – мы владеем и управляем несколькими отелями и ресторанами',
-      link: '',
-    },
-    {
-      img: changesImg,
-      text: 'Открыты для изменений – мы постоянно ищем новые решения, знания и внедряем их в работу',
-      link: '',
-    },
-    {
-      img: capitalImg,
-      text: 'Повышаем капитализацию объекта',
-      link: '',
-    },
-    {
-      img: safetyImg,
-      text: 'Надежность – полная прозрачность в ведении бизнеса и детальные отчеты',
-      link: '',
-    },
-  ]
-
-  const whoCards = [
-    {
-      img: stonksImg,
-      text: 'Инвесторам в сфере гостеприимства',
-      link: '',
-    },
-    {
-      img: projectsImg,
-      text: 'Собственникам недвижимости ',
-      link: '',
-    },
-    {
-      img: changesImg,
-      text: 'Владельцам отелей и ресторанов ',
-      link: '',
-    },
-    {
-      img: capitalImg,
-      text: 'Желающим купить готовый отель',
-      link: '',
-    },
-  ]
-
-  const projectImages = [
-    {
-      src: aboutImg1,
-      alt: '',
-      link: '/1',
-    },
-    {
-      src: aboutImg2,
-      alt: '',
-      link: '/2',
-    },
-    {
-      src: aboutImg3,
-      alt: '',
-      link: '/3',
-    },
-    {
-      src: aboutImg4,
-      alt: '',
-      link: '/4',
-    },
-    {
-      src: aboutImg5,
-      alt: '',
-      link: '/5',
     },
   ]
 
@@ -344,12 +257,14 @@ const Home = ({ data }) => {
       >
         <div className={styles.team_title}>
           <TitleSec
-            text={'Команда опытных профессионалов'}
-            size={'small'}
+            title={'Команда опытных'}
+            subTitle={'профессионалов'}
           />
-          <p>
+          <p className={styles.team_title_sub}>
             Мы — управляющая компания <span>FriendlyInn Group.</span>
-            <br /> Управляем собственными отелями и ресторанами{' '}
+          </p>
+          <p>
+            Управляем собственными отелями и ресторанами{' '}
             <a
               href='https://friendlyinn.ru'
               target='_blank'
@@ -401,14 +316,20 @@ const Home = ({ data }) => {
         id='adventages'
         className={styles.adventages}
       >
+        <div className={styles.decor}></div>
+        <div className={styles.decor}></div>
         <div className={styles.adventages_title}>
           <TitleSec
-            text={'Наши преимущества'}
-            size={'small'}
-            subTitle={
-              'Помогаем выжать максимум из отеля и ресторана. Оптимизируем все процессы и наладим все цепочки взаимодействия. С нашей помощью вы станете зарабатывать больше.'
-            }
+            title={'Наши'}
+            subTitle={'преимущества'}
           />
+          <p className={styles.adventages_title_sub}>
+            Помогаем выжать максимум из отеля и ресторана. Оптимизируем все процессы и наладим все
+            цепочки взаимодействия.
+          </p>
+          <p>
+            С нашей помощью вы станете <span>зарабатывать больше.</span>
+          </p>
         </div>
         <div className={styles.adventages_cards}>
           {adventagesCards.map((card, i) => {
@@ -419,8 +340,15 @@ const Home = ({ data }) => {
               >
                 <div className={styles.adventages_card_img}>
                   <Image
-                    fill={true}
+                    width={288}
+                    height={206}
                     src={card.img}
+                    alt={card.text}
+                  />
+                  <Image
+                    width={288}
+                    height={206}
+                    src={card.img_alt}
                     alt={card.text}
                   />
                 </div>
@@ -438,9 +366,12 @@ const Home = ({ data }) => {
         id='cost'
         className={styles.cost}
       >
-        <div className={styles.cost_text}>
-          <h2>Сколько стоят наши услуги?</h2>
-          <p>
+        <div className={styles.cost_title}>
+          <TitleSec
+            title={'Сколько стоят'}
+            subTitle={'наши услуги?'}
+          />
+          <p className={styles.cost_title_sub}>
             Стоимость наших услуг зависит от множества факторов. Оставляйте заявку и мы свяжемся с
             вами и обсудим, чем мы можем быть полезны вашему бизнесу
           </p>
@@ -473,40 +404,9 @@ const Home = ({ data }) => {
       >
         <div className={styles.work_title}>
           <TitleSec
-            text={'С кем мы работаем'}
-            size={'small'}
+            title={'С кем мы'}
+            subTitle={'работаем'}
           />
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            viewBox='0 0 40 40'
-          >
-            <g
-              id='Слой_2'
-              data-name='Слой 2'
-            >
-              <g
-                id='Слой_1-2'
-                data-name='Слой 1'
-              >
-                <path
-                  fill='none'
-                  d='M0,0H40V40H0Z'
-                />
-                <path
-                  fill='#009640'
-                  d='M20,36.67A16.67,16.67,0,1,1,36.67,20,16.67,16.67,0,0,1,20,36.67Zm0-3.34A13.33,13.33,0,1,0,6.67,20,13.33,13.33,0,0,0,20,33.33Zm-1.66-6.66-7.07-7.08,2.35-2.35L18.34,22l9.43-9.42,2.35,2.35Z'
-                />
-                <circle
-                  fill='none'
-                  stroke='#009640'
-                  strokeMiterlimit='10'
-                  cx='20'
-                  cy='20'
-                  r='19.2'
-                />
-              </g>
-            </g>
-          </svg>
         </div>
         <div className={styles.work_cards}>
           {workWithCards.map((card, i) => {
@@ -517,14 +417,14 @@ const Home = ({ data }) => {
               >
                 <div className={styles.work_card_img}>
                   <Image
-                    width={100}
-                    height={80}
+                    width={230}
+                    height={160}
                     src={card.img}
                     alt={card.text}
                   />
                   <p>{i + 1}</p>
                 </div>
-                <p className={styles.advents_text}>{card.text}</p>
+                <p className={styles.work_card_text}>{card.text}</p>
               </div>
             )
           })}
