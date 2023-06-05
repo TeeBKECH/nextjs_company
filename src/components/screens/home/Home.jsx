@@ -34,24 +34,6 @@ import styles from './Home.module.scss'
 const Home = ({ data }) => {
   const [showModal, setShowModal] = useState(false)
 
-  const advCards = [
-    {
-      img: stonksImg,
-      title: 'Рост прибыли',
-      text: 'Прирост прибыли каждый год 15%',
-    },
-    {
-      img: projectsImg,
-      title: 'Рост капитализации',
-      text: 'Увеличение капитализации объекта 10% годовых',
-    },
-    {
-      img: changesImg,
-      title: 'Надежность и гарантии',
-      text: 'Детальные отчеты и полнаяпрозрачность всей нашей деятельности',
-    },
-  ]
-
   const adventagesCards = [
     {
       img: '/experience.jpg',
@@ -314,8 +296,9 @@ const Home = ({ data }) => {
         </div>
         <div className={styles.content}>
           <h1>
-            Эффективное управление от <br />
-            <span> FriendlyInn</span> Group
+            Эффективное управление <br />
+            от
+            <span> FriendlyInn Group</span>
           </h1>
           <h2>
             Увеличим прибыль и капитализацию вашего отеля, ресторана, <br /> апратментов с гарантией
@@ -323,11 +306,24 @@ const Home = ({ data }) => {
           </h2>
           <Button
             type={'button'}
-            className={styles.callback}
             onClick={() => setShowModal(true)}
           >
             Заказать звонок
           </Button>
+          <div className={styles.content_items}>
+            <div>
+              <h5>Рост прибыли</h5>
+              <p>Прирост прибыли каждый год 15%</p>
+            </div>
+            <div>
+              <h5>Рост капитализации</h5>
+              <p>Увеличение капитализации объекта 10% годовых</p>
+            </div>
+            <div>
+              <h5>Надежность и гарантии</h5>
+              <p>Детальные отчеты и полнаяпрозрачность всей нашей деятельности</p>
+            </div>
+          </div>
           <Modal
             onClose={() => setShowModal(false)}
             show={showModal}
@@ -340,122 +336,7 @@ const Home = ({ data }) => {
             />
           </Modal>
         </div>
-        <div className={styles.social}>
-          <Socials
-            direction={'vertical'}
-            size={40}
-            data={[
-              {
-                text: 'vk',
-                link: 'https://vk.com/idfriendlyinn',
-              },
-              {
-                text: 'wa',
-                link: 'https://wa.me/+79266385055',
-              },
-              {
-                text: 'tg',
-                link: 'https://t.me/foxovskiy',
-              },
-            ]}
-          />
-        </div>
       </section>
-
-      {/* <section className={styles.we}>
-        <TitleSec text={'Почему Мы?'} />
-
-        <div className={styles.cards}>
-          {weCards.map((card) => {
-            return (
-              <div
-                key={card.text}
-                className={styles.card}
-              >
-                <div className={styles.img}>
-                  <Image
-                    width={120}
-                    height={120}
-                    src={card.img}
-                    alt={card.text}
-                  />
-                </div>
-                <p className={styles.text}>{card.text}</p>
-              </div>
-            )
-          })}
-        </div>
-      </section> */}
-
-      <section className={styles.advents}>
-        <div className={styles.advents_cards}>
-          {advCards.map((card) => {
-            return (
-              <div
-                key={card.text}
-                className={styles.advents_card}
-              >
-                <div className={styles.img}>
-                  <Image
-                    width={100}
-                    height={100}
-                    src={card.img}
-                    alt={card.text}
-                  />
-                </div>
-                <h5 className={styles.advents_title}>{card.title}</h5>
-                <p className={styles.advents_text}>{card.text}</p>
-              </div>
-            )
-          })}
-        </div>
-      </section>
-
-      {/* <section
-        id='about'
-        className={styles.about}
-      >
-        <div className={styles.about_content}>
-          <div className={styles.about_text}>
-            <TitleSec
-              position={'left'}
-              text={'О нас'}
-              subTitle='Гостеприимство — наша основная миссия!'
-            />
-            <p className={styles.par}>
-              FriendlyInn — это сеть бутиковых и авторских отелей и управляющая компания. Отели
-              находятся в зданиях являющимися памятниками архитектуры, в которых раньше
-              располагались доходные дома купцов и апартаменты гениальных исторических личностей
-              известных во всем мире.
-            </p>
-            <p className={styles.par}>
-              Мы объединили для Вас историю и современный комфорт. Нам удалось сохранить дух того
-              времени и по-новому взглянуть на его содержание. Многие элементы стен теперь стали
-              частью интерьера номеров отеля, что делает их по-своему уникальными и дает возможность
-              по-настоящему прикоснуться к истории того времени.&nbsp;
-              <Link href='/about'>Читать дальше...</Link>
-            </p>
-          </div>
-          <div className={styles.about_images}>
-            {projectImages.length &&
-              projectImages.map((image, i) => (
-                <div
-                  key={i}
-                  className={styles.about_images_item}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill={true}
-                    sizes='(max-width: 768px) 100vw,
-                  (max-width: 1200px) 50vw,
-                  33vw'
-                  />
-                </div>
-              ))}
-          </div>
-        </div>
-      </section> */}
 
       <section
         id='team'
@@ -515,31 +396,6 @@ const Home = ({ data }) => {
           })}
         </div>
       </section>
-
-      {/* <section className={styles.who}>
-        <TitleSec text={'Для кого наши услуги?'} />
-
-        <div className={styles.who_cards}>
-          {whoCards.map((card) => {
-            return (
-              <div
-                key={card.text}
-                className={styles.who_card}
-              >
-                <div className={styles.who_img}>
-                  <Image
-                    width={100}
-                    height={100}
-                    src={card.img}
-                    alt={card.text}
-                  />
-                </div>
-                <p className={styles.who_text}>{card.text}</p>
-              </div>
-            )
-          })}
-        </div>
-      </section> */}
 
       <section
         id='adventages'
@@ -674,59 +530,6 @@ const Home = ({ data }) => {
           })}
         </div>
       </section>
-
-      {/* <section
-        id='work'
-        className={styles.work}
-      >
-        <div className={styles.work_title}>
-          <TitleSec
-            text={'С кем мы НЕ работаем'}
-            size={'small'}
-          />
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            viewBox='0 0 40 40'
-            fill='#c11718'
-          >
-            <defs></defs>
-            <g
-              id='Слой_2'
-              data-name='Слой 2'
-            >
-              <g
-                id='Слой_1-2'
-                data-name='Слой 1'
-              >
-                <g id='cross'>
-                  <path d='M26,20,38.76,7.22a4.23,4.23,0,0,0-6-6L20,14,7.22,1.24a4.23,4.23,0,0,0-6,6L14,20,1.24,32.78a4.23,4.23,0,0,0,6,6L20,26,32.78,38.76a4.23,4.23,0,0,0,6-6Z' />
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-        <div className={styles.work_cards}>
-          {workOutCards.map((card, i) => {
-            return (
-              <div
-                key={i}
-                className={styles.work_card}
-              >
-                <div className={styles.work_card_img}>
-                  <Image
-                    width={100}
-                    height={80}
-                    src={card.img}
-                    alt={card.text}
-                  />
-                  <p>-</p>
-                </div>
-                <p className={styles.advents_text}>{card.text}</p>
-              </div>
-            )
-          })}
-        </div>
-      </section> */}
 
       <ProjectGroup data={data} />
 

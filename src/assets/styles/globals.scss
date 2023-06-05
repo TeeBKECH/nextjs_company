@@ -26,7 +26,7 @@ body {
 }
 
 body {
-  color: #202020;
+  color: #181919;
   background: #fff;
   font-family: 'PT Serif', serif;
 
@@ -40,6 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   background: center repeat-y url('../img/ornament.png');
+  background-size: contain;
 }
 
 a {

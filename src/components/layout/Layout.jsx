@@ -1,11 +1,15 @@
 import { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
+import { Inter } from 'next/font/google'
+import clsx from 'clsx'
 
 import Footer from './footer/Footer'
 import Header from './header/Header'
 
 import styles from './Layout.module.scss'
+
+// If loading a variable font, you don't need to specify the font weight
+const inter = Inter({ subsets: ['latin'] })
 
 const getTitle = (title) => `${title} | FriendlyInn Group`
 
@@ -78,7 +82,7 @@ const Layout = ({ children, title, description }) => {
         headerRef={headerRef}
         sticky={sticky.isSticky}
       />
-      <main className={styles.main}>{children}</main>
+      <main className={clsx(styles.main, inter.className)}>{children}</main>
 
       <Footer />
     </>

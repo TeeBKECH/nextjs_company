@@ -8,6 +8,14 @@ export default [
     title: 'Преимущества',
   },
   {
+    slug: '#projects',
+    title: 'Проекты',
+  },
+  {
+    slug: '#cost',
+    title: 'Заказать звонок',
+  },
+  {
     slug: 'contacts',
     title: 'Контакты',
   },

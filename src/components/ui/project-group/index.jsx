@@ -13,7 +13,10 @@ import styles from './project.module.scss'
 
 const ProjectGroup = ({ data }) => {
   return (
-    <section className={styles.projects}>
+    <section
+      id='projects'
+      className={styles.projects}
+    >
       <TitleSec
         text={'Наши проекты'}
         subTitle='Здесь вы найдете полный список наших проектов'

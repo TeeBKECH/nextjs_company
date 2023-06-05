@@ -1,4 +1,5 @@
 import { ToastContainer } from 'react-toastify'
+
 import NavigationLoader from '@/components/ui/loader'
 
 import 'react-toastify/dist/ReactToastify.css'
