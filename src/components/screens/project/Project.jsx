@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useCallback, useState, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper'
+import clsx from 'clsx'
 
 import Layout from '@/components/layout/Layout'
 import TitleSec from '@/components/ui/title'
@@ -11,6 +12,9 @@ import ProjectGroup from '@/components/ui/project-group'
 
 import starIcon from '@/assets/img/star.svg'
 
+import chevrone from '@/assets/img/chevrone.png'
+import chevrone2 from '@/assets/img/chevrone2.png'
+
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import styles from './Project.module.scss'
@@ -18,8 +22,22 @@ import WaitingBlock from '@/components/ui/waiting'
 
 const Project = ({ data }) => {
   const [showModal, setShowModal] = useState(false)
+  const navigationPrevRef = useRef(null)
+  const navigationNextRef = useRef(null)
+
+  const sliderRef = useRef(null)
 
   const { images } = data
+
+  const handlePrev = useCallback(() => {
+    if (!sliderRef.current) return
+    sliderRef.current.swiper.slidePrev()
+  }, [])
+
+  const handleNext = useCallback(() => {
+    if (!sliderRef.current) return
+    sliderRef.current.swiper.slideNext()
+  }, [])
 
   return (
     <Layout
@@ -27,15 +45,14 @@ const Project = ({ data }) => {
       description={data?.subTitle}
     >
       <Breadcrumbs
-        backLink={{ text: 'Наши проекты', link: '/projects' }}
+        backLink={{ text: 'Главная', link: '/#projects' }}
         currentLink={`${data?.projectType} ${data?.projectName}`}
       />
       <section className={styles.intro}>
         <div className={styles.intro_content}>
           <TitleSec
-            text={data?.title}
-            subTitle={data?.subTitle}
-            position={'left'}
+            title={data?.projectName}
+            subTitle={data?.projectType}
             size={'small'}
           />
           {data?.text.map((p, i) => {
@@ -90,15 +107,23 @@ const Project = ({ data }) => {
         </div>
         <div className={styles.project_swiper}>
           <Swiper
+            ref={sliderRef}
             modules={[Navigation]}
-            navigation={true}
+            navigation={{
+              prevEl: navigationPrevRef.current,
+              nextEl: navigationNextRef.current,
+            }}
+            onBeforeInit={(swiper) => {
+              swiper.params.navigation.prevEl = navigationPrevRef.current
+              swiper.params.navigation.nextEl = navigationNextRef.current
+            }}
             spaceBetween={30}
-            slidesPerView={3.5}
+            slidesPerView={3}
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
             breakpoints={{
               1400: {
-                slidesPerView: 3.5,
+                slidesPerView: 3,
                 spaceBetween: 30,
               },
               1100: {
@@ -106,19 +131,19 @@ const Project = ({ data }) => {
                 spaceBetween: 20,
               },
               991: {
-                slidesPerView: 2.5,
-                spaceBetween: 20,
+                slidesPerView: 2,
+                spaceBetween: 30,
               },
               750: {
                 slidesPerView: 2,
                 spaceBetween: 10,
               },
               450: {
-                slidesPerView: 1.5,
+                slidesPerView: 1,
                 spaceBetween: 20,
               },
               320: {
-                slidesPerView: 1.1,
+                slidesPerView: 1,
                 spaceBetween: 10,
               },
             }}
@@ -136,6 +161,28 @@ const Project = ({ data }) => {
               </SwiperSlide>
             ))}
           </Swiper>
+          <div
+            onClick={handlePrev}
+            className={clsx(styles.nav, styles.nav_prev)}
+          >
+            <Image
+              width={26}
+              height={26}
+              src={chevrone}
+              alt='chevrone'
+            />
+          </div>
+          <div
+            onClick={handleNext}
+            className={clsx(styles.nav, styles.nav_next)}
+          >
+            <Image
+              width={26}
+              height={26}
+              src={chevrone2}
+              alt='chevrone'
+            />
+          </div>
         </div>
       </section>
       <WaitingBlock

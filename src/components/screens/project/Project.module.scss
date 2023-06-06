@@ -133,8 +133,52 @@
   }
 
   &_swiper {
+    max-width: 1690px;
     width: 100%;
-    max-width: 1420px;
+    position: relative;
+    padding: 20px 120px;
+
+    @media (max-width: 1200px) {
+      max-width: unset;
+    }
+
+    @media (max-width: 991px) {
+      padding: 10px 60px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 10px 40px;
+    }
+
+    @media (max-width: 568px) {
+      padding: 10px;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      border: 1px solid transparent;
+      background: #eec89c;
+      font-size: 24px;
+      color: #000;
+      cursor: pointer;
+      transition: all 0.2s linear;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px 2px rgba(#000, 0.5);
+
+      &_prev {
+        left: 0;
+      }
+      &_next {
+        right: 0;
+      }
+    }
 
     &_img {
       position: relative;
