@@ -3,7 +3,10 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: rgba(#fff, 0.7);
+  width: 100%;
+  padding: 200px 0 0;
+  position: relative;
+  z-index: 2;
 
   @media (max-width: 991px) {
   }

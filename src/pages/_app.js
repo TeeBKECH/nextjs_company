@@ -8,6 +8,8 @@ import '@/assets/styles/globals.scss'
 const App = ({ Component, pageProps }) => {
   return (
     <>
+      <div className='decor'></div>
+      <div className='decor'></div>
       <NavigationLoader />
       <ToastContainer />
       <Component {...pageProps} />

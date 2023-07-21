@@ -2,23 +2,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
   gap: 10px;
-  padding: 10px 25px;
+  padding: 24px 34px;
   outline: none;
-  border: 1px solid transparent;
-  background: #eec89c;
-  font-size: 24px;
-  color: #000;
+  border: none;
+  background: #c3a962;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s linear;
   position: relative;
-  border-radius: 5px;
-  box-shadow: 0 2px 6px 2px rgba(#000, 0.5);
+  border-radius: 10px;
 
   &:hover {
-    background: lighten(#eec89c, 15);
-    border-color: #eec89c;
-    box-shadow: 0 0 3px 1px rgba(#000, 0.3);
+    background: darken(#c3a962, 10);
   }
 
   &.loading {

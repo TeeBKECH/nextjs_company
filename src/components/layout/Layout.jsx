@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 import clsx from 'clsx'
 
 import Footer from './footer/Footer'
@@ -9,7 +9,7 @@ import Header from './header/Header'
 import styles from './Layout.module.scss'
 
 // If loading a variable font, you don't need to specify the font weight
-const inter = Inter({ subsets: ['latin'] })
+const manrope = Manrope({ subsets: ['latin'] })
 
 const getTitle = (title) => `${title} | FriendlyInn Group`
 
@@ -19,7 +19,7 @@ const Layout = ({ children, title, description }) => {
 
   // handle scroll event
   const handleScroll = (elTopOffset, elHeight) => {
-    if (window.pageYOffset > elTopOffset + elHeight) {
+    if (window.scrollY > elTopOffset + elHeight) {
       setSticky({ isSticky: true, offset: elHeight })
     } else {
       setSticky({ isSticky: false, offset: 0 })
@@ -79,12 +79,13 @@ const Layout = ({ children, title, description }) => {
         />
       </Head>
       <Header
+        className={manrope.className}
         headerRef={headerRef}
         sticky={sticky.isSticky}
       />
-      <main className={clsx(styles.main, inter.className)}>{children}</main>
+      <main className={clsx(styles.main, manrope.className)}>{children}</main>
 
-      <Footer />
+      <Footer className={manrope.className} />
     </>
   )
 }

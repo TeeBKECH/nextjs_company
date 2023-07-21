@@ -1,0 +1,27 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @media (max-width: 500px) {
+      gap: 10px;
+    }
+
+    // img {
+    //   @media (max-width: 991px) {
+    //     width: 80px;
+    //   }
+    // }
+
+    span {
+      color: #909090;
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+}

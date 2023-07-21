@@ -12,10 +12,6 @@ export default [
     title: 'Проекты',
   },
   {
-    slug: '#cost',
-    title: 'Заказать звонок',
-  },
-  {
     slug: 'contacts',
     title: 'Контакты',
   },

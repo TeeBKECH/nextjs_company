@@ -21,25 +21,25 @@ const Contacts = () => {
         'Связаться с нами можете по телефону +7... Или оставьте заяввку и мы вам перезвоним!'
       }
     >
-      <Breadcrumbs
-        backLink={{ text: 'Главная', link: '/' }}
-        currentLink={'Контакты'}
-      />
       <section className={styles.contacts}>
-        <TitleSec
-          text={'Контакты'}
-          subTitle={'Сязаться с нами'}
-          position={'left'}
-        />
         <div className={styles.content}>
-          <div className={styles.content_info}>
-            <p>Москва, Дегтярный переулок, дом 8, строение 2</p>
+          <div className={styles.info}>
+            <TitleSec
+              tag='h1'
+              title={'Контакты'}
+            />
             <ul>
+              <li>
+                <p>Москва, Дегтярный переулок, дом 8, строение 2</p>
+              </li>
               <li>
                 <a href='tel:+79581119055'>+7 (958) 111-90-55</a>
               </li>
               <li>
                 <a href='mailto:hotel@friendlyinn.ru'>hotel@friendlyinn.ru</a>
+              </li>
+              <li>
+                <p>Режим работы: Пн-Пт с 09-18, Сб-Вск выходные</p>
               </li>
             </ul>
             <Socials
@@ -58,14 +58,7 @@ const Contacts = () => {
                 },
               ]}
             />
-            <Button
-              type={'button'}
-              className={styles.callback}
-              onClick={() => setShowModal(true)}
-            >
-              Заказать звонок
-            </Button>
-            <Modal
+            {/* <Modal
               onClose={() => setShowModal(false)}
               show={showModal}
             >
@@ -75,19 +68,22 @@ const Contacts = () => {
                 inputs={['name', 'phone']}
                 modal={setShowModal}
               />
-            </Modal>
+            </Modal> */}
           </div>
           <div className={styles.map}>
             <iframe
               src='https://yandex.ru/map-widget/v1/?um=constructor%3A61d9dbb06680d9cbc2c37c0c25b04f7a9654588b4876f75e000131605cc8c120&amp;source=constructor'
               width='100%'
-              height='500'
+              height='420'
               frameBorder='0'
             ></iframe>
           </div>
-          <div className={styles.content_form}>
-            <FormComponent inputs={['name', 'phone', 'email', 'message']} />
-          </div>
+        </div>
+        <div className={styles.form}>
+          <FormComponent
+            title='Форма обратной связи'
+            inputs={[{ name: 'name' }, { name: 'email' }, { name: 'message' }, { name: 'file' }]}
+          />
         </div>
       </section>
     </Layout>

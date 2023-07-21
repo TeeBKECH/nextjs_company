@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import getConfig from 'next/config'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -17,7 +17,7 @@ const initialInputs = [
   {
     type: 'text',
     name: 'name',
-    placeholder: 'Имя*',
+    placeholder: 'Ваше имя',
     required: {
       value: true,
       message: 'Укажите свое имя',
@@ -41,7 +41,7 @@ const initialInputs = [
   {
     type: 'text',
     name: 'email',
-    placeholder: 'Почта*',
+    placeholder: 'Ваш E-mail',
     required: {
       value: true,
       message: 'Укажите свою почту',
@@ -53,24 +53,24 @@ const initialInputs = [
   {
     type: 'area',
     name: 'message',
-    placeholder: 'Оставьте сообщение...',
+    placeholder: 'Введите ваш вопрос',
     maxLength: { value: 150, message: 'Максимум 150 символов' },
+  },
+  {
+    type: 'file',
+    name: 'file',
+    placeholder: 'Прикрепить файл',
   },
 ]
 
-const FormComponent = ({
-  direction = 'col',
-  inputs,
-  title = 'Отправьте свои данные',
-  description = 'Наш менеджер свяжется с Вами в самое ближайшее время',
-  modal,
-}) => {
+const FormComponent = ({ direction = 'col', inputs, title = 'Отправьте свои данные', modal }) => {
   const {
     register,
     reset,
     handleSubmit,
     formState: { errors, isSubmitting, isValid },
   } = useForm()
+  const [file, setFile] = useState('Прикрепить файл')
 
   const onSubmit = async (fieldsData) => {
     try {
@@ -87,6 +87,7 @@ const FormComponent = ({
         reset()
         notify(data?.message, 'success')
         modal && modal(false)
+        setFile('Прикрепить файл')
       } else {
         notify(data?.message, 'error')
       }
@@ -95,25 +96,37 @@ const FormComponent = ({
     }
   }
 
+  const uploadFile = (e) => {
+    e.preventDefault()
+    if (e.target.files !== null && e.target.files[0]) {
+      if (e.target.files[0].size > 2097152) {
+        return alert('Размер файла не должен превышать 2МБ')
+      }
+      setFile(() => e.target.files[0].name)
+    }
+  }
+
   return (
     <form
       className={styles.form}
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className={styles.form_title}>
+      <div className={styles.title}>
         <h3>{title}</h3>
-        <p>{description}</p>
       </div>
       <div className={clsx(styles.inputs, direction === 'col' ? styles.col : styles.row)}>
         {inputs.map((el) => {
-          const input = initialInputs.find((item) => item.name === el)
+          const input = initialInputs.find((item) => item.name === el.name)
           if (input) {
             return (
               <div
                 key={input.name}
-                className={styles.form_control}
+                className={clsx(
+                  styles.form_control,
+                  input.name === 'message' && styles.form_control_w100,
+                )}
               >
-                {input.type === 'text' ? (
+                {input.type === 'text' && (
                   <>
                     <input
                       {...register(input.name, {
@@ -129,7 +142,8 @@ const FormComponent = ({
                       <span className={styles.error}>{errors[input.name].message}</span>
                     )}
                   </>
-                ) : (
+                )}
+                {input.type === 'area' && (
                   <>
                     <textarea
                       {...register(input.name, {
@@ -142,22 +156,88 @@ const FormComponent = ({
                     )}
                   </>
                 )}
+                {input.type === 'file' && (
+                  <>
+                    <input
+                      {...register(input.name, {
+                        required: input.required,
+                        minLength: input.minLength,
+                        pattern: input.pattern,
+                        maxLength: input.maxLength,
+                        onChange: uploadFile,
+                      })}
+                      id='file'
+                      type='file'
+                      placeholder={input.placeholder}
+                    />
+                    <label htmlFor='file'>
+                      <svg
+                        width='24'
+                        height='24'
+                        viewBox='0 0 24 24'
+                        fill='none'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <path
+                          d='M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z'
+                          stroke='#909090'
+                          strokeWidth='2'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                        />
+                        <path
+                          d='M14 2V8H20'
+                          stroke='#909090'
+                          strokeWidth='2'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                        />
+                        <path
+                          d='M12 18V12'
+                          stroke='#909090'
+                          strokeWidth='2'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                        />
+                        <path
+                          d='M9 15H15'
+                          stroke='#909090'
+                          strokeWidth='2'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                        />
+                      </svg>
+
+                      <span>{file}</span>
+                    </label>
+
+                    {errors[input.name] && (
+                      <span className={styles.error}>{errors[input.name].message}</span>
+                    )}
+                  </>
+                )}
               </div>
             )
           }
         })}
-        <div className={clsx(styles.form_control, styles.form_control_submit)}>
+        <div
+          className={clsx(
+            styles.form_control,
+            styles.form_control_submit,
+            styles.form_control_w100,
+          )}
+        >
+          <p className={styles.privacy}>
+            Нажимая кнопку <span>“Оставить заявку”</span> вы автоматически соглашаетесь с{' '}
+            <Link href='/privacy'>Политикой конфиденциальности</Link>
+          </p>
           <Button
             disabled={!isValid}
             loading={isSubmitting}
             type={'submit'}
           >
-            Отправить
+            Оставить заявку
           </Button>
-          <p className={styles.privacy}>
-            Нажимая <span>Отправить</span> Вы соглашаетесь с <br />
-            <Link href='/privacy'>правилами обработки персональных данных</Link>
-          </p>
         </div>
       </div>
     </form>

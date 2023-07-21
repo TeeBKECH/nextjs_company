@@ -29,7 +29,7 @@ const Socials = ({ data, direction, size }) => {
                 <Image
                   src={icon}
                   alt={el.text}
-                  width={size ? size : 30}
+                  width={size ? size : 39}
                   height={size ? size : 30}
                 />
               </a>

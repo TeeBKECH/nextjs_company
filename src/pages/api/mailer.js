@@ -14,7 +14,9 @@ let transporter = nodemailer.createTransport({
 })
 
 const mailer = async (req, res) => {
-  const { name, phone, email, message } = req.body
+  const { name, phone, email, message, file } = req.body
+
+  console.log(file)
 
   let mailContent = ''
 
@@ -26,9 +28,14 @@ const mailer = async (req, res) => {
   try {
     await transporter.sendMail({
       from: `Friendlyinn Group | <${process.env.SMTP_USER}>`,
-      to: 'hotel@friendlyinn.ru',
+      // to: 'hotel@friendlyinn.ru',
+      to: 'nickolaybuzinov@gmail.com',
       subject: `Заявка с сайта FriendlyInn Group`,
       text: mailContent,
+      //   attachments: [{
+      //     filename: change with filename,
+      //     path: change with file path
+      // }]
     })
     res.status(200).json({ message: 'Сообщение успешно отправлено', code: 200 })
   } catch (error) {
