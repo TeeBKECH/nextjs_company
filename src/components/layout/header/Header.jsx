@@ -48,16 +48,16 @@ const MenuLink = ({ data, setToggleMenu }) => {
       </a>
     )
   }
-  // if (router.pathname === '/' && data.slug[0] === '#') {
-  //   return (
-  //     <a
-  //       onClick={() => setToggleMenu(false)}
-  //       href={data.slug}
-  //     >
-  //       {data.title}
-  //     </a>
-  //   )
-  // }
+  if (router.pathname === '/' && data.slug[0] === '#') {
+    return (
+      <a
+        onClick={() => setToggleMenu(false)}
+        href={data.slug}
+      >
+        {data.title}
+      </a>
+    )
+  }
   return (
     <Link
       href={`/${data.slug}`}

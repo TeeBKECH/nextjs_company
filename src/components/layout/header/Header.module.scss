@@ -1,7 +1,7 @@
 .header {
   position: fixed;
   z-index: 999;
-  top: 20px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -12,7 +12,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 50px;
-  transition: all 0.5s ease;
+  transition: all 0.5s linear;
   background: #fff;
   border-bottom: 1px solid #d9d9d9;
 
@@ -21,17 +21,6 @@
   }
 
   &.not_home {
-  }
-
-  &.sticky {
-    animation: smoothScroll 1s forwards;
-    background: rgba(#fff, 0.9);
-    height: 100px;
-    justify-content: flex-end;
-
-    .logo {
-      display: none;
-    }
   }
 }
 
@@ -173,15 +162,5 @@
       text-decoration: underline;
       cursor: pointer;
     }
-  }
-}
-
-@keyframes smoothScroll {
-  0% {
-    transform: translateY(-142px);
-  }
-
-  100% {
-    transform: translateY(0px);
   }
 }

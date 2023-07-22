@@ -1,32 +1,19 @@
 .privacy {
+  display: flex;
+  justify-content: center;
   width: 100%;
-  padding: 20px 40px 50px;
+  padding: 20px 0 50px;
 
   @media (max-width: 700px) {
-    padding: 20px 10px 30px;
   }
 }
 
 .content {
-  max-width: 1000px;
-  margin: 30px auto 20px;
+  width: 100%;
+  max-width: 1170px;
 
-  h3 {
-    font-size: 22px;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: lighten(#000, 30);
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
-
-  p {
-    margin-bottom: 10px;
-
-    &.notice {
-      font-size: 14px;
-      color: lighten(#000, 50);
-    }
+  .title {
+    margin-bottom: 60px;
   }
 
   ul,
@@ -55,19 +42,16 @@
 
     ol {
       padding-left: 15px;
+      margin-bottom: 15px;
     }
   }
 
   ul {
     padding-left: 10px;
     margin-bottom: 20px;
-    li {
-    }
   }
 
   b {
-  }
-
-  a {
+    font-size: 18px;
   }
 }
