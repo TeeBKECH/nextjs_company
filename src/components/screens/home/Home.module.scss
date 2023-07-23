@@ -250,6 +250,10 @@
       cursor: pointer;
       transition: all 0.2s linear;
 
+      &_disable {
+        background: #e0dfdb;
+      }
+
       &_prev {
         left: calc(50% - 50px);
       }

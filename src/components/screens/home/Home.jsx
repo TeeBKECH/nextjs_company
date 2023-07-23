@@ -42,18 +42,17 @@ const Home = ({ data }) => {
   const [showModal, setShowModal] = useState(false)
   const navigationPrevRef = useRef(null)
   const navigationNextRef = useRef(null)
-
   const sliderRef = useRef(null)
 
-  const handlePrev = useCallback(() => {
-    if (!sliderRef.current) return
-    sliderRef.current.swiper.slidePrev()
-  }, [])
+  // const handlePrev = useCallback(() => {
+  //   if (!sliderRef.current) return
+  //   sliderRef.current.swiper.slidePrev()
+  // }, [])
 
-  const handleNext = useCallback(() => {
-    if (!sliderRef.current) return
-    sliderRef.current.swiper.slideNext()
-  }, [])
+  // const handleNext = useCallback(() => {
+  //   if (!sliderRef.current) return
+  //   sliderRef.current.swiper.slideNext()
+  // }, [])
 
   const teamSlides = [
     [
@@ -819,17 +818,29 @@ const Home = ({ data }) => {
         <div className={clsx(styles.team_cards)}>
           <Swiper
             ref={sliderRef}
-            slidesPerView={1.3}
+            slidesPerView={1.5}
             spaceBetween={50}
             centeredSlides={true}
             watchSlidesProgress={true}
-            navigation={{
-              prevEl: navigationPrevRef.current,
-              nextEl: navigationNextRef.current,
-            }}
-            onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = navigationPrevRef.current
-              swiper.params.navigation.nextEl = navigationNextRef.current
+            // navigation={{
+            //   prevEl: styles.nav_prev,
+            //   nextEl: styles.nav_next,
+            //   disabledClass: styles.nav_disable,
+            // }}
+            // onBeforeInit={(swiper) => {
+            //   swiper.params.navigation.prevEl = navigationPrevRef.current
+            //   swiper.params.navigation.nextEl = navigationNextRef.current
+            //   swiper.params.navigation.disabledClass = styles.nav_disable
+            // }}
+            onInit={(swiper) => {
+              setTimeout(() => {
+                console.log(navigationNextRef)
+                swiper.params.navigation.prevEl = navigationPrevRef.current
+                swiper.params.navigation.nextEl = navigationNextRef.current
+                swiper.params.navigation.disabledClass = styles.nav_disable
+                swiper.navigation.init()
+                swiper.navigation.update()
+              }, 100)
             }}
             modules={[Navigation]}
             className={clsx(styles.mySwiper, 'mySwiper')}
@@ -869,13 +880,13 @@ const Home = ({ data }) => {
             })}
           </Swiper>
           <div
-            onClick={handlePrev}
+            ref={navigationPrevRef}
             className={clsx(styles.nav, styles.nav_prev)}
           >
             {'<'}
           </div>
           <div
-            onClick={handleNext}
+            ref={navigationNextRef}
             className={clsx(styles.nav, styles.nav_next)}
           >
             {'>'}
