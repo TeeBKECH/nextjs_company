@@ -60,13 +60,8 @@ a {
   text-decoration: none;
 }
 
-.swiper {
-  &-wrapper {
-    padding: 20px 0;
-  }
-}
-
-textarea {
+textarea,
+button {
   font-family: inherit;
   font-size: inherit;
 }

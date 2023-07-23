@@ -5,6 +5,8 @@ import { useRouter } from 'next/router'
 import clsx from 'clsx'
 
 import Logo from '@/components/ui/logo'
+import Modal from '@/components/ui/modal'
+import FormComponent from '@/components/ui/form'
 
 import links from './header.data'
 import styles from './Header.module.scss'
@@ -71,6 +73,7 @@ const MenuLink = ({ data, setToggleMenu }) => {
 
 const Header = ({ headerRef, sticky, className }) => {
   const [toggleMenu, setToggleMenu] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
   const router = useRouter()
 
@@ -136,7 +139,23 @@ const Header = ({ headerRef, sticky, className }) => {
           >
             +7 (958) 111-90-55
           </a>
-          <a className={styles.callBack}>Заказать звонок</a>
+          <a
+            className={styles.callBack}
+            onClick={() => setShowModal(true)}
+          >
+            Заказать звонок
+          </a>
+          <Modal
+            onClose={() => setShowModal(false)}
+            show={showModal}
+          >
+            <FormComponent
+              direction='col'
+              title='Введите свои данные'
+              inputs={['name', 'phone']}
+              modal={setShowModal}
+            />
+          </Modal>
         </div>
       </div>
     </header>

@@ -4,8 +4,9 @@
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
-  gap: 10px;
-  padding: 24px 34px;
+  gap: 24px;
+  padding: 12px 30px;
+  min-height: 70px;
   outline: none;
   border: none;
   background: #c3a962;
@@ -41,14 +42,14 @@
   }
 
   svg {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    display: block;
-    margin: auto;
-    background: none;
+    // position: absolute;
+    // right: 8px;
+    // top: 50%;
+    // transform: translateY(-50%);
+    // z-index: 2;
+    // display: block;
+    // margin: auto;
+    // background: none;
   }
 }
 
