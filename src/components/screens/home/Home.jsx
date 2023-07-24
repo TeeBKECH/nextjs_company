@@ -40,8 +40,10 @@ import styles from './Home.module.scss'
 
 const Home = ({ data }) => {
   const [showModal, setShowModal] = useState(false)
-  const navigationPrevRef = useRef(null)
-  const navigationNextRef = useRef(null)
+  const teamNavPrevRef = useRef(null)
+  const teamNavNextRef = useRef(null)
+  const clientsNavPrevRef = useRef(null)
+  const clientsNavNextRef = useRef(null)
   const sliderRef = useRef(null)
 
   // const handlePrev = useCallback(() => {
@@ -136,6 +138,37 @@ const Home = ({ data }) => {
           'Настройка и контроль оборудования и ПО "на удаленке". Возможен приезд при необходимости.',
       },
     ],
+  ]
+
+  const clientSlides = [
+    {
+      img: '/main_img.jpg',
+      title: 'Отель Паррадоссо',
+      description:
+        'Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Домах, моей снова!',
+      link: '/',
+    },
+    {
+      img: '/main_img.jpg',
+      title: 'Отель Паррадоссо',
+      description:
+        'Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Домах, моей снова!',
+      link: '/',
+    },
+    {
+      img: '/main_img.jpg',
+      title: 'Отель Паррадоссо',
+      description:
+        'Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Домах, моей снова!',
+      link: '/',
+    },
+    {
+      img: '/main_img.jpg',
+      title: 'Отель Паррадоссо',
+      description:
+        'Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Домах, моей снова!',
+      link: '/',
+    },
   ]
 
   return (
@@ -834,9 +867,8 @@ const Home = ({ data }) => {
             // }}
             onInit={(swiper) => {
               setTimeout(() => {
-                console.log(navigationNextRef)
-                swiper.params.navigation.prevEl = navigationPrevRef.current
-                swiper.params.navigation.nextEl = navigationNextRef.current
+                swiper.params.navigation.prevEl = teamNavPrevRef.current
+                swiper.params.navigation.nextEl = teamNavNextRef.current
                 swiper.params.navigation.disabledClass = styles.nav_disable
                 swiper.navigation.init()
                 swiper.navigation.update()
@@ -880,13 +912,13 @@ const Home = ({ data }) => {
             })}
           </Swiper>
           <div
-            ref={navigationPrevRef}
+            ref={teamNavPrevRef}
             className={clsx(styles.nav, styles.nav_prev)}
           >
             {'<'}
           </div>
           <div
-            ref={navigationNextRef}
+            ref={teamNavNextRef}
             className={clsx(styles.nav, styles.nav_next)}
           >
             {'>'}
@@ -894,58 +926,393 @@ const Home = ({ data }) => {
         </div>
       </section>
 
-      {/* 
-
+      {/* Adventages Section */}
       <section
         id='adventages'
         className={styles.adventages}
       >
-        <div className={styles.decor}></div>
-        <div className={styles.decor}></div>
-        <div className={styles.adventages_title}>
-          <TitleSec
-            title={'Наши'}
-            subTitle={'преимущества'}
-          />
-          <p className={styles.adventages_title_sub}>
-            Помогаем выжать максимум из отеля и ресторана. Оптимизируем все процессы и наладим все
-            цепочки взаимодействия.
-          </p>
-          <p>
-            С нашей помощью вы станете <span>зарабатывать больше.</span>
-          </p>
-        </div>
-        <div className={styles.adventages_cards}>
-          {adventagesCards.map((card, i) => {
-            return (
-              <div
-                key={i}
-                className={styles.adventages_card}
+        <div className={styles.container}>
+          <div className={styles.adventages_title}>
+            <TitleSec
+              title='Изучите наши преимущества'
+              align='left'
+            />
+            <p className={styles.adventages_title_sub}>
+              Помогаем выжать максимум из отеля и ресторана. <br />
+              Оптимизируем все процессы и наладим все цепочки взаимодействия. С нашей помощью вы
+              станете зарабатывать больше.
+            </p>
+          </div>
+          <div className={styles.adventages_items}>
+            <div className={styles.adventages_item}>
+              <svg
+                viewBox='0 0 32 32'
+                xmlns='http://www.w3.org/2000/svg'
               >
-                <div className={styles.adventages_card_img}>
-                  <Image
-                    width={288}
-                    height={206}
-                    src={card.img}
-                    alt={card.text}
+                <g id='document'>
+                  <polyline
+                    className={styles.cls_1}
+                    points='25 9 25 29 7 29 7 3 16 3'
                   />
-                  <Image
-                    width={288}
-                    height={206}
-                    src={card.img_alt}
-                    alt={card.text}
+                  <line
+                    className={styles.cls_1}
+                    x1='16'
+                    x2='25'
+                    y1='3'
+                    y2='9'
                   />
-                </div>
-                <div className={styles.adventages_card_content}>
-                  <h5 className={styles.adventages_card_title}>{card.title}</h5>
-                  <p className={styles.adventages_card_text}>{card.text}</p>
-                </div>
-              </div>
-            )
-          })}
+                  <line
+                    className={styles.cls_1}
+                    x1='16'
+                    x2='16'
+                    y1='3'
+                    y2='9'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='25'
+                    x2='16'
+                    y1='9'
+                    y2='9'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='11'
+                    x2='16'
+                    y1='17'
+                    y2='17'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='11'
+                    x2='20'
+                    y1='21'
+                    y2='21'
+                  />
+                </g>
+              </svg>
+              <h5>Рост прибыли</h5>
+              <p>Прирост прибыли каждый год 15%</p>
+            </div>
+            <div className={styles.adventages_item}>
+              <svg
+                version='1.1'
+                id='Capa_1'
+                x='0px'
+                y='0px'
+                viewBox='0 0 334.877 334.877'
+              >
+                <g>
+                  <path
+                    d='M333.196,155.999h-16.067V82.09c0-17.719-14.415-32.134-32.134-32.134h-21.761L240.965,9.917
+		C237.571,3.798,231.112,0,224.107,0c-3.265,0-6.504,0.842-9.364,2.429l-85.464,47.526H33.815
+		c-17.719,0-32.134,14.415-32.134,32.134v220.653c0,17.719,14.415,32.134,32.134,32.134h251.18
+		c17.719,0,32.134-14.415,32.134-32.134v-64.802h16.067V155.999z M284.995,62.809c9.897,0,17.982,7.519,19.068,17.14h-24.152
+		l-9.525-17.14H284.995z M220.996,13.663c3.014-1.69,7.07-0.508,8.734,2.494l35.476,63.786H101.798L220.996,13.663z
+		 M304.275,302.742c0,10.63-8.651,19.281-19.281,19.281H33.815c-10.63,0-19.281-8.651-19.281-19.281V82.09
+		c0-10.63,8.651-19.281,19.281-19.281h72.353L75.345,79.95H37.832c-3.554,0-6.427,2.879-6.427,6.427s2.873,6.427,6.427,6.427h14.396
+		h234.83h17.217v63.201h-46.999c-21.826,0-39.589,17.764-39.589,39.589v2.764c0,21.826,17.764,39.589,39.589,39.589h46.999V302.742z
+		 M320.342,225.087h-3.213h-59.853c-14.743,0-26.736-11.992-26.736-26.736v-2.764c0-14.743,11.992-26.736,26.736-26.736h59.853
+		h3.213V225.087z M276.961,197.497c0,7.841-6.35,14.19-14.19,14.19c-7.841,0-14.19-6.35-14.19-14.19s6.35-14.19,14.19-14.19
+		C270.612,183.306,276.961,189.662,276.961,197.497z'
+                  />
+                </g>
+              </svg>
+              <h5>Рост капитализации</h5>
+              <p>Увеличение капитализации объекта 10% годовых</p>
+            </div>
+            <div className={styles.adventages_item}>
+              <svg
+                viewBox='0 0 32 32'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <g id='document'>
+                  <polyline
+                    className={styles.cls_1}
+                    points='25 9 25 29 7 29 7 3 16 3'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='16'
+                    x2='25'
+                    y1='3'
+                    y2='9'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='16'
+                    x2='16'
+                    y1='3'
+                    y2='9'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='25'
+                    x2='16'
+                    y1='9'
+                    y2='9'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='11'
+                    x2='16'
+                    y1='17'
+                    y2='17'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='11'
+                    x2='20'
+                    y1='21'
+                    y2='21'
+                  />
+                </g>
+              </svg>
+              <h5>Надежность и гарантии</h5>
+              <p>Детальные отчеты и полнаяпрозрачность всей нашей деятельности</p>
+            </div>
+            <div className={styles.adventages_item}>
+              <svg
+                viewBox='0 0 32 32'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <g id='document'>
+                  <polyline
+                    className={styles.cls_1}
+                    points='25 9 25 29 7 29 7 3 16 3'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='16'
+                    x2='25'
+                    y1='3'
+                    y2='9'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='16'
+                    x2='16'
+                    y1='3'
+                    y2='9'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='25'
+                    x2='16'
+                    y1='9'
+                    y2='9'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='11'
+                    x2='16'
+                    y1='17'
+                    y2='17'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='11'
+                    x2='20'
+                    y1='21'
+                    y2='21'
+                  />
+                </g>
+              </svg>
+              <h5>Рост прибыли</h5>
+              <p>Прирост прибыли каждый год 15%</p>
+            </div>
+            <div className={styles.adventages_item}>
+              <svg
+                version='1.1'
+                id='Capa_1'
+                x='0px'
+                y='0px'
+                viewBox='0 0 334.877 334.877'
+              >
+                <g>
+                  <path
+                    d='M333.196,155.999h-16.067V82.09c0-17.719-14.415-32.134-32.134-32.134h-21.761L240.965,9.917
+		C237.571,3.798,231.112,0,224.107,0c-3.265,0-6.504,0.842-9.364,2.429l-85.464,47.526H33.815
+		c-17.719,0-32.134,14.415-32.134,32.134v220.653c0,17.719,14.415,32.134,32.134,32.134h251.18
+		c17.719,0,32.134-14.415,32.134-32.134v-64.802h16.067V155.999z M284.995,62.809c9.897,0,17.982,7.519,19.068,17.14h-24.152
+		l-9.525-17.14H284.995z M220.996,13.663c3.014-1.69,7.07-0.508,8.734,2.494l35.476,63.786H101.798L220.996,13.663z
+		 M304.275,302.742c0,10.63-8.651,19.281-19.281,19.281H33.815c-10.63,0-19.281-8.651-19.281-19.281V82.09
+		c0-10.63,8.651-19.281,19.281-19.281h72.353L75.345,79.95H37.832c-3.554,0-6.427,2.879-6.427,6.427s2.873,6.427,6.427,6.427h14.396
+		h234.83h17.217v63.201h-46.999c-21.826,0-39.589,17.764-39.589,39.589v2.764c0,21.826,17.764,39.589,39.589,39.589h46.999V302.742z
+		 M320.342,225.087h-3.213h-59.853c-14.743,0-26.736-11.992-26.736-26.736v-2.764c0-14.743,11.992-26.736,26.736-26.736h59.853
+		h3.213V225.087z M276.961,197.497c0,7.841-6.35,14.19-14.19,14.19c-7.841,0-14.19-6.35-14.19-14.19s6.35-14.19,14.19-14.19
+		C270.612,183.306,276.961,189.662,276.961,197.497z'
+                  />
+                </g>
+              </svg>
+              <h5>Рост капитализации</h5>
+              <p>Увеличение капитализации объекта 10% годовых</p>
+            </div>
+            <div className={styles.adventages_item}>
+              <svg
+                viewBox='0 0 32 32'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <g id='document'>
+                  <polyline
+                    className={styles.cls_1}
+                    points='25 9 25 29 7 29 7 3 16 3'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='16'
+                    x2='25'
+                    y1='3'
+                    y2='9'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='16'
+                    x2='16'
+                    y1='3'
+                    y2='9'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='25'
+                    x2='16'
+                    y1='9'
+                    y2='9'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='11'
+                    x2='16'
+                    y1='17'
+                    y2='17'
+                  />
+                  <line
+                    className={styles.cls_1}
+                    x1='11'
+                    x2='20'
+                    y1='21'
+                    y2='21'
+                  />
+                </g>
+              </svg>
+              <h5>Надежность и гарантии</h5>
+              <p>Детальные отчеты и полнаяпрозрачность всей нашей деятельности</p>
+            </div>
+          </div>
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className={styles.cta}>
+        <div className={styles.container}>
+          <div className={styles.cta_circle}></div>
+          <div className={styles.cta_title}>
+            <TitleSec title={'Сколько стоят наши услуги?'} />
+          </div>
+          <div className={styles.cta_form}>
+            <div className={styles.form}>
+              <FormComponent
+                type='cta'
+                title='Оставляйте заявку и мы с вами свяжемся'
+                titleTag='h4'
+                align='center'
+                description='Стоимость наших услуг зависит от множества факторов. Обсудим, чем именно можем быть полезны вашему бизнесу'
+                inputs={[{ name: 'phone' }]}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Clients Section */}
+      <section className={styles.clients}>
+        <div className={styles.container}>
+          <div className={styles.clients_title}>
+            <TitleSec
+              title='Наши клиенты'
+              align='center'
+            />
+          </div>
+          <div className={styles.clients_items}>
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={40}
+              centeredSlides={false}
+              watchSlidesProgress={true}
+              // navigation={{
+              //   prevEl: styles.nav_prev,
+              //   nextEl: styles.nav_next,
+              //   disabledClass: styles.nav_disable,
+              // }}
+              // onBeforeInit={(swiper) => {
+              //   swiper.params.navigation.prevEl = navigationPrevRef.current
+              //   swiper.params.navigation.nextEl = navigationNextRef.current
+              //   swiper.params.navigation.disabledClass = styles.nav_disable
+              // }}
+              onInit={(swiper) => {
+                setTimeout(() => {
+                  swiper.params.navigation.prevEl = clientsNavPrevRef.current
+                  swiper.params.navigation.nextEl = clientsNavNextRef.current
+                  swiper.params.navigation.disabledClass = styles.nav_disable
+                  swiper.navigation.init()
+                  swiper.navigation.update()
+                }, 100)
+              }}
+              modules={[Navigation]}
+              className={clsx(styles.mySwiper, 'mySwiper')}
+            >
+              {clientSlides.map((slide, index) => {
+                return (
+                  <SwiperSlide
+                    className={styles.clients_item}
+                    key={index}
+                  >
+                    <div className={styles.clients_img}>
+                      <Image
+                        src={slide.img}
+                        fill={true}
+                        alt={slide.title}
+                      />
+                    </div>
+                    <div className={styles.clients_title}>
+                      <h4>{slide.title}</h4>
+                      <p>{slide.description}</p>
+                    </div>
+                    <div className={styles.clients_actions}>
+                      <Button link={slide.link}>Подробнее</Button>
+                    </div>
+                  </SwiperSlide>
+                )
+              })}
+            </Swiper>
+            <div
+              ref={clientsNavPrevRef}
+              className={clsx(styles.nav, styles.nav_prev)}
+            >
+              {'<'}
+            </div>
+            <div
+              ref={clientsNavNextRef}
+              className={clsx(styles.nav, styles.nav_next)}
+            >
+              {'>'}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CallBack form Section */}
+      <section className={styles.callBack}>
+        <div className={styles.form}>
+          <FormComponent
+            title='Форма обратной связи'
+            type='callBack'
+            inputs={[{ name: 'name' }, { name: 'email' }, { name: 'message' }, { name: 'file' }]}
+          />
+        </div>
+      </section>
+
+      {/* 
       <section
         id='cost'
         className={styles.cost}

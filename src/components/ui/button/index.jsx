@@ -8,6 +8,7 @@ const Button = ({
   link,
   icon = false,
   type = 'button',
+  className,
   onClick,
   disabled,
   loading,
@@ -25,7 +26,7 @@ const Button = ({
         </Link>
       ) : (
         <button
-          className={clsx(styles.button, styles[view], loading && styles.loading)}
+          className={clsx(styles.button, styles[view], loading && styles.loading, className)}
           type={type}
           disabled={loading || disabled}
           onClick={onClick}
