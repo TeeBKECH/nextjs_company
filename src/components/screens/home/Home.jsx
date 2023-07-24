@@ -12,6 +12,7 @@ import Modal from '@/components/ui/modal'
 import FormComponent from '@/components/ui/form'
 import ProjectGroup from '@/components/ui/project-group'
 import WaitingBlock from '@/components/ui/waiting'
+import Accordion from '@/components/ui/accordion'
 
 import numDecor from '@/assets/img/numDecor.svg'
 
@@ -1225,7 +1226,10 @@ const Home = ({ data }) => {
       </section>
 
       {/* Clients Section */}
-      <section className={styles.clients}>
+      <section
+        id='clients'
+        className={styles.clients}
+      >
         <div className={styles.container}>
           <div className={styles.clients_title}>
             <TitleSec
@@ -1301,6 +1305,53 @@ const Home = ({ data }) => {
         </div>
       </section>
 
+      {/* Come Section */}
+      <section className={styles.come}>
+        <div className={styles.container}>
+          <div className={styles.come_img}>
+            <Image
+              src='/main_img.jpg'
+              fill={true}
+              alt='FriendlyInn Group'
+            />
+          </div>
+          <div className={styles.come_info}>
+            <div className={styles.come_title}>
+              <TitleSec
+                title='Приезжайте в гости'
+                align='left'
+              />
+            </div>
+            <div className={styles.come_description}>
+              <p>
+                Приглашаем вас посетить любой из наших отелей и ресторанов, где мы в реальном
+                времени покажем, как у нас все работает.
+              </p>
+              <p>Познакомим с нашей командой и ответим на ваши вопросы</p>
+            </div>
+            <div className={styles.come_actions}>
+              <Button
+                type='button'
+                onClick={() => setShowModal(true)}
+              >
+                Хочу в гости
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className={styles.faq}>
+        <div className={styles.container}>
+          <TitleSec
+            title='Ответы на вопросы'
+            align='center'
+          />
+          <Accordion />
+        </div>
+      </section>
+
       {/* CallBack form Section */}
       <section className={styles.callBack}>
         <div className={styles.form}>
@@ -1312,57 +1363,7 @@ const Home = ({ data }) => {
         </div>
       </section>
 
-      {/* 
-      <section
-        id='cost'
-        className={styles.cost}
-      >
-        <div className={styles.cost_title}>
-          <TitleSec
-            title={'Сколько стоят'}
-            subTitle={'наши услуги?'}
-          />
-          <p className={styles.cost_title_sub}>
-            Стоимость наших услуг зависит от множества факторов. Оставляйте заявку и мы свяжемся с
-            вами и обсудим, чем мы можем быть полезны вашему бизнесу
-          </p>
-        </div>
-        <div className={styles.cost_actions}>
-          <Button
-            type={'button'}
-            className={styles.callback}
-            onClick={() => setShowModal(true)}
-          >
-            Оставить заявку
-          </Button>
-          <Modal
-            onClose={() => setShowModal(false)}
-            show={showModal}
-          >
-            <FormComponent
-              direction='col'
-              title='Введите свои данные'
-              inputs={['name', 'phone']}
-              modal={setShowModal}
-            />
-          </Modal>
-        </div>
-      </section>*/}
-
       {/* <ProjectGroup data={data} /> */}
-
-      {/* <WaitingBlock
-        setShowModal={setShowModal}
-        showModal={showModal}
-      /> */}
-
-      {/* <section className={styles.accordion}>
-        <TitleSec
-          text={'FAQ'}
-          subTitle={'Частые вопросы'}
-        />
-        <Accordion />
-      </section> */}
     </Layout>
   )
 }

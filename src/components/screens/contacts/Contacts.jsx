@@ -82,6 +82,7 @@ const Contacts = () => {
         <div className={styles.form}>
           <FormComponent
             title='Форма обратной связи'
+            type='callBack'
             inputs={[{ name: 'name' }, { name: 'email' }, { name: 'message' }, { name: 'file' }]}
           />
         </div>
