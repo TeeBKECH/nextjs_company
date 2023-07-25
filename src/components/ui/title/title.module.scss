@@ -36,7 +36,12 @@ h1.title {
 h2.title {
   font-size: 44px;
   font-weight: 500;
-  // @media (max-width: 768px) {
-  //   font-size: 30px;
-  // }
+
+  @media (max-width: 991px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 22px;
+  }
 }

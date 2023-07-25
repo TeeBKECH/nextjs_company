@@ -3,7 +3,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
+import { Navigation, Pagination } from 'swiper/modules'
+import { useMediaQuery } from 'react-responsive'
+import dynamic from 'next/dynamic'
 
 import Layout from '@/components/layout/Layout'
 import TitleSec from '@/components/ui/title'
@@ -13,6 +15,7 @@ import FormComponent from '@/components/ui/form'
 import ProjectGroup from '@/components/ui/project-group'
 import WaitingBlock from '@/components/ui/waiting'
 import Accordion from '@/components/ui/accordion'
+import TeamSwiper from '@/components/ui/teamSwiper'
 
 import numDecor from '@/assets/img/numDecor.svg'
 
@@ -39,23 +42,18 @@ import 'swiper/css'
 
 import styles from './Home.module.scss'
 
+const ShowMoreNoSSR = dynamic(() => import('@/components/ui/showMore'), {
+  ssr: false,
+})
+
 const Home = ({ data }) => {
   const [showModal, setShowModal] = useState(false)
-  const teamNavPrevRef = useRef(null)
-  const teamNavNextRef = useRef(null)
   const clientsNavPrevRef = useRef(null)
   const clientsNavNextRef = useRef(null)
-  const sliderRef = useRef(null)
+  const clientsPagination = useRef(null)
 
-  // const handlePrev = useCallback(() => {
-  //   if (!sliderRef.current) return
-  //   sliderRef.current.swiper.slidePrev()
-  // }, [])
-
-  // const handleNext = useCallback(() => {
-  //   if (!sliderRef.current) return
-  //   sliderRef.current.swiper.slideNext()
-  // }, [])
+  const isTablet = useMediaQuery({ query: '(min-width: 577px) and (max-width: 991px)' })
+  const isMobile = useMediaQuery({ query: '(min-width: 320px) and (max-width: 576px)' })
 
   const teamSlides = [
     [
@@ -407,7 +405,7 @@ const Home = ({ data }) => {
               </svg>
               <p>
                 Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
-                Переулка раз живет однажды ему вопроса его пустился?
+                вопроса его пустился?
               </p>
             </div>
             <div className={styles.work_item}>
@@ -685,6 +683,12 @@ const Home = ({ data }) => {
               <p>Детальные отчеты и полнаяпрозрачность всей нашей деятельности</p>
             </div>
           </div>
+          <ShowMoreNoSSR
+            text='Загрузить еще'
+            className={styles.adventages_showMore}
+            onClick={() => console.log(1)}
+            show={isMobile}
+          />
         </div>
       </section>
 
@@ -850,80 +854,7 @@ const Home = ({ data }) => {
           </p>
         </div>
         <div className={clsx(styles.team_cards)}>
-          <Swiper
-            ref={sliderRef}
-            slidesPerView={1.5}
-            spaceBetween={50}
-            centeredSlides={true}
-            watchSlidesProgress={true}
-            // navigation={{
-            //   prevEl: styles.nav_prev,
-            //   nextEl: styles.nav_next,
-            //   disabledClass: styles.nav_disable,
-            // }}
-            // onBeforeInit={(swiper) => {
-            //   swiper.params.navigation.prevEl = navigationPrevRef.current
-            //   swiper.params.navigation.nextEl = navigationNextRef.current
-            //   swiper.params.navigation.disabledClass = styles.nav_disable
-            // }}
-            onInit={(swiper) => {
-              setTimeout(() => {
-                swiper.params.navigation.prevEl = teamNavPrevRef.current
-                swiper.params.navigation.nextEl = teamNavNextRef.current
-                swiper.params.navigation.disabledClass = styles.nav_disable
-                swiper.navigation.init()
-                swiper.navigation.update()
-              }, 100)
-            }}
-            modules={[Navigation]}
-            className={clsx(styles.mySwiper, 'mySwiper')}
-          >
-            {teamSlides.map((slide, index) => {
-              return (
-                <SwiperSlide
-                  className={styles.team_slide}
-                  key={index}
-                >
-                  {slide.map((card, i) => {
-                    return (
-                      <div
-                        className={styles.team_card}
-                        key={i}
-                      >
-                        <div className={styles.team_card_tag}>
-                          <span>{card.position}</span>
-                        </div>
-                        <div className={styles.team_card_img}>
-                          <Image
-                            src={card.img}
-                            width={160}
-                            height={160}
-                            alt={card.name}
-                          />
-                        </div>
-                        <div className={styles.team_card_info}>
-                          <h5>{card.name}</h5>
-                          <p>{card.options}</p>
-                        </div>
-                      </div>
-                    )
-                  })}
-                </SwiperSlide>
-              )
-            })}
-          </Swiper>
-          <div
-            ref={teamNavPrevRef}
-            className={clsx(styles.nav, styles.nav_prev)}
-          >
-            {'<'}
-          </div>
-          <div
-            ref={teamNavNextRef}
-            className={clsx(styles.nav, styles.nav_next)}
-          >
-            {'>'}
-          </div>
+          <TeamSwiper teamSlides={teamSlides} />
         </div>
       </section>
 
@@ -1200,6 +1131,12 @@ const Home = ({ data }) => {
               <p>Детальные отчеты и полнаяпрозрачность всей нашей деятельности</p>
             </div>
           </div>
+          <ShowMoreNoSSR
+            text='Показать больше преимуществ'
+            className={styles.adventages_showMore}
+            onClick={() => console.log(1)}
+            show={isMobile}
+          />
         </div>
       </section>
 
@@ -1239,20 +1176,21 @@ const Home = ({ data }) => {
           </div>
           <div className={styles.clients_items}>
             <Swiper
-              slidesPerView={3}
-              spaceBetween={40}
+              slidesPerView={1}
+              spaceBetween={0}
               centeredSlides={false}
               watchSlidesProgress={true}
-              // navigation={{
-              //   prevEl: styles.nav_prev,
-              //   nextEl: styles.nav_next,
-              //   disabledClass: styles.nav_disable,
-              // }}
-              // onBeforeInit={(swiper) => {
-              //   swiper.params.navigation.prevEl = navigationPrevRef.current
-              //   swiper.params.navigation.nextEl = navigationNextRef.current
-              //   swiper.params.navigation.disabledClass = styles.nav_disable
-              // }}
+              breakpoints={{
+                700: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+
+                992: {
+                  slidesPerView: 3,
+                  spaceBetween: 25,
+                },
+              }}
               onInit={(swiper) => {
                 setTimeout(() => {
                   swiper.params.navigation.prevEl = clientsNavPrevRef.current
@@ -1260,10 +1198,19 @@ const Home = ({ data }) => {
                   swiper.params.navigation.disabledClass = styles.nav_disable
                   swiper.navigation.init()
                   swiper.navigation.update()
+                  swiper.params.pagination.el = clientsPagination.current
+                  swiper.params.pagination.type = 'bullets'
+                  swiper.params.pagination.clickable = true
+                  swiper.params.pagination.renderBullet = (index, className) => {
+                    return `<span class="${clsx(styles.pagination_bullet, className)}"></span>`
+                  }
+                  swiper.pagination.init()
+                  swiper.pagination.update()
+                  swiper.update()
                 }, 100)
               }}
-              modules={[Navigation]}
-              className={clsx(styles.mySwiper, 'mySwiper')}
+              modules={[Navigation, Pagination]}
+              className={clsx(styles.mySwiper)}
             >
               {clientSlides.map((slide, index) => {
                 return (
@@ -1301,12 +1248,16 @@ const Home = ({ data }) => {
             >
               {'>'}
             </div>
+            <div
+              ref={clientsPagination}
+              className={styles.pagination}
+            ></div>
           </div>
         </div>
       </section>
 
       {/* Come Section */}
-      <section className={styles.come}>
+      {/* <section className={styles.come}>
         <div className={styles.container}>
           <div className={styles.come_img}>
             <Image
@@ -1339,10 +1290,10 @@ const Home = ({ data }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
-      <section className={styles.faq}>
+      {/* <section className={styles.faq}>
         <div className={styles.container}>
           <TitleSec
             title='Ответы на вопросы'
@@ -1350,10 +1301,10 @@ const Home = ({ data }) => {
           />
           <Accordion />
         </div>
-      </section>
+      </section> */}
 
       {/* CallBack form Section */}
-      <section className={styles.callBack}>
+      {/* <section className={styles.callBack}>
         <div className={styles.form}>
           <FormComponent
             title='Форма обратной связи'
@@ -1361,7 +1312,7 @@ const Home = ({ data }) => {
             inputs={[{ name: 'name' }, { name: 'email' }, { name: 'message' }, { name: 'file' }]}
           />
         </div>
-      </section>
+      </section> */}
 
       {/* <ProjectGroup data={data} /> */}
     </Layout>
