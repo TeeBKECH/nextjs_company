@@ -15,6 +15,11 @@
     justify-content: space-between;
     padding: 40px 0;
 
+    @media (max-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 30px;
+    }
+
     &:hover {
       background: transparent;
     }
@@ -26,6 +31,10 @@
     p {
       font-size: 18px;
       font-weight: 500;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
     }
   }
 
@@ -40,6 +49,12 @@
     align-items: center;
     justify-content: center;
     line-height: 1;
+
+    @media (max-width: 768px) {
+      width: 30px;
+      height: 30px;
+      font-size: 25px;
+    }
   }
 
   &_panel {
@@ -54,6 +69,10 @@
       font-size: 16px;
       font-weight: 400;
       color: #171717;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
     }
   }
 }

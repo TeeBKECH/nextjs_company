@@ -1176,16 +1176,19 @@ const Home = ({ data }) => {
           </div>
           <div className={styles.clients_items}>
             <Swiper
-              slidesPerView={1}
-              spaceBetween={0}
+              slidesPerView={3}
+              spaceBetween={25}
               centeredSlides={false}
               watchSlidesProgress={true}
               breakpoints={{
+                320: {
+                  slidesPerView: 1,
+                  spaceBetween: 0,
+                },
                 700: {
                   slidesPerView: 2,
                   spaceBetween: 20,
                 },
-
                 992: {
                   slidesPerView: 3,
                   spaceBetween: 25,
@@ -1198,18 +1201,20 @@ const Home = ({ data }) => {
                   swiper.params.navigation.disabledClass = styles.nav_disable
                   swiper.navigation.init()
                   swiper.navigation.update()
+                }, 100)
+                setTimeout(() => {
                   swiper.params.pagination.el = clientsPagination.current
                   swiper.params.pagination.type = 'bullets'
                   swiper.params.pagination.clickable = true
-                  swiper.params.pagination.renderBullet = (index, className) => {
+                  swiper.params.pagination.renderBullet = (_, className) => {
                     return `<span class="${clsx(styles.pagination_bullet, className)}"></span>`
                   }
                   swiper.pagination.init()
+                  swiper.pagination.render()
                   swiper.pagination.update()
-                  swiper.update()
-                }, 100)
+                }, 200)
               }}
-              modules={[Navigation, Pagination]}
+              modules={[Pagination, Navigation]}
               className={clsx(styles.mySwiper)}
             >
               {clientSlides.map((slide, index) => {
@@ -1257,7 +1262,7 @@ const Home = ({ data }) => {
       </section>
 
       {/* Come Section */}
-      {/* <section className={styles.come}>
+      <section className={styles.come}>
         <div className={styles.container}>
           <div className={styles.come_img}>
             <Image
@@ -1290,10 +1295,10 @@ const Home = ({ data }) => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* FAQ Section */}
-      {/* <section className={styles.faq}>
+      <section className={styles.faq}>
         <div className={styles.container}>
           <TitleSec
             title='Ответы на вопросы'
@@ -1301,10 +1306,10 @@ const Home = ({ data }) => {
           />
           <Accordion />
         </div>
-      </section> */}
+      </section>
 
       {/* CallBack form Section */}
-      {/* <section className={styles.callBack}>
+      <section className={styles.callBack}>
         <div className={styles.form}>
           <FormComponent
             title='Форма обратной связи'
@@ -1312,7 +1317,7 @@ const Home = ({ data }) => {
             inputs={[{ name: 'name' }, { name: 'email' }, { name: 'message' }, { name: 'file' }]}
           />
         </div>
-      </section> */}
+      </section>
 
       {/* <ProjectGroup data={data} /> */}
     </Layout>
