@@ -7,10 +7,23 @@
   background: #fff;
   border-radius: 15px;
 
+  @media (max-width: 768px) {
+    padding: 35px 30px;
+  }
+
+  @media (max-width: 550px) {
+    gap: 30px;
+  }
+
   .inputs {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 35px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
   }
 
   .title {
@@ -27,6 +40,11 @@
     h3 {
       font-size: 44px;
       font-weight: 400;
+
+      @media (max-width: 768px) {
+        font-size: 22px;
+        text-align: center;
+      }
     }
 
     h4 {
@@ -84,6 +102,10 @@
       resize: none;
       height: 170px;
       padding: 25px 30px;
+
+      @media (max-width: 550px) {
+        height: 300px;
+      }
     }
 
     &_submit {
@@ -96,6 +118,11 @@
         font-size: 16px;
         color: #909090;
         margin-bottom: 15px;
+
+        @media (max-width: 768px) {
+          font-size: 12px;
+          text-align: center;
+        }
 
         &_align {
           text-align: center;
@@ -114,11 +141,19 @@
     &_w100 {
       grid-column-start: 1;
       grid-column-end: 3;
+
+      @media (max-width: 768px) {
+        grid-column-start: unset;
+        grid-column-end: unset;
+      }
     }
   }
 }
 
 .submit {
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   &_w100 {
     width: 100%;
   }

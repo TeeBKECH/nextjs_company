@@ -27,6 +27,7 @@ const Contacts = () => {
             <TitleSec
               tag='h1'
               title={'Контакты'}
+              className={styles.title}
             />
             <ul>
               <li>
@@ -73,8 +74,6 @@ const Contacts = () => {
           <div className={styles.map}>
             <iframe
               src='https://yandex.ru/map-widget/v1/?um=constructor%3A61d9dbb06680d9cbc2c37c0c25b04f7a9654588b4876f75e000131605cc8c120&amp;source=constructor'
-              width='100%'
-              height='420'
               frameBorder='0'
             ></iframe>
           </div>

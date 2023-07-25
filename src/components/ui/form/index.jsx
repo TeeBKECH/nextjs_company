@@ -377,6 +377,7 @@ const FormComponent = ({
                 disabled={!isValid}
                 loading={isSubmitting}
                 type={'submit'}
+                className={styles.submit}
               >
                 Оставить заявку
               </Button>
