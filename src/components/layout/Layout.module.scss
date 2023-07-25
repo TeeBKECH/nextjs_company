@@ -4,11 +4,11 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  overflow-x: hidden;
-  padding: 160px 0 0;
+  padding: 150px 0 0;
   position: relative;
   z-index: 2;
 
   @media (max-width: 991px) {
+    padding: 100px 0 0;
   }
 }

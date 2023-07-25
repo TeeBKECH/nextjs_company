@@ -47,6 +47,12 @@ body {
     z-index: 1;
     background: url('../../assets/img/decor.png');
 
+    @media (max-width: 550px) {
+      width: 180px;
+      height: 308px;
+      background-size: cover;
+    }
+
     &:nth-child(2) {
       left: unset;
       right: 0;

@@ -93,15 +93,7 @@ const Header = ({ headerRef, sticky, className }) => {
         className,
       )}
     >
-      <Logo />
-      <div
-        onClick={burgerHandler}
-        className={clsx(styles.burger, toggleMenu && styles.burger_active)}
-      >
-        <span className={styles.line}></span>
-        <span className={styles.line}></span>
-        <span className={styles.line}></span>
-      </div>
+      <Logo className={styles.logo} />
       <nav className={clsx(styles.menu, toggleMenu && styles.menu_active)}>
         {/* {homeLink && (
           <Link
@@ -157,6 +149,14 @@ const Header = ({ headerRef, sticky, className }) => {
             />
           </Modal>
         </div>
+      </div>
+      <div
+        onClick={burgerHandler}
+        className={clsx(styles.burger, toggleMenu && styles.burger_active)}
+      >
+        <span className={styles.line}></span>
+        <span className={styles.line}></span>
+        <span className={styles.line}></span>
       </div>
     </header>
   )

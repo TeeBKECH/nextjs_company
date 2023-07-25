@@ -1,12 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import clsx from 'clsx'
 
 import styles from './logo.module.scss'
 
-const Logo = () => {
+const Logo = ({ className, place = 'header' }) => {
   return (
-    <div className={styles.logo}>
+    <div className={clsx(styles.logo, className, place === 'footer' && styles.logo_footer)}>
       <Link href='/'>
         <Image
           src='/logo.svg'
@@ -16,7 +17,7 @@ const Logo = () => {
           priority={true}
         />
         <span>
-          Управляющая <br /> компания FriendlyInn
+          Управляющая <br /> компания <b>FriendlyInn</b>
         </span>
       </Link>
     </div>

@@ -23,6 +23,14 @@
 h1.title {
   font-size: 68px;
   font-weight: 400;
+
+  @media (max-width: 991px) {
+    font-size: 48px;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 22px;
+  }
 }
 
 h2.title {
