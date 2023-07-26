@@ -6,6 +6,7 @@
   padding: 50px 60px;
   background: #fff;
   border-radius: 15px;
+  $self: &;
 
   @media (max-width: 768px) {
     padding: 35px 30px;
@@ -147,6 +148,26 @@
       grid-column-end: 3;
 
       @media (max-width: 768px) {
+        grid-column-start: unset;
+        grid-column-end: unset;
+      }
+    }
+  }
+
+  &.cta {
+  }
+  &.callBack {
+  }
+  &.modal {
+    padding: 30px 20px;
+    .inputs {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+
+    #{$self}_control {
+      &_w100 {
         grid-column-start: unset;
         grid-column-end: unset;
       }

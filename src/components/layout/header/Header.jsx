@@ -142,9 +142,8 @@ const Header = ({ headerRef, sticky, className }) => {
             show={showModal}
           >
             <FormComponent
-              direction='col'
-              title='Введите свои данные'
-              inputs={['name', 'phone']}
+              type='modal'
+              inputs={[{ name: 'phone' }]}
               modal={setShowModal}
             />
           </Modal>

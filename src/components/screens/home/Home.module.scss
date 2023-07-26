@@ -590,6 +590,10 @@
     flex-direction: column;
     gap: 40px;
 
+    @media (max-width: 991px) {
+      min-height: 588px;
+    }
+
     @media (max-width: 550px) {
       gap: 15px;
     }
@@ -636,6 +640,9 @@
     }
   }
   &_actions {
+    @media (max-width: 991px) {
+      margin-top: auto;
+    }
   }
 
   .pagination {

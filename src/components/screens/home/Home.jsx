@@ -331,17 +331,6 @@ const Home = ({ data }) => {
             >
               Узнать подробнее
             </Button>
-            <Modal
-              onClose={() => setShowModal(false)}
-              show={showModal}
-            >
-              <FormComponent
-                direction='col'
-                title='Введите свои данные'
-                inputs={['name', 'phone']}
-                modal={setShowModal}
-              />
-            </Modal>
           </div>
         </div>
       </section>
@@ -1217,7 +1206,7 @@ const Home = ({ data }) => {
               modules={[Pagination, Navigation]}
               className={clsx(styles.mySwiper)}
             >
-              {clientSlides.map((slide, index) => {
+              {data.map((slide, index) => {
                 return (
                   <SwiperSlide
                     className={styles.clients_item}
@@ -1231,11 +1220,13 @@ const Home = ({ data }) => {
                       />
                     </div>
                     <div className={styles.clients_title}>
-                      <h4>{slide.title}</h4>
-                      <p>{slide.description}</p>
+                      <h4>
+                        {slide.projectType} {slide.projectName}
+                      </h4>
+                      <p>{slide.subTitle}</p>
                     </div>
                     <div className={styles.clients_actions}>
-                      <Button link={slide.link}>Подробнее</Button>
+                      <Button link={`clients/${slide.slug}`}>Подробнее</Button>
                     </div>
                   </SwiperSlide>
                 )
@@ -1319,7 +1310,16 @@ const Home = ({ data }) => {
         </div>
       </section>
 
-      {/* <ProjectGroup data={data} /> */}
+      <Modal
+        onClose={() => setShowModal(false)}
+        show={showModal}
+      >
+        <FormComponent
+          type='modal'
+          inputs={[{ name: 'phone' }]}
+          modal={setShowModal}
+        />
+      </Modal>
     </Layout>
   )
 }

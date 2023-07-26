@@ -67,7 +67,7 @@ const FormComponent = ({
   inputs,
   type,
   description = '',
-  title = 'Отправьте свои данные',
+  title = '',
   titleTag = 'h3',
   align = 'left',
   modal,
@@ -116,15 +116,17 @@ const FormComponent = ({
 
   return (
     <form
-      className={styles.form}
+      className={clsx(styles.form, styles[type])}
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className={clsx(styles.title, styles[align])}>
-        {titleTag === 'h3' ? <h3>{title}</h3> : <h4>{title}</h4>}
-        {description && <p>{description}</p>}
-      </div>
+      {title && (
+        <div className={clsx(styles.title, styles[align])}>
+          {titleTag === 'h3' ? <h3>{title}</h3> : <h4>{title}</h4>}
+          {description && <p>{description}</p>}
+        </div>
+      )}
       <div className={clsx(styles.inputs)}>
-        {type === 'cta' && (
+        {(type === 'cta' || type === 'modal') && (
           <>
             {inputs.map((el) => {
               const input = initialInputs.find((item) => item.name === el.name)

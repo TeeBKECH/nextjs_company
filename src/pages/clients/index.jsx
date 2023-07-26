@@ -1,11 +1,11 @@
-import Projects from '@/components/screens/projects/Projects'
+import Clients from '@/components/screens/clients'
 
-const ProjectsPage = ({ projectCards }) => {
-  return <Projects data={projectCards} />
+const ClientsPage = ({ clientsCards }) => {
+  return <Clients data={clientsCards} />
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`${process.env.API_URL}/projects`)
+  const res = await fetch(`${process.env.API_URL}/clients`)
   const data = await res.json()
 
   if (!data) {
@@ -19,4 +19,4 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default ProjectsPage
+export default ClientsPage
