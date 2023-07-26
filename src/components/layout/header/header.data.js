@@ -8,7 +8,7 @@ export default [
     title: 'Преимущества',
   },
   {
-    slug: '#clients',
+    slug: '#projects',
     title: 'Проекты',
   },
   {

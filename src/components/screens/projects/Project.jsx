@@ -13,9 +13,9 @@ import FormComponent from '@/components/ui/form'
 // Import Swiper styles
 import 'swiper/css'
 
-import styles from './clients.module.scss'
+import styles from './projects.module.scss'
 
-const Client = ({ data }) => {
+const Project = ({ data }) => {
   const { img, projectName, projectType, title, subTitle, text } = data
   const [showModal, setShowModal] = useState(false)
   const navPrevRef = useRef(null)
@@ -425,4 +425,4 @@ C270.612,183.306,276.961,189.662,276.961,197.497z'
   )
 }
 
-export default Client
+export default Project

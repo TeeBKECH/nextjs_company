@@ -5,7 +5,7 @@ const HomePage = ({ projectCards }) => {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`${process.env.API_URL}/clients`)
+  const res = await fetch(`${process.env.API_URL}/projects`)
   const data = await res.json()
 
   if (!data) {

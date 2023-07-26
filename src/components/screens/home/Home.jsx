@@ -55,12 +55,12 @@ const Home = ({ data }) => {
   const [workWithShowAll, setWorkWithShowAll] = useState(true)
   const [adventagesShowAll, setAdventagesShowAll] = useState(true)
 
-  const clientsNavPrevRef = useRef(null)
-  const clientsNavNextRef = useRef(null)
-  const clientsPagination = useRef(null)
+  const projectsNavPrevRef = useRef(null)
+  const projectsNavNextRef = useRef(null)
+  const projectsPagination = useRef(null)
 
-  const isTablet = useMediaQuery({ query: '(min-width: 577px) and (max-width: 991px)' })
-  const isMobile = useMediaQuery({ query: '(min-width: 320px) and (max-width: 576px)' })
+  const isTablet = useMediaQuery({ query: '(min-width: 701px) and (max-width: 991px)' })
+  const isMobile = useMediaQuery({ query: '(min-width: 320px) and (max-width: 700px)' })
 
   const teamSlides = [
     [
@@ -507,24 +507,33 @@ const Home = ({ data }) => {
         </div>
       </section>
 
-      {/* Clients Section */}
+      {/* Projects Section */}
       <section
-        id='clients'
-        className={styles.clients}
+        id='projects'
+        className={styles.projects}
       >
         <div className={styles.container}>
-          <div className={styles.clients_title}>
+          <div className={styles.projects_title}>
             <TitleSec
-              title='Наши клиенты'
+              title='Наши Проекты'
               align='center'
             />
           </div>
-          <div className={styles.clients_items}>
+          <div className={styles.projects_items}>
             <Swiper
               slidesPerView={3}
               spaceBetween={25}
               centeredSlides={false}
               watchSlidesProgress={true}
+              onSlideChange={(swiper) => {
+                let minus = isMobile ? 2 : isTablet ? 3 : 4
+                if (swiper.activeIndex === 0) {
+                  swiper.slideTo(swiper.slides.length - minus)
+                }
+                if (swiper.activeIndex === swiper.slides.length - minus + 1) {
+                  swiper.slideTo(1)
+                }
+              }}
               breakpoints={{
                 320: {
                   slidesPerView: 1,
@@ -540,15 +549,18 @@ const Home = ({ data }) => {
                 },
               }}
               onInit={(swiper) => {
+                if (swiper.isBeginning) {
+                  swiper.slideTo(1)
+                }
                 setTimeout(() => {
-                  swiper.params.navigation.prevEl = clientsNavPrevRef.current
-                  swiper.params.navigation.nextEl = clientsNavNextRef.current
+                  swiper.params.navigation.prevEl = projectsNavPrevRef.current
+                  swiper.params.navigation.nextEl = projectsNavNextRef.current
                   swiper.params.navigation.disabledClass = styles.nav_disable
                   swiper.navigation.init()
                   swiper.navigation.update()
                 }, 100)
                 setTimeout(() => {
-                  swiper.params.pagination.el = clientsPagination.current
+                  swiper.params.pagination.el = projectsPagination.current
                   swiper.params.pagination.type = 'bullets'
                   swiper.params.pagination.clickable = true
                   swiper.params.pagination.renderBullet = (_, className) => {
@@ -562,46 +574,48 @@ const Home = ({ data }) => {
               modules={[Pagination, Navigation]}
               className={clsx(styles.mySwiper)}
             >
+              <SwiperSlide></SwiperSlide>
               {data.map((slide, index) => {
                 return (
                   <SwiperSlide
-                    className={styles.clients_item}
+                    className={styles.projects_item}
                     key={index}
                   >
-                    <div className={styles.clients_img}>
+                    <div className={styles.projects_img}>
                       <Image
                         src={slide.img}
                         fill={true}
                         alt={slide.title}
                       />
                     </div>
-                    <div className={styles.clients_title}>
+                    <div className={styles.projects_title}>
                       <h4>
                         {slide.projectType} {slide.projectName}
                       </h4>
                       <p>{slide.subTitle}</p>
                     </div>
-                    <div className={styles.clients_actions}>
-                      <Button link={`clients/${slide.slug}`}>Подробнее</Button>
+                    <div className={styles.projects_actions}>
+                      <Button link={`projects/${slide.slug}`}>Подробнее</Button>
                     </div>
                   </SwiperSlide>
                 )
               })}
+              <SwiperSlide></SwiperSlide>
             </Swiper>
             <div
-              ref={clientsNavPrevRef}
+              ref={projectsNavPrevRef}
               className={clsx(styles.nav, styles.nav_prev)}
             >
               {'<'}
             </div>
             <div
-              ref={clientsNavNextRef}
+              ref={projectsNavNextRef}
               className={clsx(styles.nav, styles.nav_next)}
             >
               {'>'}
             </div>
             <div
-              ref={clientsPagination}
+              ref={projectsPagination}
               className={styles.pagination}
             ></div>
           </div>
@@ -645,7 +659,7 @@ const Home = ({ data }) => {
       </section>
 
       {/* FAQ Section */}
-      <section className={styles.faq}>
+      {/* <section className={styles.faq}>
         <div className={styles.container}>
           <TitleSec
             title='Ответы на вопросы'
@@ -653,7 +667,7 @@ const Home = ({ data }) => {
           />
           <Accordion />
         </div>
-      </section>
+      </section> */}
 
       {/* CallBack form Section */}
       <section className={styles.callBack}>

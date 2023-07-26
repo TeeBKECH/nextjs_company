@@ -1,14 +1,14 @@
 import { useRouter } from 'next/router'
 
-import Client from '@/components/screens/clients/Client'
+import Project from '@/components/screens/projects/Project'
 
-const ClientPage = ({ data }) => {
-  return <Client data={data} />
+const ProjectPage = ({ data }) => {
+  return <Project data={data} />
 }
 
 export async function getServerSideProps(context) {
   const { slug } = context.params
-  const res = await fetch(`${process.env.API_URL}/clients?slug=${slug}`)
+  const res = await fetch(`${process.env.API_URL}/projects?slug=${slug}`)
   const data = await res.json()
 
   if (!data) {
@@ -22,4 +22,4 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default ClientPage
+export default ProjectPage

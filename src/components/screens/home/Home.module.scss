@@ -489,7 +489,7 @@
   }
 }
 
-.clients {
+.projects {
   background: #f4f0e5;
   padding: 80px 0;
   width: 100%;
@@ -649,6 +649,11 @@
       height: 10px;
       border-radius: 50%;
       background: #e7c975;
+
+      &:first-child,
+      &:last-child {
+        display: none;
+      }
     }
   }
 }
