@@ -184,6 +184,16 @@
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
     }
+
+    @media (max-width: 576px) {
+      height: 455px;
+      overflow: hidden;
+    }
+
+    &_all {
+      height: auto;
+      overflow: auto;
+    }
   }
 
   &_item {
@@ -362,6 +372,16 @@
 
     @media (max-width: 550px) {
       grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 576px) {
+      height: 540px;
+      overflow: hidden;
+    }
+
+    &_all {
+      height: auto;
+      overflow: auto;
     }
   }
 

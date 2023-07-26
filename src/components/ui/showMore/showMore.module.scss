@@ -4,7 +4,7 @@
   justify-content: center;
   gap: 10px;
 
-  &_active {
+  @media (max-width: 576px) {
     display: flex;
   }
 

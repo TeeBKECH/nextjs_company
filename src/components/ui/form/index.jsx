@@ -8,7 +8,10 @@ import { notify } from '@/utils/notify'
 
 import Button from '@/components/ui/button'
 
+import fileIcon from '@/assets/img/file-plus.svg'
+
 import styles from './Form.module.scss'
+import Image from 'next/image'
 
 const { publicRuntimeConfig } = getConfig()
 const { API_URL } = publicRuntimeConfig
@@ -59,7 +62,6 @@ const initialInputs = [
   {
     type: 'file',
     name: 'file',
-    placeholder: 'Прикрепить файл',
   },
 ]
 
@@ -78,16 +80,14 @@ const FormComponent = ({
     handleSubmit,
     formState: { errors, isSubmitting, isValid },
   } = useForm()
-  const [file, setFile] = useState('Прикрепить файл')
+  const [file, setFile] = useState(null)
 
   const onSubmit = async (fieldsData) => {
+    console.log(fieldsData)
+    console.log(file)
     try {
       const res = await fetch(`${API_URL}/mailer`, {
         method: 'POST',
-        headers: {
-          Accept: 'application/json, text/plain, */*',
-          'Content-Type': 'application/json',
-        },
         body: JSON.stringify(fieldsData),
       })
       const data = await res.json()
@@ -110,7 +110,7 @@ const FormComponent = ({
       if (e.target.files[0].size > 2097152) {
         return alert('Размер файла не должен превышать 2МБ')
       }
-      setFile(() => e.target.files[0].name)
+      setFile(() => e.target.files[0])
     }
   }
 
@@ -304,55 +304,21 @@ const FormComponent = ({
                       <>
                         <input
                           {...register(input.name, {
-                            required: input.required,
-                            minLength: input.minLength,
-                            pattern: input.pattern,
-                            maxLength: input.maxLength,
                             onChange: uploadFile,
                           })}
                           id='file'
                           type='file'
-                          placeholder={input.placeholder}
+                          accept='.jpeg, .jpg, .pdf'
                         />
                         <label htmlFor='file'>
-                          <svg
-                            width='24'
-                            height='24'
-                            viewBox='0 0 24 24'
-                            fill='none'
-                            xmlns='http://www.w3.org/2000/svg'
-                          >
-                            <path
-                              d='M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z'
-                              stroke='#909090'
-                              strokeWidth='2'
-                              strokeLinecap='round'
-                              strokeLinejoin='round'
-                            />
-                            <path
-                              d='M14 2V8H20'
-                              stroke='#909090'
-                              strokeWidth='2'
-                              strokeLinecap='round'
-                              strokeLinejoin='round'
-                            />
-                            <path
-                              d='M12 18V12'
-                              stroke='#909090'
-                              strokeWidth='2'
-                              strokeLinecap='round'
-                              strokeLinejoin='round'
-                            />
-                            <path
-                              d='M9 15H15'
-                              stroke='#909090'
-                              strokeWidth='2'
-                              strokeLinecap='round'
-                              strokeLinejoin='round'
-                            />
-                          </svg>
+                          <Image
+                            src={fileIcon}
+                            width={24}
+                            height={24}
+                            alt='file icon'
+                          />
 
-                          <span>{file}</span>
+                          <span>{file && file.name ? file.name : 'Прикрепить файл'}</span>
                         </label>
 
                         {errors[input.name] && (

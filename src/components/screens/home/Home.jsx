@@ -52,6 +52,9 @@ const ShowMoreNoSSR = dynamic(() => import('@/components/ui/showMore'), {
 
 const Home = ({ data }) => {
   const [showModal, setShowModal] = useState(false)
+  const [workWithShowAll, setWorkWithShowAll] = useState(true)
+  const [adventagesShowAll, setAdventagesShowAll] = useState(true)
+
   const clientsNavPrevRef = useRef(null)
   const clientsNavNextRef = useRef(null)
   const clientsPagination = useRef(null)
@@ -220,7 +223,7 @@ const Home = ({ data }) => {
               align='center'
             />
           </div>
-          <div className={styles.work_items}>
+          <div className={clsx(styles.work_items, !workWithShowAll && styles.work_items_all)}>
             <div className={styles.work_item}>
               <Image
                 src={work_1}
@@ -309,12 +312,13 @@ const Home = ({ data }) => {
               <p>Владельцы отелей или ресторанов, кто хочет повысить уровень сервиса.</p>
             </div>
           </div>
-          <ShowMoreNoSSR
-            text='Загрузить еще'
-            className={styles.adventages_showMore}
-            onClick={() => console.log(1)}
-            show={isMobile}
-          />
+          {workWithShowAll && (
+            <ShowMoreNoSSR
+              text='Загрузить еще'
+              className={styles.adventages_showMore}
+              onClick={setWorkWithShowAll}
+            />
+          )}
         </div>
       </section>
 
@@ -404,7 +408,12 @@ const Home = ({ data }) => {
               станете зарабатывать больше.
             </p>
           </div>
-          <div className={styles.adventages_items}>
+          <div
+            className={clsx(
+              styles.adventages_items,
+              !adventagesShowAll && styles.adventages_items_all,
+            )}
+          >
             <div className={styles.adventages_item}>
               <Image
                 src={adv_1}
@@ -466,12 +475,13 @@ const Home = ({ data }) => {
               <p>Работаем по стандартным премиум сегмента</p>
             </div>
           </div>
-          <ShowMoreNoSSR
-            text='Показать больше преимуществ'
-            className={styles.adventages_showMore}
-            onClick={() => console.log(1)}
-            show={isMobile}
-          />
+          {adventagesShowAll && (
+            <ShowMoreNoSSR
+              text='Показать больше преимуществ'
+              className={styles.adventages_showMore}
+              onClick={setAdventagesShowAll}
+            />
+          )}
         </div>
       </section>
 
@@ -656,6 +666,7 @@ const Home = ({ data }) => {
         </div>
       </section>
 
+      {/* Modal Section */}
       <Modal
         onClose={() => setShowModal(false)}
         show={showModal}

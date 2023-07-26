@@ -6,7 +6,10 @@ import styles from './showMore.module.scss'
 
 const ShowMore = ({ className, onClick, show, text }) => {
   return (
-    <div className={clsx(styles.showMore, show && styles.showMore_active)}>
+    <div
+      onClick={() => onClick(false)}
+      className={clsx(styles.showMore, className)}
+    >
       <span>{text}</span>
       <div className={styles.showMore_icon}>{'>'}</div>
     </div>

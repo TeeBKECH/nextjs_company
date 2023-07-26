@@ -16,8 +16,6 @@ let transporter = nodemailer.createTransport({
 const mailer = async (req, res) => {
   const { name, phone, email, message, file } = req.body
 
-  console.log(file)
-
   let mailContent = ''
 
   mailContent += name ? `Имя: ${name}\n` : ''
