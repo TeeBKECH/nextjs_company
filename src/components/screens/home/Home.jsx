@@ -62,14 +62,14 @@ const Home = ({ data }) => {
   const teamSlides = [
     [
       {
-        img: menPlaceholder,
+        img: '/team/team_10.jpg',
         male: 0,
         name: 'Красовский Александр',
         position: 'Генереальный директор',
         options: 'Обработка целей общества и планов по их реализации. Стратегическое управление.',
       },
       {
-        img: womenPlaceholder,
+        img: '/team/team_9.jpg',
         male: 1,
         name: 'Стречень Ирина',
         position: 'Исполнительный директор',
@@ -77,7 +77,7 @@ const Home = ({ data }) => {
           'Организация экономически обоснованной опертивной деятельности. Составление отчетности для партнеров и инвесторов',
       },
       {
-        img: menPlaceholder,
+        img: '/team/team_1.jpg',
         male: 0,
         name: 'Сивцев Антон',
         position: 'Управляющий отелями',
@@ -85,7 +85,7 @@ const Home = ({ data }) => {
           'Контроль всех служб и персонала. Присутствует на объекте в соответствии с утвержденным графиком.',
       },
       {
-        img: womenPlaceholder,
+        img: '/team/team_9.jpg',
         male: 1,
         name: 'Стречень Ирина',
         position: 'Revenue manager',
@@ -94,14 +94,14 @@ const Home = ({ data }) => {
     ],
     [
       {
-        img: menPlaceholder,
+        img: '/team/team_1.jpg',
         male: 0,
         name: 'Сивцев Антон',
         position: 'HR',
         options: 'Организация динамического ценообразования и его контроль. Работает удаленно.',
       },
       {
-        img: womenPlaceholder,
+        img: '/team/team_4.jpg',
         male: 1,
         name: 'Бахитгуль',
         position: 'Супервайзер',
@@ -109,14 +109,14 @@ const Home = ({ data }) => {
           'Организация службу хаускипинга. Контроль за чистотой и порядком. Присутствует на объекте в соответствии с утвержденным графиком.',
       },
       {
-        img: womenPlaceholder,
+        img: '/team/team_9.jpg',
         male: 1,
         name: 'Стречень Ирина',
         position: 'Маркетолог',
         options: 'Организация динамического ценообразования и его контроль. Работает удаленно.',
       },
       {
-        img: menPlaceholder,
+        img: '/team/team_8.jpg',
         male: 0,
         name: 'Кравчук Роман',
         position: 'Технический работник',
@@ -133,7 +133,7 @@ const Home = ({ data }) => {
         options: 'Консультации, работа с документами "на удаленке"',
       },
       {
-        img: menPlaceholder,
+        img: '/team/team_3.jpg',
         male: 0,
         name: 'Бузинов Николай',
         position: 'IT специалист',
