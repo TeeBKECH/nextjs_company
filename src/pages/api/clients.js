@@ -1,8 +1,3 @@
-import project1image1 from '@/assets/img/jpg/projects/myaso.jpg'
-import project2image1 from '@/assets/img/jpg/projects/regul.jpg'
-import project3image1 from '@/assets/img/jpg/projects/parradosso.jpg'
-import project4image1 from '@/assets/img/jpg/projects/tchaikovsky.jpg'
-
 import project1Logo from '@/assets/img/logo-myaso.svg'
 import project2Logo from '@/assets/img/logo-regul.svg'
 import project3Logo from '@/assets/img/logo-parradosso.svg'
@@ -11,7 +6,7 @@ import project4Logo from '@/assets/img/logo-tchaika.svg'
 const projectCards = [
   {
     slug: 'myasnitskiy',
-    img: project1image1,
+    img: '/clients/myaso_main.jpg',
     logo: project1Logo,
     projectName: 'Мясницкий',
     projectType: 'Бутик-отель',
@@ -57,7 +52,7 @@ const projectCards = [
   },
   {
     slug: 'regul',
-    img: project2image1,
+    img: '/clients/regul_main.jpg',
     logo: project2Logo,
     projectName: 'Regul',
     projectType: 'Бутик-отель',
@@ -99,7 +94,7 @@ const projectCards = [
   },
   {
     slug: 'parradosso',
-    img: project3image1,
+    img: '/clients/parradosso_main.jpg',
     logo: project3Logo,
     projectName: 'Паррадоссо',
     projectType: 'Авторский отель',
@@ -146,7 +141,7 @@ const projectCards = [
   },
   {
     slug: 'tchaikovsky',
-    img: project4image1,
+    img: '/clients/tchaika_main.jpg',
     logo: project4Logo,
     projectName: 'Чайковский',
     projectType: 'Бутик-отель',

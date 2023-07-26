@@ -1,13 +1,8 @@
 import { useState } from 'react'
-import Link from 'next/link'
-import clsx from 'clsx'
 
 import Layout from '@/components/layout/Layout'
-import Breadcrumbs from '@/components/ui/breadcrumbs'
 import TitleSec from '@/components/ui/title'
 import FormComponent from '@/components/ui/form'
-import Button from '@/components/ui/button'
-import Modal from '@/components/ui/modal'
 import Socials from '@/components/ui/socials'
 
 import styles from './Contacts.module.scss'

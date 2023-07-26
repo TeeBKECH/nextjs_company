@@ -92,20 +92,6 @@
       align-items: center;
     }
 
-    svg {
-      width: 30px;
-      height: 30px;
-      fill: #c6c6c6;
-
-      .cls_1 {
-        fill: none;
-        stroke: #c6c6c6;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 2px;
-      }
-    }
-
     h5 {
       color: #c3a962;
       font-size: 22px;
@@ -214,20 +200,6 @@
 
     @media (max-width: 768px) {
       align-items: center;
-    }
-
-    svg {
-      width: 65px;
-      height: 65px;
-      fill: #c3a962;
-
-      .cls_1 {
-        fill: none;
-        stroke: #c3a962;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 2px;
-      }
     }
 
     h5 {
@@ -405,20 +377,6 @@
 
     @media (max-width: 550px) {
       align-items: center;
-    }
-
-    svg {
-      width: 50px;
-      height: 50px;
-      fill: #c3a962;
-
-      .cls_1 {
-        fill: none;
-        stroke: #c3a962;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 2px;
-      }
     }
 
     h5 {
