@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
@@ -7,6 +7,8 @@ import clsx from 'clsx'
 import Layout from '@/components/layout/Layout'
 import Button from '@/components/ui/button'
 import TitleSec from '@/components/ui/title'
+import Modal from '@/components/ui/modal'
+import FormComponent from '@/components/ui/form'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -15,6 +17,7 @@ import styles from './clients.module.scss'
 
 const Client = ({ data }) => {
   const { img, projectName, projectType, title, subTitle, text } = data
+  const [showModal, setShowModal] = useState(false)
   const navPrevRef = useRef(null)
   const navNextRef = useRef(null)
   return (
@@ -408,6 +411,16 @@ C270.612,183.306,276.961,189.662,276.961,197.497z'
           </div>
         </div>
       </section>
+      <Modal
+        onClose={() => setShowModal(false)}
+        show={showModal}
+      >
+        <FormComponent
+          type='modal'
+          inputs={[{ name: 'phone' }]}
+          modal={setShowModal}
+        />
+      </Modal>
     </Layout>
   )
 }
