@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer'
+import formidable from 'formidable'
 
 let transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -13,30 +14,40 @@ let transporter = nodemailer.createTransport({
   },
 })
 
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+}
+
 const mailer = async (req, res) => {
-  const { name, phone, email, message, file } = req.body
-
+  const form = formidable({})
   let mailContent = ''
-
-  mailContent += name ? `Имя: ${name}\n` : ''
-  mailContent += phone ? `Телефон: ${phone}\n` : ''
-  mailContent += email ? `Почта: ${email}\n` : ''
-  mailContent += message ? `Сообщение: ${message}\n` : ''
+  let attachments = []
 
   try {
+    const [fields, files] = await form.parse(req)
+    const { name, phone, email, message } = fields
+    mailContent += name ? `Имя: ${name[0]}\n` : ''
+    mailContent += phone ? `Телефон: ${phone[0]}\n` : ''
+    mailContent += email ? `Почта: ${email[0]}\n` : ''
+    mailContent += message ? `Сообщение: ${message[0]}\n` : ''
+
+    if (files?.file?.length) {
+      console.log(files.file[0])
+      attachments.push({ filename: files.file[0].originalFilename, path: files.file[0].filepath })
+    }
+
     await transporter.sendMail({
       from: `Friendlyinn Group | <${process.env.SMTP_USER}>`,
       // to: 'hotel@friendlyinn.ru',
       to: 'nickolaybuzinov@gmail.com',
       subject: `Заявка с сайта FriendlyInn Group`,
       text: mailContent,
-      //   attachments: [{
-      //     filename: change with filename,
-      //     path: change with file path
-      // }]
+      attachments,
     })
     res.status(200).json({ message: 'Сообщение успешно отправлено', code: 200 })
-  } catch (error) {
+  } catch (err) {
     res.status(500).json({ message: 'Ошибка при отправке формы', code: 500, error })
   }
 }

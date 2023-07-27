@@ -80,22 +80,36 @@ const FormComponent = ({
     handleSubmit,
     formState: { errors, isSubmitting, isValid },
   } = useForm()
+
   const [file, setFile] = useState(null)
 
   const onSubmit = async (fieldsData) => {
-    console.log(fieldsData)
-    console.log(file)
+    let formData = new FormData()
+    for (let key in fieldsData) {
+      if (fieldsData.hasOwnProperty(key) && key !== 'file') {
+        formData.append(key, fieldsData[key])
+      }
+    }
+    file && formData.append('file', file)
     try {
+      // const res = await fetch(`${API_URL}/mailer`, {
+      //   method: 'POST',
+      //   headers: {
+      //     Accept: 'application/json, text/plain, */*',
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(fieldsData),
+      // })
       const res = await fetch(`${API_URL}/mailer`, {
         method: 'POST',
-        body: JSON.stringify(fieldsData),
+        body: formData,
       })
       const data = await res.json()
       if (data?.code === 200) {
         reset()
         notify(data?.message, 'success')
         modal && modal(false)
-        setFile('Прикрепить файл')
+        setFile(null)
       } else {
         notify(data?.message, 'error')
       }
@@ -111,6 +125,7 @@ const FormComponent = ({
         return alert('Размер файла не должен превышать 2МБ')
       }
       setFile(() => e.target.files[0])
+      console.log(e.target.files[0])
     }
   }
 
@@ -134,10 +149,7 @@ const FormComponent = ({
                 return (
                   <div
                     key={input.name}
-                    className={clsx(
-                      styles.form_control,
-                      input.name === 'message' && styles.form_control_w100,
-                    )}
+                    className={clsx(styles.form_control)}
                   >
                     {input.type === 'text' && (
                       <>
@@ -151,79 +163,6 @@ const FormComponent = ({
                           type='text'
                           placeholder={input.placeholder}
                         />
-                        {errors[input.name] && (
-                          <span className={styles.error}>{errors[input.name].message}</span>
-                        )}
-                      </>
-                    )}
-                    {input.type === 'area' && (
-                      <>
-                        <textarea
-                          {...register(input.name, {
-                            maxLength: input.maxLength,
-                          })}
-                          placeholder={input.placeholder}
-                        ></textarea>
-                        {errors[input.name] && (
-                          <span className={styles.error}>{errors[input.name].message}</span>
-                        )}
-                      </>
-                    )}
-                    {input.type === 'file' && (
-                      <>
-                        <input
-                          {...register(input.name, {
-                            required: input.required,
-                            minLength: input.minLength,
-                            pattern: input.pattern,
-                            maxLength: input.maxLength,
-                            onChange: uploadFile,
-                          })}
-                          id='file'
-                          type='file'
-                          placeholder={input.placeholder}
-                        />
-                        <label htmlFor='file'>
-                          <svg
-                            width='24'
-                            height='24'
-                            viewBox='0 0 24 24'
-                            fill='none'
-                            xmlns='http://www.w3.org/2000/svg'
-                          >
-                            <path
-                              d='M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z'
-                              stroke='#909090'
-                              strokeWidth='2'
-                              strokeLinecap='round'
-                              strokeLinejoin='round'
-                            />
-                            <path
-                              d='M14 2V8H20'
-                              stroke='#909090'
-                              strokeWidth='2'
-                              strokeLinecap='round'
-                              strokeLinejoin='round'
-                            />
-                            <path
-                              d='M12 18V12'
-                              stroke='#909090'
-                              strokeWidth='2'
-                              strokeLinecap='round'
-                              strokeLinejoin='round'
-                            />
-                            <path
-                              d='M9 15H15'
-                              stroke='#909090'
-                              strokeWidth='2'
-                              strokeLinecap='round'
-                              strokeLinejoin='round'
-                            />
-                          </svg>
-
-                          <span>{file}</span>
-                        </label>
-
                         {errors[input.name] && (
                           <span className={styles.error}>{errors[input.name].message}</span>
                         )}
@@ -308,7 +247,7 @@ const FormComponent = ({
                           })}
                           id='file'
                           type='file'
-                          accept='.jpeg, .jpg, .pdf'
+                          accept='.jpeg, .jpg, .pdf, .docx, .xlsx, .txt'
                         />
                         <label htmlFor='file'>
                           <Image
@@ -317,7 +256,6 @@ const FormComponent = ({
                             height={24}
                             alt='file icon'
                           />
-
                           <span>{file && file.name ? file.name : 'Прикрепить файл'}</span>
                         </label>
 

@@ -679,6 +679,10 @@ const Home = ({ data }) => {
           />
         </div>
       </section>
+      {/* <FormComponent
+        type='callBack'
+        inputs={[{ name: 'file' }]}
+      /> */}
 
       {/* Modal Section */}
       <Modal
