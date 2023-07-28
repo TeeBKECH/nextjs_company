@@ -78,6 +78,7 @@ const Contacts = () => {
             title='Форма обратной связи'
             type='callBack'
             inputs={[{ name: 'name' }, { name: 'email' }, { name: 'message' }, { name: 'file' }]}
+            ymGoalId='callback-form'
           />
         </div>
       </section>

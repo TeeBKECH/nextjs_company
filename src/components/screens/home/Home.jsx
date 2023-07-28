@@ -52,6 +52,7 @@ const ShowMoreNoSSR = dynamic(() => import('@/components/ui/showMore'), {
 
 const Home = ({ data }) => {
   const [showModal, setShowModal] = useState(false)
+  const [modalFormGoal, setModalFormGoal] = useState('')
   const [workWithShowAll, setWorkWithShowAll] = useState(true)
   const [adventagesShowAll, setAdventagesShowAll] = useState(true)
 
@@ -146,6 +147,15 @@ const Home = ({ data }) => {
     ],
   ]
 
+  const introButtonHandler = () => {
+    setModalFormGoal('Intro-form')
+    setShowModal(true)
+  }
+  const comeButtonHandler = () => {
+    setModalFormGoal('come-form')
+    setShowModal(true)
+  }
+
   return (
     <Layout
       title={'Главная'}
@@ -206,7 +216,7 @@ const Home = ({ data }) => {
             <Button
               type={'button'}
               icon={true}
-              onClick={() => setShowModal(true)}
+              onClick={introButtonHandler}
             >
               Узнать подробнее
             </Button>
@@ -501,6 +511,7 @@ const Home = ({ data }) => {
                 align='center'
                 description='Стоимость наших услуг зависит от множества факторов. Обсудим, чем именно можем быть полезны вашему бизнесу'
                 inputs={[{ name: 'phone' }]}
+                ymGoalId='cta-form'
               />
             </div>
           </div>
@@ -649,7 +660,7 @@ const Home = ({ data }) => {
             <div className={styles.come_actions}>
               <Button
                 type='button'
-                onClick={() => setShowModal(true)}
+                onClick={comeButtonHandler}
               >
                 Хочу в гости
               </Button>
@@ -676,6 +687,7 @@ const Home = ({ data }) => {
             title='Форма обратной связи'
             type='callBack'
             inputs={[{ name: 'name' }, { name: 'email' }, { name: 'message' }, { name: 'file' }]}
+            ymGoalId='callback-form'
           />
         </div>
       </section>
@@ -693,6 +705,7 @@ const Home = ({ data }) => {
           type='modal'
           inputs={[{ name: 'phone' }]}
           modal={setShowModal}
+          ymGoalId={modalFormGoal}
         />
       </Modal>
     </Layout>

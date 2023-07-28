@@ -419,6 +419,7 @@ C270.612,183.306,276.961,189.662,276.961,197.497z'
           type='modal'
           inputs={[{ name: 'phone' }]}
           modal={setShowModal}
+          ymGoalId='come-form'
         />
       </Modal>
     </Layout>
