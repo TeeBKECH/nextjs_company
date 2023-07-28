@@ -231,7 +231,7 @@ C270.612,183.306,276.961,189.662,276.961,197.497z'
                   <p>Детальные отчеты и полнаяпрозрачность всей нашей деятельности</p>
                 </div>
               </SwiperSlide>
-              <SwiperSlide className={styles.slide}>
+              {/* <SwiperSlide className={styles.slide}>
                 <div className={styles.swiper_item}>
                   <svg
                     viewBox='0 0 32 32'
@@ -359,7 +359,7 @@ C270.612,183.306,276.961,189.662,276.961,197.497z'
                   <h5>Надежность и гарантии</h5>
                   <p>Детальные отчеты и полнаяпрозрачность всей нашей деятельности</p>
                 </div>
-              </SwiperSlide>
+              </SwiperSlide> */}
             </Swiper>
             <div
               ref={navPrevRef}
