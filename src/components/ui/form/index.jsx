@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import getConfig from 'next/config'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
@@ -89,34 +89,71 @@ const FormComponent = ({
   } = useForm()
 
   const [file, setFile] = useState(null)
-  const [token, setToken] = useState('')
+  const [visible, setVisible] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
-  const onSubmit = async (fieldsData) => {
-    let formData = new FormData()
-    for (let key in fieldsData) {
-      if (fieldsData.hasOwnProperty(key) && key !== 'file') {
-        formData.append(key, fieldsData[key])
-      }
+  const refForm = useRef(null)
+
+  const handleChallengeHidden = useCallback(() => {
+    console.log('задание закончилось')
+    setIsLoading(false)
+    setVisible(false)
+  }, [])
+
+  const checkSuccessCaptcha = async (tkn) => {
+    if (!tkn) {
+      return
     }
-    formData.append('captcha', token)
-    file && formData.append('file', file)
     try {
-      const res = await fetch(`${API_URL}/mailer`, {
+      const resCaptchaCheck = await fetch(`${API_URL}/captcha`, {
         method: 'POST',
-        body: formData,
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({ captchaToken: tkn }),
       })
-      const data = await res.json()
+      const data = await resCaptchaCheck.json()
+
       if (data?.code === 200) {
-        reset()
-        notify(data?.message, 'success')
-        ymGoal(ymGoalId)
-        modal && modal(false)
-        setFile(null)
+        const fieldsData = getValues()
+        let formData = new FormData()
+        for (let key in fieldsData) {
+          if (fieldsData.hasOwnProperty(key) && key !== 'file') {
+            formData.append(key, fieldsData[key])
+          }
+        }
+        file && formData.append('file', file)
+
+        const res = await fetch(`${API_URL}/mailer`, {
+          method: 'POST',
+          body: formData,
+        })
+        const sendData = await res.json()
+        if (sendData?.code === 200) {
+          reset()
+          notify(sendData?.message, 'success')
+          ymGoal(ymGoalId)
+          modal && modal(false)
+          setFile(null)
+        } else {
+          notify(sendData?.message, 'error')
+        }
       } else {
         notify(data?.message, 'error')
       }
+      setIsLoading(false)
+      setVisible(false)
     } catch (error) {
       notify('Сообщение не отправлено', 'error')
+      setIsLoading(false)
+      setVisible(false)
+    }
+  }
+
+  const onSubmit = async (fieldsData, e) => {
+    if (!refForm.current.elements['smart-token'].value) {
+      setIsLoading(true)
+      setVisible(true)
     }
   }
 
@@ -135,7 +172,13 @@ const FormComponent = ({
     <form
       className={clsx(styles.form, styles[type])}
       onSubmit={handleSubmit(onSubmit)}
+      ref={refForm}
     >
+      <CaptchaBlock
+        setToken={checkSuccessCaptcha}
+        visible={visible}
+        onChallengeHidden={handleChallengeHidden}
+      />
       {title && (
         <div className={clsx(styles.title, styles[align])}>
           {titleTag === 'h3' ? <h3>{title}</h3> : <h4>{title}</h4>}
@@ -174,13 +217,14 @@ const FormComponent = ({
                 )
               }
             })}
-            <CaptchaBlock setToken={setToken} />
+
             <div className={clsx(styles.form_control, styles.form_control_submit)}>
               <Button
-                disabled={!isValid}
-                loading={isSubmitting}
+                disabled={false}
+                loading={isLoading}
                 type={'submit'}
                 className={styles.submit_w100}
+                // onClick={handleSubmitButton}
               >
                 Оставить заявку
               </Button>
@@ -262,7 +306,6 @@ const FormComponent = ({
                           />
                           <span>{file && file.name ? file.name : 'Прикрепить файл'}</span>
                         </label>
-                        <CaptchaBlock setToken={setToken} />
                       </>
                     )}
                   </div>
@@ -281,8 +324,8 @@ const FormComponent = ({
                 <Link href='/privacy'>Политикой конфиденциальности</Link>
               </p>
               <Button
-                disabled={!isValid}
-                loading={isSubmitting}
+                disabled={false}
+                loading={isLoading}
                 type={'submit'}
                 className={styles.submit}
               >

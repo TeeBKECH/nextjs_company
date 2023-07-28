@@ -50,6 +50,10 @@ const ShowMoreNoSSR = dynamic(() => import('@/components/ui/showMore'), {
   ssr: false,
 })
 
+const FormComponentNoSSR = dynamic(() => import('@/components/ui/form'), {
+  ssr: false,
+})
+
 const Home = ({ data }) => {
   const [showModal, setShowModal] = useState(false)
   const [modalFormGoal, setModalFormGoal] = useState('')
@@ -374,7 +378,7 @@ const Home = ({ data }) => {
       </section>
 
       {/* Team Section */}
-      <section
+      {/* <section
         id='team'
         className={styles.team}
       >
@@ -399,7 +403,7 @@ const Home = ({ data }) => {
         <div className={clsx(styles.team_cards)}>
           <TeamSwiper teamSlides={teamSlides} />
         </div>
-      </section>
+      </section> */}
 
       {/* Adventages Section */}
       <section
@@ -504,7 +508,7 @@ const Home = ({ data }) => {
           </div>
           <div className={styles.cta_form}>
             <div className={styles.form}>
-              <FormComponent
+              <FormComponentNoSSR
                 type='cta'
                 title='Оставляйте заявку и мы с вами свяжемся'
                 titleTag='h4'
@@ -638,7 +642,7 @@ const Home = ({ data }) => {
         <div className={styles.container}>
           <div className={styles.come_img}>
             <Image
-              src='/come_main.jpg'
+              src='/main_img_1.jpg'
               fill={true}
               alt='FriendlyInn Group'
             />

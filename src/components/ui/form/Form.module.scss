@@ -103,7 +103,7 @@
         justify-content: center;
         gap: 10px;
         width: 440px;
-        height: 100px;
+        height: 90px;
         border: 1px solid #c3a962;
         border-radius: 10px;
         cursor: pointer;
@@ -157,24 +157,15 @@
     &_w100 {
       grid-column-start: 1;
       grid-column-end: 3;
-      display: flex;
-      justify-content: flex-start;
-      gap: 20px;
 
       @media (max-width: 768px) {
         grid-column-start: unset;
         grid-column-end: unset;
-        flex-direction: column;
       }
     }
   }
 
   &.cta {
-    #{$self}_control {
-      input {
-        height: 100px;
-      }
-    }
   }
   &.callBack {
   }

@@ -380,7 +380,7 @@ C270.612,183.306,276.961,189.662,276.961,197.497z'
         <div className={styles.container}>
           <div className={styles.come_img}>
             <Image
-              src='/main_img.jpg'
+              src='/main_img_1.jpg'
               fill={true}
               alt='FriendlyInn Group'
             />

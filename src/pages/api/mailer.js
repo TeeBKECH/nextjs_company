@@ -1,6 +1,5 @@
 import nodemailer from 'nodemailer'
 import formidable from 'formidable'
-import fetch from 'node-fetch'
 
 let transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -26,21 +25,7 @@ const mailer = async (req, res) => {
 
   try {
     const [fields, files] = await form.parse(req)
-    const { name, phone, email, message, captcha } = fields
-
-    if (!captcha[0]) {
-      return res.status(400).json({ message: 'Пройдите проверку "Я не робот"', code: 400 })
-    }
-
-    const result = await fetch(
-      `https://smartcaptcha.yandexcloud.net/validate?secret=${process.env.CAPTCHA_SERVER_KEY}&token=${captcha[0]}`,
-    )
-    const captchaStatus = await result.json()
-    if (captchaStatus.status !== 'ok') {
-      return res
-        .status(400)
-        .json({ message: 'Проверка "Я не робот" не пройдена. Попробуйте снова', code: 400 })
-    }
+    const { name, phone, email, message } = fields
 
     let mailContent = ''
     let attachments = []
