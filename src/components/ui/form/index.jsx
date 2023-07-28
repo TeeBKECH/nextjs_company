@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import getConfig from 'next/config'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import clsx from 'clsx'
 import { useForm } from 'react-hook-form'
 
 import { notify } from '@/utils/notify'
 
 import Button from '@/components/ui/button'
+import Captcha from '../captcha'
 
 import fileIcon from '@/assets/img/file-plus.svg'
 
@@ -15,49 +17,52 @@ import Image from 'next/image'
 
 const { publicRuntimeConfig } = getConfig()
 const { API_URL } = publicRuntimeConfig
+const CaptchaBlock = dynamic(() => import('@/components/ui/captcha'), {
+  ssr: false,
+})
 
 const initialInputs = [
   {
     type: 'text',
     name: 'name',
     placeholder: 'Ваше имя',
-    required: {
-      value: true,
-      message: 'Укажите свое имя',
-    },
-    minLength: { value: 2, message: 'Минимум 2 символа' },
-    maxLength: { value: 30, message: 'Максимум 20 символов' },
-    pattern: { value: /^[А-Яа-яA-Za-z\s]+$/i, message: 'Только буквы' },
+    // required: {
+    //   value: true,
+    //   message: 'Укажите свое имя',
+    // },
+    // minLength: { value: 2, message: 'Минимум 2 символа' },
+    // maxLength: { value: 30, message: 'Максимум 20 символов' },
+    // pattern: { value: /^[А-Яа-яA-Za-z\s]+$/i, message: 'Только буквы' },
   },
   {
     type: 'text',
     name: 'phone',
     placeholder: 'Ваш телефон',
-    required: {
-      value: true,
-      message: 'Укажите свой телефон',
-    },
-    minLength: { value: 9, message: 'Минимум 9 символов' },
-    maxLength: { value: 15, message: 'Максимум 15 символов' },
-    pattern: { value: /^\d+$/, message: 'Только цифры' },
+    // required: {
+    //   value: true,
+    //   message: 'Укажите свой телефон',
+    // },
+    // minLength: { value: 9, message: 'Минимум 9 символов' },
+    // maxLength: { value: 15, message: 'Максимум 15 символов' },
+    // pattern: { value: /^\d+$/, message: 'Только цифры' },
   },
   {
     type: 'text',
     name: 'email',
     placeholder: 'Ваш E-mail',
-    required: {
-      value: true,
-      message: 'Укажите свою почту',
-    },
-    minLength: { value: 5, message: 'Минимум 5 символов' },
-    maxLength: { value: 30, message: 'Максимум 30 символов' },
-    pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: 'Некорректная почта' },
+    // required: {
+    //   value: true,
+    //   message: 'Укажите свою почту',
+    // },
+    // minLength: { value: 5, message: 'Минимум 5 символов' },
+    // maxLength: { value: 30, message: 'Максимум 30 символов' },
+    // pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: 'Некорректная почта' },
   },
   {
     type: 'area',
     name: 'message',
     placeholder: 'Введите ваш вопрос',
-    maxLength: { value: 150, message: 'Максимум 150 символов' },
+    // maxLength: { value: 150, message: 'Максимум 150 символов' },
   },
   {
     type: 'file',
@@ -78,10 +83,12 @@ const FormComponent = ({
     register,
     reset,
     handleSubmit,
+    getValues,
     formState: { errors, isSubmitting, isValid },
   } = useForm()
 
   const [file, setFile] = useState(null)
+  const [token, setToken] = useState('')
 
   const onSubmit = async (fieldsData) => {
     let formData = new FormData()
@@ -90,6 +97,7 @@ const FormComponent = ({
         formData.append(key, fieldsData[key])
       }
     }
+    formData.append('captcha', token)
     file && formData.append('file', file)
     try {
       // const res = await fetch(`${API_URL}/mailer`, {
@@ -172,6 +180,7 @@ const FormComponent = ({
                 )
               }
             })}
+            <CaptchaBlock setToken={setToken} />
             <div className={clsx(styles.form_control, styles.form_control_submit)}>
               <Button
                 disabled={!isValid}
@@ -206,7 +215,8 @@ const FormComponent = ({
                     key={input.name}
                     className={clsx(
                       styles.form_control,
-                      input.name === 'message' && styles.form_control_w100,
+                      (input.name === 'message' || input.name === 'file') &&
+                        styles.form_control_w100,
                     )}
                   >
                     {input.type === 'text' && (
@@ -258,10 +268,7 @@ const FormComponent = ({
                           />
                           <span>{file && file.name ? file.name : 'Прикрепить файл'}</span>
                         </label>
-
-                        {errors[input.name] && (
-                          <span className={styles.error}>{errors[input.name].message}</span>
-                        )}
+                        <CaptchaBlock setToken={setToken} />
                       </>
                     )}
                   </div>

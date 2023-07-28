@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import clsx from 'clsx'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
 import { useMediaQuery } from 'react-responsive'
-import dynamic from 'next/dynamic'
 
 import Layout from '@/components/layout/Layout'
 import TitleSec from '@/components/ui/title'

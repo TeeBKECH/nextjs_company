@@ -10,9 +10,11 @@
     "static": "next build && next export"
   },
   "dependencies": {
+    "@yandex/smart-captcha": "2.4.9",
     "clsx": "^1.2.1",
     "formidable": "^3.5.0",
     "next": "13.2.4",
+    "node-fetch": "^3.3.2",
     "nodemailer": "^6.9.1",
     "react": "18.2.0",
     "react-accessible-accordion": "^5.0.0",

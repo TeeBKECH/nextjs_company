@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer'
 import formidable from 'formidable'
+import fetch from 'node-fetch'
 
 let transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -22,19 +23,34 @@ export const config = {
 
 const mailer = async (req, res) => {
   const form = formidable({})
-  let mailContent = ''
-  let attachments = []
 
   try {
     const [fields, files] = await form.parse(req)
-    const { name, phone, email, message } = fields
+    const { name, phone, email, message, captcha } = fields
+
+    if (!captcha[0]) {
+      return res.status(400).json({ message: 'Пройдите проверку "Я не робот"', code: 400 })
+    }
+
+    const result = await fetch(
+      `https://smartcaptcha.yandexcloud.net/validate?secret=${process.env.CAPTCHA_SERVER_KEY}&token=${captcha[0]}`,
+    )
+    const captchaStatus = await result.json()
+    if (captchaStatus.status !== 'ok') {
+      return res
+        .status(400)
+        .json({ message: 'Проверка "Я не робот" не пройдена. Попробуйте снова', code: 400 })
+    }
+
+    let mailContent = ''
+    let attachments = []
+
     mailContent += name ? `Имя: ${name[0]}\n` : ''
     mailContent += phone ? `Телефон: ${phone[0]}\n` : ''
     mailContent += email ? `Почта: ${email[0]}\n` : ''
     mailContent += message ? `Сообщение: ${message[0]}\n` : ''
 
     if (files?.file?.length) {
-      console.log(files.file[0])
       attachments.push({ filename: files.file[0].originalFilename, path: files.file[0].filepath })
     }
 
@@ -48,7 +64,7 @@ const mailer = async (req, res) => {
     })
     res.status(200).json({ message: 'Сообщение успешно отправлено', code: 200 })
   } catch (err) {
-    res.status(500).json({ message: 'Ошибка при отправке формы', code: 500, error })
+    res.status(500).json({ message: 'Ошибка при отправке формы', code: 500, err })
   }
 }
 

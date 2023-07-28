@@ -8,6 +8,10 @@
   position: relative;
   z-index: 2;
 
+  @media (max-height: 900px) {
+    padding: 120px 0 0;
+  }
+
   @media (max-width: 991px) {
     padding: 100px 0 0;
   }

@@ -16,6 +16,10 @@
     grid-template-columns: 1fr 2fr;
     gap: 35px 85px;
 
+    @media (max-height: 900px) {
+      gap: 15px 85px;
+    }
+
     @media (max-width: 991px) {
       padding: 20px 10px 0;
       gap: 25px 55px;
@@ -44,6 +48,10 @@
       font-size: 44px;
       font-weight: 400;
 
+      @media (max-height: 900px) {
+        font-size: 32px;
+      }
+
       @media (max-width: 991px) {
         font-size: 32px;
         text-align: center;
@@ -70,6 +78,10 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
     gap: 20px;
+
+    @media (max-height: 900px) {
+      gap: 10px;
+    }
   }
 
   &_item {
@@ -96,6 +108,10 @@
       color: #c3a962;
       font-size: 22px;
 
+      @media (max-height: 900px) {
+        font-size: 20px;
+      }
+
       @media (max-width: 850px) {
         text-align: center;
       }
@@ -103,6 +119,10 @@
 
     p {
       font-size: 16px;
+
+      @media (max-height: 900px) {
+        font-size: 14px;
+      }
 
       @media (max-width: 850px) {
         text-align: center;
