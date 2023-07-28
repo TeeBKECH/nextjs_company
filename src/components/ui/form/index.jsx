@@ -6,9 +6,9 @@ import clsx from 'clsx'
 import { useForm } from 'react-hook-form'
 
 import { notify } from '@/utils/notify'
+import { ymGoal } from '@/utils/ymGoal'
 
 import Button from '@/components/ui/button'
-import Captcha from '../captcha'
 
 import fileIcon from '@/assets/img/file-plus.svg'
 
@@ -78,6 +78,7 @@ const FormComponent = ({
   titleTag = 'h3',
   align = 'left',
   modal,
+  ymGoalId,
 }) => {
   const {
     register,
@@ -100,14 +101,6 @@ const FormComponent = ({
     formData.append('captcha', token)
     file && formData.append('file', file)
     try {
-      // const res = await fetch(`${API_URL}/mailer`, {
-      //   method: 'POST',
-      //   headers: {
-      //     Accept: 'application/json, text/plain, */*',
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(fieldsData),
-      // })
       const res = await fetch(`${API_URL}/mailer`, {
         method: 'POST',
         body: formData,
@@ -116,6 +109,7 @@ const FormComponent = ({
       if (data?.code === 200) {
         reset()
         notify(data?.message, 'success')
+        ymGoal(ymGoalId)
         modal && modal(false)
         setFile(null)
       } else {

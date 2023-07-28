@@ -145,6 +145,7 @@ const Header = ({ headerRef, sticky, className }) => {
               type='modal'
               inputs={[{ name: 'phone' }]}
               modal={setShowModal}
+              ymGoalId='header-form'
             />
           </Modal>
         </div>

@@ -14,7 +14,7 @@ export default function Document() {
           name='yandex-verification'
           content='441b1a9197945299'
         />
-        {/* <script
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               ${metrikaHtml}
@@ -26,7 +26,7 @@ export default function Document() {
               });
             `,
           }}
-        /> */}
+        />
       </Head>
       <body id='body_id'>
         <Main />
