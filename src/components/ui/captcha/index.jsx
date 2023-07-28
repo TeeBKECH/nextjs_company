@@ -12,7 +12,7 @@ const Captcha = ({ className, setToken }) => {
   return (
     <div className={clsx(className, styles.captcha)}>
       <SmartCaptcha
-        sitekey={CAPTCHA_CLIENT_KEY}
+        sitekey={''}
         onSuccess={setToken}
       />
     </div>
