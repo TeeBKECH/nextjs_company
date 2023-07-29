@@ -8,9 +8,9 @@ import tgIcon from '@/assets/img/tg_icon.svg'
 
 import styles from './socials.module.scss'
 
-const Socials = ({ data, direction, size }) => {
+const Socials = ({ data, direction, size, className }) => {
   return (
-    <ul className={clsx(styles.socials, direction && styles.socials_vertical)}>
+    <ul className={clsx(styles.socials, direction && styles.socials_vertical, className)}>
       {data.length > 0 &&
         data.map((el, i) => {
           let icon

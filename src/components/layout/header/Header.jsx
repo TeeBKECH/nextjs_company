@@ -1,15 +1,22 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
+import { useMediaQuery } from 'react-responsive'
 import clsx from 'clsx'
 
 import Logo from '@/components/ui/logo'
 import Modal from '@/components/ui/modal'
 import FormComponent from '@/components/ui/form'
+import Socials from '@/components/ui/socials'
 
 import links from './header.data'
 import styles from './Header.module.scss'
+
+const SocialsNoSSR = dynamic(() => import('@/components/ui/socials'), {
+  ssr: false,
+})
 
 const MenuLink = ({ data, setToggleMenu }) => {
   const router = useRouter()
@@ -75,6 +82,8 @@ const Header = ({ headerRef, sticky, className }) => {
   const [toggleMenu, setToggleMenu] = useState(false)
   const [showModal, setShowModal] = useState(false)
 
+  const isMobile = useMediaQuery({ query: '(min-width: 320px) and (max-width: 991px)' })
+
   const router = useRouter()
 
   const homeLink = router.pathname !== '/'
@@ -110,6 +119,25 @@ const Header = ({ headerRef, sticky, className }) => {
             setToggleMenu={setToggleMenu}
           />
         ))}
+        {isMobile && (
+          <SocialsNoSSR
+            className={styles.socials}
+            data={[
+              {
+                text: 'vk',
+                link: 'https://vk.com/idfriendlyinn',
+              },
+              {
+                text: 'wa',
+                link: 'https://wa.me/+79266385055',
+              },
+              {
+                text: 'tg',
+                link: 'https://t.me/foxovskiy',
+              },
+            ]}
+          />
+        )}
       </nav>
       <div className={styles.phone}>
         <svg

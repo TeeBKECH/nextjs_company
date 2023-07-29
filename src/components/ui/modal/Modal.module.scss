@@ -26,12 +26,22 @@
     top: 60px;
     transform: translate(-50%, 0);
   }
+
+  @media (max-width: 450px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .close {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media (max-height: 880px) {
+    position: absolute;
+    right: 25px;
+    bottom: 35px;
+  }
 
   span {
     font-size: 25px;
@@ -44,6 +54,13 @@
     align-items: center;
     justify-content: center;
     border: 1px solid #ececec;
+    line-height: 1;
+
+    @media (max-width: 450px), (max-height: 880px) {
+      background: #fff;
+      border-radius: 50%;
+      border: 1px solid #ff5959;
+    }
 
     &:hover {
       color: #ff0000;
@@ -54,7 +71,9 @@
 
 .body {
   @media (max-height: 880px) {
-    height: calc(100vh - 160px);
+    height: calc(100vh - 140px);
     overflow-y: auto;
+    border-radius: 20px;
+    background: #fff;
   }
 }

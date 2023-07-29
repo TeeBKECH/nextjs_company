@@ -239,6 +239,16 @@ const FormComponent = ({
               <p className={clsx(styles.privacy, styles.privacy_align)}>
                 Нажимая кнопку <span>“Оставить заявку”</span> вы автоматически соглашаетесь с{' '}
                 <Link href='/privacy'>Политикой конфиденциальности</Link>
+                <br />
+                <span>
+                  Ваши данные обрабатывает{' '}
+                  <a
+                    href='https://yandex.ru/legal/smartcaptcha_notice/'
+                    target='_blank'
+                  >
+                    SmartCaptcha
+                  </a>
+                </span>
               </p>
             </div>
           </>
@@ -322,6 +332,16 @@ const FormComponent = ({
               <p className={styles.privacy}>
                 Нажимая кнопку <span>“Оставить заявку”</span> вы автоматически соглашаетесь с{' '}
                 <Link href='/privacy'>Политикой конфиденциальности</Link>
+                <br />
+                <span>
+                  Ваши данные обрабатывает{' '}
+                  <a
+                    href='https://yandex.ru/legal/smartcaptcha_notice/'
+                    target='_blank'
+                  >
+                    SmartCaptcha
+                  </a>
+                </span>
               </p>
               <Button
                 disabled={false}
