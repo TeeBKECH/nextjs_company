@@ -22,8 +22,8 @@
   flex-direction: column;
   gap: 10px;
 
-  @media (max-height: 870px) {
-    top: 70px;
+  @media (max-height: 880px) {
+    top: 60px;
     transform: translate(-50%, 0);
   }
 }
@@ -53,7 +53,7 @@
 }
 
 .body {
-  @media (max-height: 870px) {
+  @media (max-height: 880px) {
     height: calc(100vh - 160px);
     overflow-y: auto;
   }
