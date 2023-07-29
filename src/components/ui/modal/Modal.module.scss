@@ -25,7 +25,6 @@
   @media (max-height: 870px) {
     top: 70px;
     transform: translate(-50%, 0);
-    overflow-y: auto;
   }
 }
 
@@ -54,7 +53,8 @@
 }
 
 .body {
-  @media (max-height: 700px) {
-    overflow-y: scroll;
+  @media (max-height: 870px) {
+    height: calc(100vh - 160px);
+    overflow-y: auto;
   }
 }
