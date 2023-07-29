@@ -209,7 +209,7 @@ const Home = ({ data }) => {
     ],
     [
       {
-        img: womenPlaceholder,
+        img: '/team/team_7.jpg',
         male: 1,
         name: 'Гречанюк Инна',
         position: 'Старший администратор',
