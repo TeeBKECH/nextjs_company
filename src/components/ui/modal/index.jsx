@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { useRouter } from 'next/router'
+import clsx from 'clsx'
 
 import styles from './Modal.module.scss'
 
-const Modal = ({ show, onClose, children }) => {
+const Modal = ({ show, onClose, children, className }) => {
   const modalOverlayRef = useRef(null)
   const router = useRouter()
 
@@ -48,7 +49,7 @@ const Modal = ({ show, onClose, children }) => {
         className={styles.overlay}
         ref={modalOverlayRef}
       ></div>
-      <div className={styles.modal}>
+      <div className={clsx(styles.modal, className)}>
         <div className={styles.close}>
           <span onClick={handleCloseClick}>&times;</span>
         </div>

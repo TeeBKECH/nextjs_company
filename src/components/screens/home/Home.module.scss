@@ -334,13 +334,17 @@
 
   &_cards {
     width: 100%;
-    min-height: 680px;
-    margin-bottom: 70px;
+    padding-bottom: 20px;
     position: relative;
 
     @media (max-width: 991px) {
-      min-height: 300px;
+      width: 768px;
+      min-height: unset;
       margin-bottom: 0;
+    }
+
+    @media (max-width: 830px) {
+      width: calc(100% - 34px);
     }
   }
 }

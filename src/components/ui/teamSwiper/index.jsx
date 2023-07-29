@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import clsx from 'clsx'
@@ -8,14 +8,28 @@ const MediaQuery = dynamic(() => import('react-responsive'), {
   ssr: false,
 })
 
+import Modal from '../modal'
+
 // Import Swiper styles
 import 'swiper/css'
 
 import styles from './teamSwiper.module.scss'
 
 const TeamSwiper = ({ teamSlides }) => {
+  const [showModal, setShowModal] = useState(false)
+  const [modalItem, setModalItem] = useState(null)
   const teamNavPrevRef = useRef(null)
   const teamNavNextRef = useRef(null)
+
+  const showMoreHandler = (item) => {
+    setShowModal(true)
+    setModalItem(item)
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
+    setModalItem(null)
+  }
 
   return (
     <>
@@ -70,9 +84,6 @@ const TeamSwiper = ({ teamSlides }) => {
                       className={styles.card}
                       key={i}
                     >
-                      <div className={styles.card_tag}>
-                        <span>{card.position}</span>
-                      </div>
                       <div className={styles.card_img}>
                         <Image
                           src={card.img}
@@ -83,7 +94,13 @@ const TeamSwiper = ({ teamSlides }) => {
                       </div>
                       <div className={styles.card_info}>
                         <h5>{card.name}</h5>
-                        <p>{card.options}</p>
+                        <p>{card.position}</p>
+                        <a
+                          className={styles.showMore}
+                          onClick={() => showMoreHandler(card)}
+                        >
+                          Подробнее
+                        </a>
                       </div>
                     </div>
                   )
@@ -121,10 +138,10 @@ const TeamSwiper = ({ teamSlides }) => {
                 className={styles.slide}
                 key={i}
               >
-                <div className={styles.card}>
-                  <div className={styles.card_tag}>
-                    <span>{card.position}</span>
-                  </div>
+                <div
+                  className={styles.card}
+                  key={i}
+                >
                   <div className={styles.card_img}>
                     <Image
                       src={card.img}
@@ -135,7 +152,13 @@ const TeamSwiper = ({ teamSlides }) => {
                   </div>
                   <div className={styles.card_info}>
                     <h5>{card.name}</h5>
-                    <p>{card.options}</p>
+                    <p>{card.position}</p>
+                    <a
+                      className={styles.showMore}
+                      onClick={() => showMoreHandler(card)}
+                    >
+                      Подробнее
+                    </a>
                   </div>
                 </div>
               </SwiperSlide>
@@ -155,6 +178,27 @@ const TeamSwiper = ({ teamSlides }) => {
       >
         {'>'}
       </div>
+      <Modal
+        onClose={closeModal}
+        show={showModal}
+        className={styles.modal}
+      >
+        <div className={styles.fullCard}>
+          <div className={styles.fullCard_name}>
+            <h4>{modalItem?.name}</h4>
+            <p>{modalItem?.position}</p>
+          </div>
+          <div className={styles.fullCard_text}>
+            <h5>Обязанности:</h5>
+            {modalItem?.options &&
+              modalItem?.options.map((text, index) => (
+                <p key={index}>
+                  <span>✓</span> {text}
+                </p>
+              ))}
+          </div>
+        </div>
+      </Modal>
     </>
   )
 }
