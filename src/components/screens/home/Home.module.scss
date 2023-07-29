@@ -210,6 +210,21 @@
       overflow: hidden;
     }
 
+    @media (max-width: 450px) {
+      height: 495px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 400px) {
+      height: 530px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 370px) {
+      height: 580px;
+      overflow: hidden;
+    }
+
     &_all {
       height: auto;
       overflow: auto;
@@ -705,6 +720,10 @@
   display: flex;
   justify-content: center;
 
+  @media (max-width: 768px) {
+    padding: 60px 0 20px;
+  }
+
   .container {
     width: 100%;
     max-width: 1170px;
@@ -746,7 +765,7 @@
     }
 
     @media (max-width: 450px) {
-      height: 150px;
+      height: 200px;
     }
 
     img {
@@ -820,7 +839,7 @@
   background: #fafafa;
 
   @media (max-width: 768px) {
-    padding: 45px 0;
+    padding: 25px 0;
   }
 
   .form {

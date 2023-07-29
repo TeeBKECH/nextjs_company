@@ -132,10 +132,11 @@
     width: 100%;
     min-height: 208px;
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 0;
+    // margin-bottom: 100px;
 
     @media (max-width: 991px) {
-      margin-bottom: 60px;
+      // margin-bottom: 60px;
     }
   }
 
@@ -144,6 +145,7 @@
     height: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 30px;
 
     :global {
       .swiper-wrapper {

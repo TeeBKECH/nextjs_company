@@ -5,4 +5,13 @@ module.exports = nextConfig = {
     API_URL: process.env.API_URL,
     CAPTCHA_CLIENT_KEY: process.env.CAPTCHA_CLIENT_KEY,
   },
+  async redirects() {
+    return [
+      {
+        source: '/projects',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
 }
