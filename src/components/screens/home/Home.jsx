@@ -41,6 +41,9 @@ import adv_6 from '@/assets/img/adv_6.svg'
 import menPlaceholder from '@/assets/img/jpg/men.jpg'
 import womenPlaceholder from '@/assets/img/jpg/women.jpg'
 
+import leftNav from '@/assets/img/arrow_right.svg'
+import rightNav from '@/assets/img/arrow_left.svg'
+
 // Import Swiper styles
 import 'swiper/css'
 
@@ -712,13 +715,23 @@ const Home = ({ data }) => {
               ref={projectsNavPrevRef}
               className={clsx(styles.nav, styles.nav_prev)}
             >
-              {'<'}
+              <Image
+                src={leftNav}
+                width={10}
+                height={21}
+                alt='arrow left'
+              />
             </div>
             <div
               ref={projectsNavNextRef}
               className={clsx(styles.nav, styles.nav_next)}
             >
-              {'>'}
+              <Image
+                src={rightNav}
+                width={10}
+                height={21}
+                alt='arrow right'
+              />
             </div>
             <div
               ref={projectsPagination}

@@ -581,7 +581,7 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background: #fff;
+      background: #c3a962;
       font-size: 25px;
       color: #171717;
       cursor: pointer;
@@ -608,6 +608,14 @@
         @media (max-width: 550px) {
           left: -5px;
         }
+
+        img {
+          margin-right: 4px;
+
+          @media (max-width: 576px) {
+            margin-right: 2px;
+          }
+        }
       }
       &_next {
         right: 20px;
@@ -616,8 +624,16 @@
           right: 10px;
         }
 
-        @media (max-width: 991px) {
+        @media (max-width: 550px) {
           right: -5px;
+        }
+
+        img {
+          margin-left: 4px;
+
+          @media (max-width: 576px) {
+            margin-left: 2px;
+          }
         }
       }
     }
