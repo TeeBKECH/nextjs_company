@@ -428,7 +428,7 @@ const Home = ({ data }) => {
       </section>
 
       {/* Work Out Section */}
-      <section className={clsx(styles.work, styles.work_out)}>
+      {/* <section className={clsx(styles.work, styles.work_out)}>
         <div className={styles.container}>
           <div className={styles.work_title}>
             <TitleSec
@@ -466,7 +466,7 @@ const Home = ({ data }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Team Section */}
       <section
@@ -564,9 +564,9 @@ const Home = ({ data }) => {
                 src={adv_5}
                 width={45}
                 height={45}
-                alt='Проверка гос органами'
+                alt='Проверка государственными органами'
               />
-              <h5>Проверка гос органами</h5>
+              <h5>Проверка государственными органами</h5>
               <p>Подготовка и прохождение любых проверок</p>
             </div>
             <div className={styles.adventages_item}>

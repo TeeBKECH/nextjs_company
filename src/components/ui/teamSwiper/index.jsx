@@ -10,6 +10,9 @@ const MediaQuery = dynamic(() => import('react-responsive'), {
 
 import Modal from '../modal'
 
+import leftNav from '@/assets/img/arrow_right.svg'
+import rightNav from '@/assets/img/arrow_left.svg'
+
 // Import Swiper styles
 import 'swiper/css'
 
@@ -170,13 +173,23 @@ const TeamSwiper = ({ teamSlides }) => {
         ref={teamNavPrevRef}
         className={clsx(styles.nav, styles.nav_prev)}
       >
-        {'<'}
+        <Image
+          src={leftNav}
+          width={10}
+          height={21}
+          alt='arrow left'
+        />
       </div>
       <div
         ref={teamNavNextRef}
         className={clsx(styles.nav, styles.nav_next)}
       >
-        {'>'}
+        <Image
+          src={rightNav}
+          width={10}
+          height={21}
+          alt='arrow right'
+        />
       </div>
       <Modal
         onClose={closeModal}

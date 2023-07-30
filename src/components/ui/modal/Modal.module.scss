@@ -37,10 +37,11 @@
   align-items: center;
   justify-content: flex-end;
 
-  @media (max-height: 880px) {
-    position: absolute;
-    right: 25px;
+  @media (max-width: 450px), (max-height: 880px) {
+    position: fixed;
+    left: 50%;
     bottom: 35px;
+    transform: translateX(-50%);
   }
 
   span {
@@ -71,9 +72,9 @@
 
 .body {
   @media (max-height: 880px) {
-    height: calc(100vh - 140px);
+    max-height: calc(100vh - 140px);
     overflow-y: auto;
     border-radius: 20px;
-    background: #fff;
+    // background: #fff;
   }
 }
