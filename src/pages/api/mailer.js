@@ -41,8 +41,8 @@ const mailer = async (req, res) => {
 
     await transporter.sendMail({
       from: `Friendlyinn Group | <${process.env.SMTP_USER}>`,
-      // to: 'hotel@friendlyinn.ru',
-      to: 'nickolaybuzinov@gmail.com',
+      to: 'hotel@friendlyinn.ru',
+      // to: 'nickolaybuzinov@gmail.com',
       subject: `Заявка с сайта FriendlyInn Group`,
       text: mailContent,
       attachments,
