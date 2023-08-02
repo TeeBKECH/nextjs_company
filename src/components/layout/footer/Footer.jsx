@@ -70,7 +70,7 @@ const Footer = ({ className }) => {
           <ul>
             <li>Москва, Дегтярный переулок, дом 8, строение 2</li>
             <li>
-              <a href='tel:+79581119055'>+7 (958) 111-90-55</a>
+              <a href='tel:+74992869554'>+7 (499) 286-95-54</a>
             </li>
             <li>
               <a href='mailto:hotel@friendlyinn.ru'>hotel@friendlyinn.ru</a>
@@ -84,7 +84,7 @@ const Footer = ({ className }) => {
             <ul>
               <li>Москва, Дегтярный переулок, дом 8, строение 2</li>
               <li>
-                <a href='tel:+79581119055'>+7 (958) 111-90-55</a>
+                <a href='tel:+74992869554'>+7 (499) 286-95-54</a>
               </li>
               <li>
                 <a href='mailto:hotel@friendlyinn.ru'>hotel@friendlyinn.ru</a>

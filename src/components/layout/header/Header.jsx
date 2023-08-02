@@ -155,9 +155,9 @@ const Header = ({ headerRef, sticky, className }) => {
         <div className={styles.phone_actions}>
           <a
             className={styles.callPhone}
-            href='tel:+79581119055'
+            href='tel:+74992869554'
           >
-            +7 (958) 111-90-55
+            +7 (499) 286-95-54
           </a>
           <a
             className={styles.callBack}
