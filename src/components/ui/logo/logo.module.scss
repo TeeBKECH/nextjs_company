@@ -16,6 +16,10 @@
       gap: 10px;
     }
 
+    @media (max-width: 450px) {
+      gap: 3px;
+    }
+
     img {
       @media (max-width: 991px) {
         width: 60px;

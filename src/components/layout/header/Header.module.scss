@@ -29,6 +29,11 @@
     padding: 0 7px;
     gap: 10px;
   }
+
+  @media (max-width: 450px) {
+    padding: 0 5px;
+    gap: 5px;
+  }
 }
 
 .logo {
@@ -129,6 +134,10 @@
 
       @media (max-width: 550px) {
         font-size: 14px;
+      }
+
+      @media (max-width: 450px) {
+        font-size: 12px;
       }
     }
     .callBack {
