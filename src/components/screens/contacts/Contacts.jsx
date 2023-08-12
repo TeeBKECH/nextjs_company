@@ -32,6 +32,9 @@ const Contacts = () => {
                 <a href='tel:+74992869554'>+7 (499) 286-95-54</a>
               </li>
               <li>
+                <a href='tel:+79266385055'>+7 (926) 638-50-55</a>
+              </li>
+              <li>
                 <a href='mailto:hotel@friendlyinn.ru'>hotel@friendlyinn.ru</a>
               </li>
               <li>
