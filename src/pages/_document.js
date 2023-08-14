@@ -15,6 +15,21 @@ export default function Document() {
           content='441b1a9197945299'
         />
         <script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=G-8MZ5TB1PJ9'
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-8MZ5TB1PJ9');
+            `,
+          }}
+        />
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               ${metrikaHtml}
