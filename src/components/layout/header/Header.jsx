@@ -155,10 +155,16 @@ const Header = ({ headerRef, sticky, className }) => {
         <div className={styles.phone_actions}>
           <a
             className={styles.callPhone}
+            href='tel:+79266385055'
+          >
+            +7 (926) 638-50-55
+          </a>
+          {/* <a
+            className={styles.callPhone}
             href='tel:+74992869554'
           >
             +7 (499) 286-95-54
-          </a>
+          </a> */}
           <a
             className={styles.callBack}
             onClick={() => setShowModal(true)}
