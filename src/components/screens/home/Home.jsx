@@ -31,6 +31,15 @@ import work_out_1 from '@/assets/img/work_out_1.svg'
 import work_out_2 from '@/assets/img/work_out_2.svg'
 import work_out_3 from '@/assets/img/work_out_3.svg'
 
+import serviceIcon_1 from '@/assets/img/service1.svg'
+import serviceIcon_2 from '@/assets/img/service2.svg'
+import serviceIcon_3 from '@/assets/img/service3.svg'
+import serviceIcon_4 from '@/assets/img/service4.svg'
+import serviceIcon_5 from '@/assets/img/service5.svg'
+import serviceIcon_6 from '@/assets/img/service6.svg'
+import serviceIcon_7 from '@/assets/img/service7.svg'
+import serviceIcon_8 from '@/assets/img/service8.svg'
+
 import adv_1 from '@/assets/img/adv_1.svg'
 import adv_2 from '@/assets/img/adv_2.svg'
 import adv_3 from '@/assets/img/adv_3.svg'
@@ -60,6 +69,8 @@ const FormComponentNoSSR = dynamic(() => import('@/components/ui/form'), {
 const Home = ({ data }) => {
   const [showModal, setShowModal] = useState(false)
   const [modalFormGoal, setModalFormGoal] = useState('')
+  const [showServicesModal, setShowServicesModal] = useState(false)
+  const [servicesModalItem, setServicesModalItem] = useState(null)
   const [workWithShowAll, setWorkWithShowAll] = useState(true)
   const [adventagesShowAll, setAdventagesShowAll] = useState(true)
 
@@ -245,6 +256,123 @@ const Home = ({ data }) => {
     ],
   ]
 
+  const servicesCards = [
+    {
+      title: 'Управление отелем',
+      subtitle: 'Мы работаем, чтобы Вы отдыхали.',
+      img: serviceIcon_1,
+      description: 'Наша компания осуществляет полное управление отелем:',
+      options: [
+        'продажи и маркетинг',
+        'персонал',
+        'внедрение стандартов гостиничного сервиса',
+        'техническая эксплуатация',
+        'подключение к партнерской программе',
+        'управленческий и бухгалтерский учет',
+      ],
+    },
+    {
+      title: 'Управление рестораном',
+      subtitle: 'Вкусно и со вкусом.',
+      img: serviceIcon_2,
+      description: 'Осуществляем весь цикл:',
+      options: [
+        'оснащение',
+        'запуск ресторана',
+        'продажи и маркетинг',
+        'персонал',
+        'техническая эксплуатация',
+        'управленческий и бухгалтерский учет',
+      ],
+    },
+    {
+      title: 'Строительство отеля',
+      subtitle: 'Полный цикл запуска объекта',
+      img: serviceIcon_3,
+      description:
+        'Полный цикл запуска объекта от выбора места локации до ввода здания в эксплуатацию:',
+      options: [
+        'Выбор локации',
+        'Разработка концепции',
+        'Бизнес-план',
+        'Проект объекта',
+        'Сопровождение строительства',
+        'Прием объекта у подрядчиков',
+        'Оснащение объекта',
+        'Подбор и обучение персонала',
+        'Запуск объекта',
+      ],
+    },
+    {
+      title: 'Реновация объекта',
+      subtitle: 'Вдохнуть современность и инновации в работающий объект',
+      img: serviceIcon_4,
+      description: 'Работа состоит из нескольких этапов:',
+      options: [
+        'Аудит объекта',
+        'Подготовка и согласование проекта',
+        'Построение плана работ',
+        'Подбор поставщиков для оснащения',
+        'Сопровождение работ',
+        'Приме работ у подрядчика',
+      ],
+    },
+    {
+      title: 'Дизайн-проект отеля',
+      subtitle: 'Большой опыт проектирования',
+      img: serviceIcon_5,
+      description: 'Работа состоит из нескольких этапов:',
+      options: [
+        'Команда наших дизайнеров создаст проект с учетом Ваших пожеланий, специфики здания.',
+        'Будет разработана концепция, также учтены все требования для дальнейшего прохождения классификации объекта.',
+        'Большой опыт проектирования позволяет учесть все нюансы – от удобства при эксплуатации объекта до эргономики в пространстве.',
+      ],
+    },
+    {
+      title: 'Аудит',
+      subtitle: 'Проверка и разработка рекомендаций по оптимизации работы.',
+      img: serviceIcon_6,
+      description: 'Проверка и разработка рекомендаций по оптимизации работы:',
+      options: [
+        'Анализ работы всех служб отеля',
+        'Проверка документации',
+        'Разработка рекомендаций',
+      ],
+    },
+    {
+      title: 'Консалтинг',
+      subtitle: 'Оказание консультаций действующим отелям по различным вопросам',
+      img: serviceIcon_7,
+      description: 'Оказание консультаций действующим отелям по различным вопросам:',
+      options: [
+        'документация',
+        'персонал',
+        'реклама и продвижение',
+        'настройка и подключение площадок бронирования',
+        'разработка сайта',
+        'юридические вопросы',
+        'другое',
+      ],
+    },
+    {
+      title: 'Франшиза',
+      subtitle: 'Возможно, лучшая инвестиция, о которой Вы когда-либо думали.',
+      img: serviceIcon_8,
+      description: 'Обладатель франшизы Friendly Inn получает:',
+      options: [
+        'право на использование бренда Friendly Inn',
+        'включение в пул объектов Friendly inn – размещение на сайте компании',
+        'стандарты работы отеля',
+        'аудит отеля и разработка рекомендаций ',
+        'обучение персонала',
+        'рабочие инструменты продвижения',
+        'оптимизация денежных потоков ',
+        'консультации по работе отеля и другим вопросам',
+        'систему контроля соблюдения стандартов',
+      ],
+    },
+  ]
+
   const introButtonHandler = () => {
     setModalFormGoal('Intro-form')
     setShowModal(true)
@@ -252,6 +380,16 @@ const Home = ({ data }) => {
   const comeButtonHandler = () => {
     setModalFormGoal('come-form')
     setShowModal(true)
+  }
+
+  const showMoreServicesHandler = (item) => {
+    setShowServicesModal(true)
+    setServicesModalItem(item)
+  }
+
+  const closeServicesModal = () => {
+    setShowServicesModal(false)
+    setServicesModalItem(null)
   }
 
   return (
@@ -590,6 +728,67 @@ const Home = ({ data }) => {
               onClick={setAdventagesShowAll}
             />
           )}
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section
+        id='services'
+        className={styles.services}
+      >
+        <div className={styles.container}>
+          <div className={styles.services_title}>
+            <TitleSec
+              title='Наши услуги'
+              align='center'
+            />
+          </div>
+          <div className={clsx(styles.services_items)}>
+            {servicesCards.map((card, i) => (
+              <div
+                key={i}
+                className={styles.services_item}
+              >
+                <Image
+                  src={card.img}
+                  width={45}
+                  height={45}
+                  alt='Опыт'
+                />
+                <h5>{card.title}</h5>
+                <p>{card.subtitle}</p>
+                <a
+                  className={styles.showMore}
+                  onClick={() => showMoreServicesHandler(card)}
+                >
+                  Подробнее
+                </a>
+              </div>
+            ))}
+          </div>
+          <Modal
+            onClose={closeServicesModal}
+            show={showServicesModal}
+            className={styles.serviceModal}
+          >
+            <div className={styles.service}>
+              <div className={styles.service_title}>
+                <h4>{servicesModalItem?.title}</h4>
+              </div>
+              <div className={styles.service_text}>
+                <p>{servicesModalItem?.description}</p>
+                {servicesModalItem?.options && (
+                  <ul className={styles.service_list}>
+                    {servicesModalItem?.options.map((text, index) => (
+                      <li key={index}>
+                        <span>✓</span> {text}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          </Modal>
         </div>
       </section>
 
