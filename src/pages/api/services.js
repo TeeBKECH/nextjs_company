@@ -45,7 +45,7 @@ const servicesCards = [
     title: 'Строительство отеля',
     subtitle: 'Полный цикл запуска объекта',
     icon: serviceIcon_3,
-    preview: '/services/3.jpg',
+    preview: '/services/3.jpeg',
     description:
       'Полный цикл запуска объекта от выбора места локации до ввода здания в эксплуатацию:',
     options: [

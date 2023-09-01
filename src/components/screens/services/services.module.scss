@@ -57,15 +57,15 @@
     overflow: hidden;
 
     @media (max-width: 991px) {
-      height: 400px;
+      min-height: 400px;
     }
 
-    @media (max-width: 550px) {
-      height: 200px;
+    @media (max-width: 576px) {
+      min-height: 300px;
     }
 
     @media (max-width: 450px) {
-      height: 150px;
+      min-height: 200px;
     }
 
     img {
@@ -79,6 +79,20 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px 40px;
+
+    @media (max-width: 991px) {
+      grid-column-start: unset;
+      grid-column-end: unset;
+      gap: 20px;
+    }
+
+    @media (max-width: 850px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
 
     &_item {
       display: flex;
