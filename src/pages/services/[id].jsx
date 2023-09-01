@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import Service from '@/components/screens/services/service'
+import Service from '@/components/screens/services/Service'
 
 const ServicePage = ({ data }) => {
   return <Service data={data} />
