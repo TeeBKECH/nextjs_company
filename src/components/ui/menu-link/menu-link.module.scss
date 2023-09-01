@@ -1,0 +1,35 @@
+.link {
+  color: #171717;
+  font-size: 14px;
+  font-weight: 400;
+
+  &_target {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    color: #c3a962;
+    text-decoration: underline;
+
+    @media (max-width: 991px) {
+      margin-left: 20px;
+    }
+  }
+
+  &_button {
+    cursor: pointer;
+    position: relative;
+
+    @media (max-width: 991px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &_active {
+  }
+}
+
+.subMenu {
+}

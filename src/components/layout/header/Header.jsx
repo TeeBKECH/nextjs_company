@@ -9,6 +9,7 @@ import clsx from 'clsx'
 import Logo from '@/components/ui/logo'
 import Modal from '@/components/ui/modal'
 import FormComponent from '@/components/ui/form'
+import MenuLink from '@/components/ui/menu-link'
 import Socials from '@/components/ui/socials'
 
 import links from './header.data'
@@ -17,66 +18,6 @@ import styles from './Header.module.scss'
 const SocialsNoSSR = dynamic(() => import('@/components/ui/socials'), {
   ssr: false,
 })
-
-const MenuLink = ({ data, setToggleMenu }) => {
-  const router = useRouter()
-  if (data.target) {
-    return (
-      <a
-        href={data.slug}
-        target={data.target}
-        className={clsx(styles.link, styles.link_target)}
-      >
-        {data.title}
-        <svg
-          width='11'
-          height='11'
-          viewBox='0 0 11 11'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            d='M9 5.73333V8.93333C9 9.21623 8.88762 9.48754 8.68758 9.68758C8.48754 9.88762 8.21623 10 7.93333 10H2.06667C1.78377 10 1.51246 9.88762 1.31242 9.68758C1.11238 9.48754 1 9.21623 1 8.93333V3.06667C1 2.78377 1.11238 2.51246 1.31242 2.31242C1.51246 2.11238 1.78377 2 2.06667 2H5.26667'
-            stroke='#C3A962'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-          />
-          <path
-            d='M7 1H10V4'
-            stroke='#C3A962'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-          />
-          <path
-            d='M5 6L10 1'
-            stroke='#C3A962'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-          />
-        </svg>
-      </a>
-    )
-  }
-  if (router.pathname === '/' && data.slug[0] === '#') {
-    return (
-      <a
-        onClick={() => setToggleMenu(false)}
-        href={data.slug}
-      >
-        {data.title}
-      </a>
-    )
-  }
-  return (
-    <Link
-      href={`/${data.slug}`}
-      onClick={() => setToggleMenu(false)}
-      className={clsx(styles.link)}
-    >
-      {data.title}
-    </Link>
-  )
-}
 
 const Header = ({ headerRef, sticky, className }) => {
   const [toggleMenu, setToggleMenu] = useState(false)

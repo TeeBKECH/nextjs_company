@@ -1,21 +1,28 @@
 import Home from '@/components/screens/home/Home'
 
-const HomePage = ({ projectCards }) => {
-  return <Home data={projectCards} />
+const HomePage = ({ projectCards, servicesCards }) => {
+  return (
+    <Home
+      data={projectCards}
+      servicesCards={servicesCards}
+    />
+  )
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`${process.env.API_URL}/projects`)
-  const data = await res.json()
+  const projectsRes = await fetch(`${process.env.API_URL}/projects`)
+  const servicesRes = await fetch(`${process.env.API_URL}/services`)
+  const projectsData = await projectsRes.json()
+  const servicesData = await servicesRes.json()
 
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
+  // if (data) {
+  //   return {
+  //     notFound: true,
+  //   }
+  // }
 
   return {
-    props: { ...data }, // will be passed to the page component as props
+    props: { ...projectsData, ...servicesData }, // will be passed to the page component as props
   }
 }
 

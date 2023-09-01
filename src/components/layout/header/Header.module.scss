@@ -18,7 +18,7 @@
   padding: 0 10px;
 
   @media (max-width: 1100px) {
-    gap: 30px;
+    gap: 20px;
   }
 
   @media (max-width: 991px) {
@@ -43,12 +43,12 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 40px;
+  gap: 20px;
   width: 580px;
   flex: 1;
 
   @media (max-width: 1100px) {
-    gap: 25px;
+    gap: 15px;
   }
 
   @media (max-width: 991px) {
@@ -77,25 +77,6 @@
 }
 
 .link {
-  color: #171717;
-  font-size: 14px;
-  font-weight: 400;
-
-  &:last-child {
-    margin-left: auto;
-    color: #c3a962;
-    text-decoration: underline;
-
-    @media (max-width: 991px) {
-      margin-left: 20px;
-    }
-  }
-  &_target {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #c3a962;
-  }
 }
 
 .phone {

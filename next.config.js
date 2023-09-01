@@ -12,6 +12,11 @@ module.exports = nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/services',
+        destination: '/',
+        permanent: true,
+      },
     ]
   },
 }
