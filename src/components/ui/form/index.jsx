@@ -38,10 +38,10 @@ const initialInputs = [
     type: 'text',
     name: 'phone',
     placeholder: 'Ваш телефон',
-    // required: {
-    //   value: true,
-    //   message: 'Укажите свой телефон',
-    // },
+    required: {
+      value: true,
+      message: 'Укажите свой телефон',
+    },
     // minLength: { value: 9, message: 'Минимум 9 символов' },
     // maxLength: { value: 15, message: 'Максимум 15 символов' },
     // pattern: { value: /^\d+$/, message: 'Только цифры' },
@@ -50,10 +50,10 @@ const initialInputs = [
     type: 'text',
     name: 'email',
     placeholder: 'Ваш E-mail',
-    // required: {
-    //   value: true,
-    //   message: 'Укажите свою почту',
-    // },
+    required: {
+      value: true,
+      message: 'Укажите свою почту',
+    },
     // minLength: { value: 5, message: 'Минимум 5 символов' },
     // maxLength: { value: 30, message: 'Максимум 30 символов' },
     // pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: 'Некорректная почта' },
@@ -85,11 +85,13 @@ const FormComponent = ({
     reset,
     handleSubmit,
     getValues,
+    setValue,
     formState: { errors, isSubmitting, isValid },
   } = useForm()
 
   const [file, setFile] = useState(null)
   const [visible, setVisible] = useState(false)
+  const [token, setToken] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
   const refForm = useRef(null)
@@ -100,44 +102,65 @@ const FormComponent = ({
     setVisible(false)
   }, [])
 
-  const checkSuccessCaptcha = async (tkn) => {
-    if (!tkn) {
-      return
-    }
+  const checkCaptchaFetch = async (tkn) => {
     try {
-      const resCaptchaCheck = await fetch(`${API_URL}/captcha`, {
+      const res = await fetch(`${API_URL}/captcha`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
         },
         body: JSON.stringify({ captchaToken: tkn }),
       })
-      const data = await resCaptchaCheck.json()
+      const data = await res.json()
+      return data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const sendFormData = async (fieldsData) => {
+    try {
+      let formData = new FormData()
+      for (let key in fieldsData) {
+        if (fieldsData.hasOwnProperty(key) && key !== 'file') {
+          formData.append(key, fieldsData[key])
+        }
+      }
+      file && formData.append('file', file)
+
+      const res = await fetch(`${API_URL}/mailer`, {
+        method: 'POST',
+        body: formData,
+      })
+      const data = await res.json()
+      if (data?.code === 200) {
+        reset()
+        notify(data?.message, 'success')
+        ymGoal(ymGoalId)
+        modal && modal(false)
+        setFile(null)
+      } else {
+        notify(sendData?.message, 'error')
+      }
+    } catch (error) {
+      console.log(error)
+      setIsLoading(false)
+      setVisible(false)
+    }
+  }
+
+  const checkSuccessCaptcha = async (tkn) => {
+    if (!tkn) {
+      return
+    }
+    try {
+      setToken(tkn)
+      setIsLoading(true)
+      const data = await checkCaptchaFetch(tkn)
 
       if (data?.code === 200) {
         const fieldsData = getValues()
-        let formData = new FormData()
-        for (let key in fieldsData) {
-          if (fieldsData.hasOwnProperty(key) && key !== 'file') {
-            formData.append(key, fieldsData[key])
-          }
-        }
-        file && formData.append('file', file)
-
-        const res = await fetch(`${API_URL}/mailer`, {
-          method: 'POST',
-          body: formData,
-        })
-        const sendData = await res.json()
-        if (sendData?.code === 200) {
-          reset()
-          notify(sendData?.message, 'success')
-          ymGoal(ymGoalId)
-          modal && modal(false)
-          setFile(null)
-        } else {
-          notify(sendData?.message, 'error')
-        }
+        await sendFormData(fieldsData)
       } else {
         notify(data?.message, 'error')
       }
@@ -150,10 +173,19 @@ const FormComponent = ({
     }
   }
 
-  const onSubmit = async (fieldsData, e) => {
-    if (!refForm.current.elements['smart-token'].value) {
-      setIsLoading(true)
+  const onSubmit = async (fieldsData) => {
+    try {
       setVisible(true)
+      setIsLoading(true)
+      if (token) {
+        await sendFormData(fieldsData)
+        setVisible(false)
+        setIsLoading(false)
+      }
+    } catch (error) {
+      notify('Сообщение не отправлено', 'error')
+      setIsLoading(false)
+      setVisible(false)
     }
   }
 
