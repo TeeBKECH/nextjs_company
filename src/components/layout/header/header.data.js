@@ -8,53 +8,53 @@ import serviceIcon_7 from '@/assets/img/service7.svg'
 import serviceIcon_8 from '@/assets/img/service8.svg'
 
 export default [
-  // {
-  //   type: 'button',
-  //   href: 'services',
-  //   title: 'Услуги',
-  //   links: [
-  //     {
-  //       href: '1',
-  //       title: 'Управление отелем',
-  //       icon: serviceIcon_1,
-  //     },
-  //     {
-  //       href: '2',
-  //       title: 'Управление рестораном',
-  //       icon: serviceIcon_2,
-  //     },
-  //     {
-  //       href: '3',
-  //       title: 'Строительство отеля',
-  //       icon: serviceIcon_3,
-  //     },
-  //     {
-  //       href: '4',
-  //       title: 'Реновация объекта',
-  //       icon: serviceIcon_4,
-  //     },
-  //     {
-  //       href: '5',
-  //       title: 'Дизайн-проект отеля',
-  //       icon: serviceIcon_5,
-  //     },
-  //     {
-  //       href: '6',
-  //       title: 'Аудит',
-  //       icon: serviceIcon_6,
-  //     },
-  //     {
-  //       href: '7',
-  //       title: 'Консалтинг',
-  //       icon: serviceIcon_7,
-  //     },
-  //     {
-  //       href: '8',
-  //       title: 'Франшиза',
-  //       icon: serviceIcon_8,
-  //     },
-  //   ],
-  // },
+  {
+    type: 'button',
+    href: 'services',
+    title: 'Услуги',
+    links: [
+      {
+        href: '1',
+        title: 'Управление отелем',
+        icon: serviceIcon_1,
+      },
+      {
+        href: '2',
+        title: 'Управление рестораном',
+        icon: serviceIcon_2,
+      },
+      {
+        href: '3',
+        title: 'Строительство отеля',
+        icon: serviceIcon_3,
+      },
+      {
+        href: '4',
+        title: 'Реновация объекта',
+        icon: serviceIcon_4,
+      },
+      {
+        href: '5',
+        title: 'Дизайн-проект отеля',
+        icon: serviceIcon_5,
+      },
+      {
+        href: '6',
+        title: 'Аудит',
+        icon: serviceIcon_6,
+      },
+      {
+        href: '7',
+        title: 'Консалтинг',
+        icon: serviceIcon_7,
+      },
+      {
+        href: '8',
+        title: 'Франшиза',
+        icon: serviceIcon_8,
+      },
+    ],
+  },
   {
     type: 'navLink',
     href: '#adventages',
