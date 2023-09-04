@@ -1,4 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import dns from 'node:dns'
+dns.setDefaultResultOrder('ipv4first')
 
 export default function Document() {
   const metrikaHtml = `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
