@@ -325,8 +325,8 @@ const Home = ({ data, servicesCards }) => {
           </div>
           <div className={styles.intro_img}>
             <Image
-              src='/main_img.jpg'
-              alt='FriendlyInn Group'
+              src='/main_img_3.jpg'
+              alt='Friendly Inn Group'
               priority={true}
               fill={true}
             />
@@ -659,7 +659,7 @@ const Home = ({ data, servicesCards }) => {
                 <h4>{servicesModalItem?.title}</h4>
               </div>
               <div className={styles.service_text}>
-                <p>{servicesModalItem?.description}</p>
+                <p>Работа состоит из нескольких этапов:</p>
                 {servicesModalItem?.options && (
                   <ul className={styles.service_list}>
                     {servicesModalItem?.options.map((text, index) => (
