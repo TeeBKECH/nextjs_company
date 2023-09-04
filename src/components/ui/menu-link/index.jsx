@@ -18,6 +18,11 @@ const MenuLink = ({ data, setToggleMenu }) => {
     setSubMenu((prev) => (prev === null ? menu : null))
   }
 
+  const closeHandler = () => {
+    setSubMenu(null)
+    setToggleMenu(false)
+  }
+
   if (data.type === 'button') {
     return (
       <div className={clsx(styles.link, styles.link_button)}>
@@ -27,7 +32,7 @@ const MenuLink = ({ data, setToggleMenu }) => {
             links={data.links}
             className={styles.subMenu}
             href={data.href}
-            closeHandler={() => setSubMenu(null)}
+            closeHandler={closeHandler}
           />
         )}
       </div>

@@ -21,7 +21,7 @@ const Service = ({ data }) => {
   return (
     <Layout
       title={`${title} | Услуги`}
-      description={description}
+      description={description[0]}
     >
       {/* Intro Section */}
       <section className={styles.intro}>
@@ -31,15 +31,10 @@ const Service = ({ data }) => {
               tag='h2'
               title={`${title}`}
               className={styles.title}
-              align='center'
             />
-            <p>
-              Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
-              Знаках рот имени дал журчит но. Рекламных ручеек буквенных пунктуация.
-            </p>
-            <p>
-              Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
-            </p>
+            {description.map((el, i) => (
+              <p key={i}>{el}</p>
+            ))}
           </div>
           <div className={styles.preview}>
             <Image
