@@ -52,7 +52,7 @@ const Project = ({ data }) => {
       </section>
       <section className={styles.swiper}>
         <div className={styles.container}>
-          <div className={styles.swiper_title}>
+          {/* <div className={styles.swiper_title}>
             <TitleSec
               title={'Команда опытных профессионалов'}
               align='center'
@@ -69,7 +69,7 @@ const Project = ({ data }) => {
               . Предоставляем команду отлично зарекомендовавших управленцев, которые будут работать
               над достижением поставленных задач в любой точке России
             </p>
-          </div>
+          </div> */}
           <div className={styles.swiper_items}>
             <Swiper
               slidesPerView={1}
@@ -173,7 +173,7 @@ const Project = ({ data }) => {
             </div>
             <div className={styles.come_description}>
               <p>
-                Приглашаем вас посетить любой из наших отелей и ресторанов, где мы в реальном
+                Приглашаем Вас посетить любой из наших отелей и ресторанов, где мы в реальном
                 времени покажем, как у нас все работает.
               </p>
               <p>Познакомим с нашей командой и ответим на ваши вопросы</p>

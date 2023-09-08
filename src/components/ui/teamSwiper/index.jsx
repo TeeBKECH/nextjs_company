@@ -202,7 +202,10 @@ const TeamSwiper = ({ teamSlides }) => {
             <p>{modalItem?.position}</p>
           </div>
           <div className={styles.fullCard_text}>
-            <h5>Обязанности:</h5>
+            {modalItem?.description && (
+              <p className={styles.fullCard_description}>{modalItem?.description}</p>
+            )}
+            {modalItem?.options_title && <h5>{modalItem.options_title}</h5>}
             {modalItem?.options &&
               modalItem?.options.map((text, index) => (
                 <p key={index}>

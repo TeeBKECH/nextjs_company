@@ -11,8 +11,10 @@ const MenuBlock = ({ links, className, href, closeHandler }) => {
   const ref = useRef(null)
 
   const outsideClickListener = (e) => {
-    if (e.target != ref.current) {
-      closeHandler()
+    if (window.innerWidth > 990) {
+      if (e.target != ref.current) {
+        closeHandler()
+      }
     }
   }
 
@@ -36,6 +38,7 @@ const MenuBlock = ({ links, className, href, closeHandler }) => {
           key={i}
           className={styles.link}
           href={`/${href}/${link.href}`}
+          onClick={closeHandler}
         >
           <Image
             src={link.icon}

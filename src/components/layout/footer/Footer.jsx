@@ -23,6 +23,9 @@ const Footer = ({ className }) => {
           <h3>Меню</h3>
           <ul>
             <li>
+              <a href='/#services'>Услуги</a>
+            </li>
+            <li>
               <a href='/#team'>Команда</a>
             </li>
             <li>
