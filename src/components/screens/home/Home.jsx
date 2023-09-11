@@ -347,8 +347,9 @@ const Home = ({ data, servicesCards }) => {
               type={'button'}
               icon={true}
               onClick={introButtonHandler}
+              className={styles.intro_btn}
             >
-              Узнать подробнее
+              Получить бесплатную консультацию
             </Button>
           </div>
         </div>
@@ -676,10 +677,13 @@ const Home = ({ data, servicesCards }) => {
                 src={adv_3}
                 width={45}
                 height={45}
-                alt='База гостей'
+                alt='С нами комфортно работать'
               />
-              <h5>База гостей</h5>
-              <p>Привлечение постоянных клиентов</p>
+              <h5>С нами комфортно работать</h5>
+              <p>
+                Максимальное погружение в проект. <br />
+                На связи 24/7
+              </p>
             </div>
             <div className={styles.adventages_item}>
               <Image
@@ -689,7 +693,10 @@ const Home = ({ data, servicesCards }) => {
                 alt='Программа лояльности'
               />
               <h5>Программа лояльности</h5>
-              <p>Включение в действующую партнерскую программу и программу лояльности</p>
+              <p>
+                Включение в действующую партнерскую программу и программу лояльности. Привлечение
+                постоянных клиентов
+              </p>
             </div>
             <div className={styles.adventages_item}>
               <Image

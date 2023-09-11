@@ -39,6 +39,7 @@ const Button = ({
               viewBox='0 0 46 46'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
+              className={styles.phone_icon}
             >
               <rect
                 width='46'
