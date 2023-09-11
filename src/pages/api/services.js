@@ -11,7 +11,7 @@ const servicesCards = [
   {
     id: 1,
     title: 'Управление отелем',
-    subtitle: 'Мы работаем, чтобы Вы отдыхали.',
+    subtitle: 'Мы работаем, чтобы Вы отдыхали',
     icon: serviceIcon_1,
     preview: '/services/1.jpg',
     description: [
@@ -31,7 +31,7 @@ const servicesCards = [
   {
     id: 2,
     title: 'Управление рестораном',
-    subtitle: 'Вкусно и со вкусом.',
+    subtitle: 'Вкусно и со вкусом',
     icon: serviceIcon_2,
     preview: '/services/2.jpg',
     description: [
@@ -111,7 +111,7 @@ const servicesCards = [
   {
     id: 6,
     title: 'Аудит',
-    subtitle: 'Проверка и разработка рекомендаций по оптимизации работы.',
+    subtitle: 'Проверка и разработка рекомендаций по оптимизации работы',
     icon: serviceIcon_6,
     preview: '/services/6.jpg',
     description: [
@@ -146,7 +146,7 @@ const servicesCards = [
   {
     id: 8,
     title: 'Франшиза',
-    subtitle: 'Возможно, лучшая инвестиция, о которой Вы когда-либо думали.',
+    subtitle: 'Возможно, лучшая инвестиция, о которой Вы когда-либо думали',
     icon: serviceIcon_8,
     preview: '/services/8.jpg',
     description: [
