@@ -29,18 +29,7 @@ import work_8 from '@/assets/img/work_8.svg'
 import work_9 from '@/assets/img/work_9.svg'
 import work_10 from '@/assets/img/work_10.svg'
 
-import work_out_1 from '@/assets/img/work_out_1.svg'
-import work_out_2 from '@/assets/img/work_out_2.svg'
-import work_out_3 from '@/assets/img/work_out_3.svg'
-
-import serviceIcon_1 from '@/assets/img/service1.svg'
-import serviceIcon_2 from '@/assets/img/service2.svg'
-import serviceIcon_3 from '@/assets/img/service3.svg'
-import serviceIcon_4 from '@/assets/img/service4.svg'
-import serviceIcon_5 from '@/assets/img/service5.svg'
-import serviceIcon_6 from '@/assets/img/service6.svg'
-import serviceIcon_7 from '@/assets/img/service7.svg'
-import serviceIcon_8 from '@/assets/img/service8.svg'
+import serviceImg9 from '@/assets/img/service9.svg'
 
 import adv_1 from '@/assets/img/adv_1.svg'
 import adv_2 from '@/assets/img/adv_2.svg'
@@ -592,6 +581,15 @@ const Home = ({ data, servicesCards }) => {
               </div>
             </div>
           </Modal>
+          <div className={styles.services_dop}>
+            <Image
+              src={serviceImg9}
+              width={45}
+              height={45}
+              alt={'Поможем с покупкой и продажей отеля'}
+            />
+            <p>А так же поможем с оценкой при покупке или продаже отеля</p>
+          </div>
         </div>
       </section>
 

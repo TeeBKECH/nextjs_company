@@ -595,6 +595,25 @@
       }
     }
   }
+
+  &_dop {
+    padding: 20px 15px 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    p {
+      font-size: 20px;
+      font-weight: 500;
+      text-align: center;
+      text-transform: uppercase;
+      color: #917e49;
+    }
+  }
 }
 
 .service {
