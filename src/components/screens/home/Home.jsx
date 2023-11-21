@@ -835,7 +835,7 @@ const Home = ({ data, servicesCards }) => {
                       <h4>
                         {slide.projectType} {slide.projectName}
                       </h4>
-                      <p>{slide.subTitle}</p>
+                      {/* <p>{slide.subTitle}</p> */}
                     </div>
                     <div className={styles.projects_actions}>
                       <Button link={`projects/${slide.slug}`}>Подробнее</Button>
