@@ -47,6 +47,12 @@ const mailer = async (req, res) => {
       text: mailContent,
       attachments,
     })
+    const tgMessage = encodeURI(mailContent)
+    const response = await fetch(
+      `https://api.telegram.org/bot${process.env.TG_API_KEY}/sendMessage?chat_id=${process.env.TG_CHAT_ID}&parse_mode=html&text=${tgMessage}`,
+      { method: 'POST' },
+    )
+    const data = await response.json()
     res.status(200).json({ message: 'Сообщение успешно отправлено', code: 200 })
   } catch (err) {
     res.status(500).json({ message: 'Ошибка при отправке формы', code: 500, err })

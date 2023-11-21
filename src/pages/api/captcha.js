@@ -3,7 +3,6 @@ import fetch from 'node-fetch'
 const captcha = async (req, res) => {
   try {
     const { captchaToken } = req.body
-    console.log(captchaToken)
     if (!captchaToken) {
       return res.status(400).json({ message: 'Токен captcha отсутствует', code: 400 })
     }
@@ -12,9 +11,7 @@ const captcha = async (req, res) => {
       `https://smartcaptcha.yandexcloud.net/validate?secret=${process.env.CAPTCHA_SERVER_KEY}&token=${captchaToken}`,
     )
     const captchaStatus = await result.json()
-    console.log(captchaStatus)
     if (captchaStatus.status !== 'ok') {
-      // console.log(captchaStatus)
       return res
         .status(400)
         .json({ message: 'Проверка "Я не робот" не пройдена. Попробуйте снова', code: 401 })
