@@ -72,6 +72,11 @@ export default [
   },
   {
     type: 'navLink',
+    href: 'experience',
+    title: 'Наш опыт',
+  },
+  {
+    type: 'navLink',
     href: 'contacts',
     title: 'Контакты',
   },

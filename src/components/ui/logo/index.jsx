@@ -12,12 +12,12 @@ const Logo = ({ className, place = 'header' }) => {
         <Image
           src='/logo.svg'
           alt='FriendlyInn Group'
-          width={94}
-          height={85}
+          width={85}
+          height={78}
           priority={true}
         />
         <span>
-          Управляющая <br /> компания <b>FriendlyInn</b>
+          Управляющая <br /> компания <b>Friendly Inn</b>
         </span>
       </Link>
     </div>

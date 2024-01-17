@@ -324,7 +324,7 @@
   gap: 50px;
 
   @media (max-width: 991px) {
-    padding: 20px 0;
+    padding: 80px 0 20px;
   }
 
   &_title {
@@ -393,7 +393,7 @@
   background: #f4f0e5;
 
   @media (max-width: 991px) {
-    padding: 35px 0 30px;
+    padding: 85px 0 30px;
   }
 
   .container {
@@ -746,7 +746,7 @@
   justify-content: center;
 
   @media (max-width: 991px) {
-    padding: 45px 0;
+    padding: 85px 0 30px;
   }
 
   .container {
@@ -855,12 +855,15 @@
     gap: 40px;
 
     @media (max-width: 991px) {
-      min-height: 588px;
+      min-height: 520px;
+    }
+
+    @media (max-width: 700px) {
+      min-height: unset;
     }
 
     @media (max-width: 550px) {
       gap: 15px;
-      min-height: unset;
     }
   }
   &_img {

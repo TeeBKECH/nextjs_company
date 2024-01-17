@@ -8,6 +8,16 @@
   position: relative;
   z-index: 2;
 
+  // &_bg {
+  //   background: linear-gradient(
+  //     to top,
+  //     rgba(#929292, 0.08),
+  //     rgba(#929292, 0.02),
+  //     rgba(#929292, 0.09),
+  //     rgba(#929292, 0.03)
+  //   );
+  // }
+
   @media (max-height: 900px) {
     padding: 120px 0 0;
   }

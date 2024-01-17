@@ -13,7 +13,7 @@ const manrope = Manrope({ subsets: ['latin'] })
 
 const getTitle = (title) => `${title} | FriendlyInn Group`
 
-const Layout = ({ children, title, description }) => {
+const Layout = ({ children, title, description, bg }) => {
   const [sticky, setSticky] = useState({ isSticky: false, offset: 0 })
   const headerRef = useRef(null)
 
@@ -83,7 +83,7 @@ const Layout = ({ children, title, description }) => {
         headerRef={headerRef}
         sticky={sticky.isSticky}
       />
-      <main className={clsx(styles.main, manrope.className)}>{children}</main>
+      <main className={clsx(styles.main, manrope.className, bg && styles.main_bg)}>{children}</main>
 
       <Footer className={manrope.className} />
     </>
