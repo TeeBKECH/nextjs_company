@@ -45,14 +45,6 @@ const Header = ({ headerRef, sticky, className }) => {
     >
       <Logo className={styles.logo} />
       <nav className={clsx(styles.menu, toggleMenu && styles.menu_active)}>
-        {/* {homeLink && (
-          <Link
-            href='/'
-            className={clsx(styles.link)}
-          >
-            Главная
-          </Link>
-        )} */}
         {links.map((el, i) => (
           <MenuLink
             key={i}

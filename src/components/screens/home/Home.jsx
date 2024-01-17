@@ -29,7 +29,7 @@ import work_8 from '@/assets/img/work_8.svg'
 import work_9 from '@/assets/img/work_9.svg'
 import work_10 from '@/assets/img/work_10.svg'
 
-import serviceImg9 from '@/assets/img/service9.svg'
+import serviceImg999 from '@/assets/img/service999.svg'
 
 import adv_1 from '@/assets/img/adv_1.svg'
 import adv_2 from '@/assets/img/adv_2.svg'
@@ -496,47 +496,6 @@ const Home = ({ data, servicesCards }) => {
         </div>
       </section>
 
-      {/* Work Out Section */}
-      {/* <section className={clsx(styles.work, styles.work_out)}>
-        <div className={styles.container}>
-          <div className={styles.work_title}>
-            <TitleSec
-              title={'С кем мы не работаем'}
-              align='center'
-            />
-          </div>
-          <div className={clsx(styles.work_items, styles.work_out_items)}>
-            <div className={styles.work_item}>
-              <Image
-                src={work_out_1}
-                width={45}
-                height={45}
-                alt='Отели менее 12 номеров'
-              />
-              <h5>Отели менее 12 номеров</h5>
-            </div>
-            <div className={styles.work_item}>
-              <Image
-                src={work_out_2}
-                width={45}
-                height={45}
-                alt='Хостелы'
-              />
-              <h5>Хостелы</h5>
-            </div>
-            <div className={styles.work_item}>
-              <Image
-                src={work_out_3}
-                width={45}
-                height={45}
-                alt='Рестораны менее 25 посадочных мест'
-              />
-              <h5>Рестораны менее 25 посадочных мест</h5>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Services Section */}
       <section
         id='services'
@@ -571,6 +530,16 @@ const Home = ({ data, servicesCards }) => {
                 </a>
               </div>
             ))}
+            <div className={styles.services_item}>
+              {/* className={styles.services_dop} */}
+              <Image
+                src={serviceImg999}
+                width={45}
+                height={45}
+                alt={'Поможем с покупкой и продажей отеля'}
+              />
+              <h5>А так же поможем с оценкой при покупке или продаже отеля</h5>
+            </div>
           </div>
           <Modal
             onClose={closeServicesModal}
@@ -595,15 +564,6 @@ const Home = ({ data, servicesCards }) => {
               </div>
             </div>
           </Modal>
-          <div className={styles.services_dop}>
-            <Image
-              src={serviceImg9}
-              width={45}
-              height={45}
-              alt={'Поможем с покупкой и продажей отеля'}
-            />
-            <p>А так же поможем с оценкой при покупке или продаже отеля</p>
-          </div>
         </div>
       </section>
 

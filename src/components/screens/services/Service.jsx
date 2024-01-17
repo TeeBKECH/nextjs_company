@@ -15,6 +15,7 @@ const FormComponentNoSSR = dynamic(() => import('@/components/ui/form'), {
 })
 
 const Service = ({ data }) => {
+  // console.log(data)
   const { img, title, description, options, preview } = data
   // const [showModal, setShowModal] = useState(false)
 

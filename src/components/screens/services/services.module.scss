@@ -44,6 +44,7 @@
   .title {
     margin-bottom: 20px;
     text-transform: uppercase;
+    font-size: 24px;
 
     @media (max-width: 550px) {
       text-align: center;
@@ -53,7 +54,7 @@
   .preview {
     position: relative;
     width: 100%;
-    min-height: 300px;
+    min-height: 370px;
     border-radius: 18px;
     overflow: hidden;
 

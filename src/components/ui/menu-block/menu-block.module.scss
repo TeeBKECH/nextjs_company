@@ -18,7 +18,7 @@
     padding: 5px;
     grid-template-columns: 1fr;
     gap: 0;
-    box-shadow: unset;
+    margin-top: 10px;
   }
 }
 
@@ -35,7 +35,6 @@
   }
 
   @media (max-width: 991px) {
-    justify-content: center;
     font-size: 12px;
     color: lighten(#171717, 15);
     border-bottom: none;
