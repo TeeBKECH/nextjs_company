@@ -30,11 +30,11 @@ export default [
     href: '#team',
     title: 'Команда',
   },
-  {
-    type: 'navLink',
-    href: 'experience',
-    title: 'Наш опыт',
-  },
+  // {
+  //   type: 'navLink',
+  //   href: 'experience',
+  //   title: 'Наш опыт',
+  // },
   {
     type: 'navLink',
     href: 'contacts',

@@ -39,4 +39,16 @@
     color: lighten(#171717, 15);
     border-bottom: none;
   }
+
+  &_last {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-content: center;
+
+    @media (max-width: 991px) {
+      grid-column-start: unset;
+      grid-column-end: unset;
+      justify-content: flex-start;
+    }
+  }
 }

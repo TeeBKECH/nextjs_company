@@ -36,10 +36,14 @@ const MenuBlock = ({ links, className, href, closeHandler }) => {
       {links.map((link, i) => (
         <Link
           key={i}
-          className={styles.link}
+          className={clsx(
+            styles.link,
+            links.length % 2 !== 0 && i === links.length - 1 && styles.link_last,
+          )}
           href={`/${href}/${link.href}`}
           onClick={closeHandler}
         >
+          {links.length % 2 !== 0 && i === links.length && '123'}
           <Image
             src={link.icon}
             width={20}
