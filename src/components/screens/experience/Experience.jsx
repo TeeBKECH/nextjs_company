@@ -5,6 +5,10 @@ import clsx from 'clsx'
 import Layout from '@/components/layout/Layout'
 import TitleSec from '@/components/ui/title'
 
+import experineceIcon from '@/assets/img/experience-icon.svg'
+import hotelsIcon from '@/assets/img/hotels-icon.svg'
+import brandedIcon from '@/assets/img/branded-icon.svg'
+
 import starsIcon4 from '@/assets/img/stars-icon-4.svg'
 import starsIcon5 from '@/assets/img/stars-icon-5.svg'
 
@@ -20,7 +24,7 @@ const Experience = () => {
       bg={true}
     >
       {/* Intro Section */}
-      <section className={clsx(styles.intro)}>
+      {/* <section className={clsx(styles.intro)}>
         <div className={styles.intro_title}>
           <TitleSec
             title={'Опыт нашей компании'}
@@ -49,9 +53,9 @@ const Experience = () => {
                   src={starsIcon4}
                   width={110}
                   height={24}
-                  alt='бутик-отель «Чайковский»'
+                  alt='Бутик-отель «Чайковский»'
                 />
-                <p>бутик-отель</p>
+                <p>Бутик-отель</p>
                 <h5>«Чайковский»</h5>
                 <Link href={'#'}>Подробнее</Link>
               </div>
@@ -61,9 +65,9 @@ const Experience = () => {
                   src={starsIcon4}
                   width={110}
                   height={24}
-                  alt='бутик-отель «Мясницкий»'
+                  alt='Бутик-отель «Мясницкий»'
                 />
-                <p>бутик-отель</p>
+                <p>Бутик-отель</p>
                 <h5>«Мясницкий»</h5>
                 <Link href={'#'}>Подробнее</Link>
               </div>
@@ -73,9 +77,9 @@ const Experience = () => {
                   src={starsIcon5}
                   width={140}
                   height={24}
-                  alt='бутик-отель «Regul»'
+                  alt='Бутик-отель «Regul»'
                 />
-                <p>бутик-отель</p>
+                <p>Бутик-отель</p>
                 <h5>«Regul»</h5>
                 <Link href={'#'}>Подробнее</Link>
               </div>
@@ -99,9 +103,54 @@ const Experience = () => {
             </p>
           </div>
         </div>
+      </section> */}
+      <section className={clsx(styles.hero)}>
+        <div className={styles.hero_content}>
+          <div className={styles.hero_title}>
+            <TitleSec
+              title={'Опыт'}
+              align='center'
+            />
+          </div>
+          <div className={styles.hero_cards}>
+            <div className={styles.hero_card}>
+              <div className={styles.hero_icon}>
+                <Image
+                  src={experineceIcon}
+                  width={70}
+                  height={70}
+                  alt='8 лет на рынке'
+                />
+              </div>
+              <h4>8 лет на рынке</h4>
+            </div>
+            <div className={styles.hero_card}>
+              <div className={styles.hero_icon}>
+                <Image
+                  src={hotelsIcon}
+                  width={70}
+                  height={70}
+                  alt='Запущены 15 отелей'
+                />
+              </div>
+              <h4>Запущены 15 отелей</h4>
+            </div>
+            <div className={styles.hero_card}>
+              <div className={styles.hero_icon}>
+                <Image
+                  src={brandedIcon}
+                  width={70}
+                  height={70}
+                  alt='4 отеля работает под брендом Friendly Inn'
+                />
+              </div>
+              <h4>4 отеля работает под брендом Friendly Inn</h4>
+            </div>
+          </div>
+        </div>
       </section>
       {/* Plan */}
-      <section className={styles.plan}>
+      {/* <section className={styles.plan}>
         <div className={styles.plan_content}>
           <div className={clsx(styles.title, styles.plan_title)}>
             <h2>Бизнес-план</h2>
@@ -133,9 +182,9 @@ const Experience = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Location */}
-      <section className={styles.location}>
+      {/* <section className={styles.location}>
         <div className={styles.location_content}>
           <div className={clsx(styles.title, styles.location_title)}>
             <h2>Локация</h2>
@@ -169,9 +218,9 @@ const Experience = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Concept */}
-      <section className={styles.concept}>
+      {/* <section className={styles.concept}>
         <div className={styles.concept_container}>
           <div className={styles.concept_circle}></div>
           <div className={styles.concept_content}>
@@ -197,7 +246,7 @@ const Experience = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Designing */}
       <section className={styles.designing}>
         <div className={styles.designing_content}>
@@ -223,29 +272,49 @@ const Experience = () => {
           <div className={styles.designing_gallery}>
             <div className={styles.designing_img}>
               <Image
+                src={'/experience/1-before.jpg'}
+                width={540}
+                height={345}
+                alt='Before'
+              />
+            </div>
+            <div className={styles.designing_img}>
+              <Image
+                src={'/experience/1-after.jpg'}
+                width={540}
+                height={345}
+                alt='after'
+              />
+            </div>
+            <div className={styles.designing_img}>
+              <Image
                 src={'/experience/designing-1.jpg'}
-                fill={true}
+                width={540}
+                height={345}
                 alt='Проектирование'
               />
             </div>
             <div className={styles.designing_img}>
               <Image
                 src={'/experience/designing-2.jpg'}
-                fill={true}
+                width={540}
+                height={345}
                 alt='Проектирование'
               />
             </div>
             <div className={styles.designing_img}>
               <Image
                 src={'/experience/designing-3.jpg'}
-                fill={true}
+                width={540}
+                height={345}
                 alt='Проектирование'
               />
             </div>
             <div className={styles.designing_img}>
               <Image
                 src={'/experience/designing-4.jpg'}
-                fill={true}
+                width={540}
+                height={345}
                 alt='Проектирование'
               />
             </div>
@@ -274,13 +343,14 @@ const Experience = () => {
             <div className={styles.designProject_img_wrapper}>
               <Image
                 src={'/experience/design-project.jpg'}
-                fill={true}
+                width={540}
+                height={345}
                 alt={`Бизнес-план`}
               />
             </div>
             <div className={styles.designProject_img_caption}>
               <p>
-                Например, <span>бутик-отель «Чайковский»*</span> располагается в здании, где жил
+                Например, <span>Бутик-отель «Чайковский»*</span> располагается в здании, где жил
                 Петр Ильич, и мы постарались в дизайне отеля подчеркнуть романтизм и лирику
                 произведений великого композитора.
               </p>
@@ -318,7 +388,18 @@ const Experience = () => {
         <div className={styles.building_content}>
           <div className={clsx(styles.title, styles.building_title)}>
             <h2>Строительство и ремонт</h2>
-            <p>Контролируем каждый этап строительства и ремонта. На связи с инвестором 24/7.</p>
+            {/* <p>Контролируем каждый этап строительства и ремонта. На связи с инвестором 24/7.</p> */}
+          </div>
+          <div className={styles.building_caption}>
+            <p>
+              Мы много лет сотрудничаем на договорных условиях с проверенными подрядчиками и
+              строительными компаниями, имеющими лицензию и необходимый опыт. Это позволяет избегать
+              ошибок, оптимизировать затраты и запускать объекты в обусловленные сроки.
+            </p>
+            <p>
+              Мы заказываем оборудование только у надежных поставщиков и следим, чтобы товары имели
+              определенный класс пожаробезопасности.
+            </p>
           </div>
           <div className={styles.building_images}>
             <div className={styles.building_image}>
@@ -335,17 +416,6 @@ const Experience = () => {
                 alt='after'
               />
             </div>
-          </div>
-          <div className={styles.building_caption}>
-            <p>
-              Мы много лет сотрудничаем на договорных условиях с проверенными подрядчиками и
-              строительными компаниями, имеющими лицензию и необходимый опыт. Это позволяет избегать
-              ошибок, оптимизировать затраты и запускать объекты в обусловленные сроки.
-            </p>
-            <p>
-              Мы заказываем оборудование только у надежных поставщиков и следим, чтобы товары имели
-              определенный класс пожаробезопасности.
-            </p>
           </div>
         </div>
       </section>
