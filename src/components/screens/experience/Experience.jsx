@@ -347,7 +347,7 @@ const Experience = () => {
                 height={345}
                 alt={`Бизнес-план`}
               />
-              <p>«На фото пример подбора концепции»</p>
+              <p>* На фото пример подбора концепции</p>
             </div>
             <div className={styles.designProject_img_caption}>
               <p>
