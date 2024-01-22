@@ -425,6 +425,8 @@ const Experience = () => {
         <div className={styles.opening_content}>
           <div className={clsx(styles.title, styles.opening_title)}>
             <h2>Предоткрытие и открытие</h2>
+          </div>
+          <div className={styles.opening_text}>
             <p>
               Мы тщательно вникаем в каждый процесс, чтобы к открытию объект был полностью готов к
               эксплуатации и приему гостей: налажена операционная деятельность, готова вся
