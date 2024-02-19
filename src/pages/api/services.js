@@ -212,7 +212,7 @@ export const servicesCards = [
   {
     id: 11,
     title: 'Оформление документации для отеля',
-    subtitle: 'Наличие успешного опыта получения государственного финансирования',
+    subtitle: 'Если вы не хотите тратить свое время на самостоятельное оформление документов',
     icon: serviceIcon_11,
     preview: '/services/11.jpg',
     description: [

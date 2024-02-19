@@ -29,6 +29,10 @@ import work_8 from '@/assets/img/work_8.svg'
 import work_9 from '@/assets/img/work_9.svg'
 import work_10 from '@/assets/img/work_10.svg'
 
+import experineceIcon from '@/assets/img/experience-icon.svg'
+import hotelsIcon from '@/assets/img/hotels-icon.svg'
+import brandedIcon from '@/assets/img/branded-icon.svg'
+
 import serviceImg999 from '@/assets/img/service999.svg'
 
 import adv_1 from '@/assets/img/adv_1.svg'
@@ -48,6 +52,7 @@ import rightNav from '@/assets/img/arrow_left.svg'
 import 'swiper/css'
 
 import styles from './Home.module.scss'
+import Link from 'next/link'
 
 const ShowMoreNoSSR = dynamic(() => import('@/components/ui/showMore'), {
   ssr: false,
@@ -358,6 +363,61 @@ const Home = ({ data, servicesCards }) => {
         </div>
       </section>
 
+      {/* Experience Section */}
+      <section className={styles.experience}>
+        <div className={styles.experience_content}>
+          <div className={styles.experience_title}>
+            <TitleSec
+              title={'Наш Опыт'}
+              align='center'
+            />
+          </div>
+          <div className={styles.experience_cards}>
+            <div className={styles.experience_card}>
+              <div className={styles.experience_icon}>
+                <Image
+                  src={experineceIcon}
+                  width={70}
+                  height={70}
+                  alt='8 лет на рынке'
+                />
+              </div>
+              <h4>8 лет на рынке</h4>
+            </div>
+            <div className={styles.experience_card}>
+              <div className={styles.experience_icon}>
+                <Image
+                  src={hotelsIcon}
+                  width={70}
+                  height={70}
+                  alt='Запущены 15 отелей'
+                />
+              </div>
+              <h4>Запущены 15 отелей</h4>
+            </div>
+            <div className={styles.experience_card}>
+              <div className={styles.experience_icon}>
+                <Image
+                  src={brandedIcon}
+                  width={70}
+                  height={70}
+                  alt='4 отеля работает под брендом Friendly Inn'
+                />
+              </div>
+              <h4>4 отеля работает под брендом Friendly Inn</h4>
+            </div>
+          </div>
+          <div className={styles.experience_actions}>
+            <Link
+              className={styles.experience_link}
+              href='/experience'
+            >
+              Подробнее
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Work With Section */}
       <section className={styles.work}>
         <div className={styles.container}>
@@ -538,7 +598,7 @@ const Home = ({ data, servicesCards }) => {
                 height={45}
                 alt={'Поможем с покупкой и продажей отеля'}
               />
-              <h5>А так же поможем с оценкой при покупке или продаже отеля</h5>
+              <h5>А также поможем с оценкой при покупке или продаже отеля</h5>
             </div>
           </div>
           <Modal

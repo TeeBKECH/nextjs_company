@@ -200,6 +200,70 @@
   }
 }
 
+.experience {
+  &_title {
+    margin-bottom: 30px;
+  }
+  &_cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+    @media screen and (max-width: 900px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
+  }
+
+  &_card {
+    width: 100%;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(#000, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+
+    h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #000;
+      text-align: center;
+    }
+  }
+
+  &_icon {
+    display: flex;
+    align-items: center;
+
+    span {
+    }
+  }
+
+  &_actions {
+    width: 100%;
+    padding: 30px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_link {
+    color: #917e49;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.2s linear;
+
+    &:hover {
+      color: #b49c5a;
+      text-decoration: none;
+    }
+  }
+}
+
 .work {
   width: 100%;
   display: flex;
