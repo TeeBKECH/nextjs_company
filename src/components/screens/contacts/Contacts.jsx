@@ -6,6 +6,7 @@ import FormComponent from '@/components/ui/form'
 import Socials from '@/components/ui/socials'
 
 import styles from './Contacts.module.scss'
+import BitrixForm from '@/components/ui/bitrix-form'
 
 const Contacts = () => {
   const [showModal, setShowModal] = useState(false)
@@ -77,11 +78,15 @@ const Contacts = () => {
           </div>
         </div>
         <div className={styles.form}>
-          <FormComponent
+          {/* <FormComponent
             title='Форма обратной связи'
             type='callBack'
             inputs={[{ name: 'name' }, { name: 'email' }, { name: 'message' }, { name: 'file' }]}
             ymGoalId='callback-form'
+          /> */}
+          <BitrixForm
+            b24='inline/3/xihwgm'
+            url='https://cdn-ru.bitrix24.ru/b29138824/crm/form/loader_3.js'
           />
         </div>
       </section>

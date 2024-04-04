@@ -179,9 +179,13 @@ const Project = ({ data }) => {
               <p>Познакомим с нашей командой и ответим на Ваши вопросы</p>
             </div>
             <div className={styles.come_actions}>
+              <script
+                data-b24-form='click/1/jge3m7'
+                data-skip-moving='true'
+              ></script>
               <Button
                 type='button'
-                onClick={() => setShowModal(true)}
+                // onClick={() => setShowModal(true)}
               >
                 Хочу в гости
               </Button>

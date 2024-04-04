@@ -9,6 +9,7 @@ import TitleSec from '@/components/ui/title'
 import Modal from '@/components/ui/modal'
 
 import styles from './services.module.scss'
+import BitrixForm from '@/components/ui/bitrix-form'
 
 const FormComponentNoSSR = dynamic(() => import('@/components/ui/form'), {
   ssr: false,
@@ -67,7 +68,7 @@ const Service = ({ data }) => {
           </div>
           <div className={styles.cta_form}>
             <div className={styles.form}>
-              <FormComponentNoSSR
+              {/* <FormComponentNoSSR
                 type='cta'
                 title='Оставляйте заявку и мы с вами свяжемся'
                 titleTag='h4'
@@ -75,6 +76,10 @@ const Service = ({ data }) => {
                 description='Стоимость наших услуг зависит от множества факторов. Обсудим, чем именно можем быть полезны вашему бизнесу'
                 inputs={[{ name: 'phone' }]}
                 ymGoalId='cta-form'
+              /> */}
+              <BitrixForm
+                b24='inline/15/v0h2dl'
+                url='https://cdn-ru.bitrix24.ru/b29138824/crm/form/loader_15.js'
               />
             </div>
           </div>

@@ -13,6 +13,7 @@ import Modal from '@/components/ui/modal'
 import FormComponent from '@/components/ui/form'
 import Accordion from '@/components/ui/accordion'
 import TeamSwiper from '@/components/ui/teamSwiper'
+import BitrixForm from '@/components/ui/bitrix-form'
 
 import main_1 from '@/assets/img/main_1.svg'
 import main_2 from '@/assets/img/main_2.svg'
@@ -774,7 +775,7 @@ const Home = ({ data, servicesCards }) => {
           </div> */}
           <div className={styles.cta_form}>
             <div className={styles.form}>
-              <FormComponentNoSSR
+              {/* <FormComponentNoSSR
                 type='cta'
                 title='Оставляйте заявку для бесплатной консультации.'
                 titleTag='h4'
@@ -782,6 +783,10 @@ const Home = ({ data, servicesCards }) => {
                 description='Мы подскажем оптимальный путь развития Вашего бизнеса.'
                 inputs={[{ name: 'phone' }]}
                 ymGoalId='cta-form'
+              /> */}
+              <BitrixForm
+                b24='inline/15/v0h2dl'
+                url='https://cdn-ru.bitrix24.ru/b29138824/crm/form/loader_15.js'
               />
             </div>
           </div>
@@ -967,12 +972,16 @@ const Home = ({ data, servicesCards }) => {
       {/* CallBack form Section */}
       <section className={styles.callBack}>
         <div className={styles.form}>
-          <FormComponent
+          {/* <FormComponent
             title='Остались вопросы?'
             description='Свяжитесь с нами через форму сайта и мы ответим Вам в кратчайшие сроки.'
             type='callBack'
             inputs={[{ name: 'name' }, { name: 'email' }, { name: 'message' }, { name: 'file' }]}
             ymGoalId='callback-form'
+          /> */}
+          <BitrixForm
+            b24='inline/3/xihwgm'
+            url='https://cdn-ru.bitrix24.ru/b29138824/crm/form/loader_3.js'
           />
         </div>
       </section>
