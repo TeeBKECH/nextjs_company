@@ -22,6 +22,14 @@ export default function Document() {
         />
         <script
           dangerouslySetInnerHTML={{
+            __html: `(function(w,d,u){
+              var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+              var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+              })(window,document,'https://cdn-ru.bitrix24.ru/b29138824/crm/form/loader_1.js');`,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

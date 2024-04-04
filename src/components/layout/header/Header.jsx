@@ -98,9 +98,13 @@ const Header = ({ headerRef, sticky, className }) => {
           >
             +7 (499) 286-95-54
           </a> */}
+          <script
+            data-b24-form='click/1/jge3m7'
+            data-skip-moving='true'
+          ></script>
           <a
             className={styles.callBack}
-            onClick={() => setShowModal(true)}
+            // onClick={() => setShowModal(true)}
           >
             Заказать звонок
           </a>

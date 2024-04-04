@@ -351,10 +351,14 @@ const Home = ({ data, servicesCards }) => {
             />
           </div>
           <div className={styles.intro_actions}>
+            <script
+              data-b24-form='click/1/jge3m7'
+              data-skip-moving='true'
+            ></script>
             <Button
               type={'button'}
               icon={true}
-              onClick={introButtonHandler}
+              // onClick={introButtonHandler}
               className={styles.intro_btn}
             >
               Получить бесплатную консультацию
@@ -934,9 +938,13 @@ const Home = ({ data, servicesCards }) => {
               <p>Познакомим с нашей командой и ответим на Ваши вопросы</p>
             </div>
             <div className={styles.come_actions}>
+              <script
+                data-b24-form='click/1/jge3m7'
+                data-skip-moving='true'
+              ></script>
               <Button
                 type='button'
-                onClick={comeButtonHandler}
+                // onClick={comeButtonHandler}
               >
                 Хочу в гости
               </Button>
@@ -978,12 +986,12 @@ const Home = ({ data, servicesCards }) => {
         onClose={() => setShowModal(false)}
         show={showModal}
       >
-        <FormComponent
+        {/* <FormComponent
           type='modal'
           inputs={[{ name: 'phone' }]}
           modal={setShowModal}
           ymGoalId={modalFormGoal}
-        />
+        /> */}
       </Modal>
     </Layout>
   )
