@@ -180,9 +180,9 @@ const Project = ({ data }) => {
             </div>
             <div className={styles.come_actions}>
               <script
-                data-b24-form='click/1/jge3m7'
+                data-b24-form='click/18/tj6irf'
                 data-skip-moving='true'
-              ></script>
+              />
               <Button
                 type='button'
                 // onClick={() => setShowModal(true)}

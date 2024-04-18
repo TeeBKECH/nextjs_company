@@ -78,8 +78,8 @@ const Service = ({ data }) => {
                 ymGoalId='cta-form'
               /> */}
               <BitrixForm
-                b24='inline/15/v0h2dl'
-                url='https://cdn-ru.bitrix24.ru/b29138824/crm/form/loader_15.js'
+                b24='inline/20/su7d9z'
+                url='https://cdn-ru.bitrix24.ru/b29346204/crm/form/loader_20.js'
               />
             </div>
           </div>

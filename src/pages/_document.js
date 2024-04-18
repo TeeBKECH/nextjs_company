@@ -25,7 +25,7 @@ export default function Document() {
             __html: `(function(w,d,u){
               var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
               var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-              })(window,document,'https://cdn-ru.bitrix24.ru/b29138824/crm/form/loader_1.js');`,
+              })(window,document,'https://cdn-ru.bitrix24.ru/b29346204/crm/form/loader_18.js');`,
           }}
         />
         <script
@@ -33,7 +33,7 @@ export default function Document() {
             __html: `(function(w,d,u){
               var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
               var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-      })(window,document,'https://cdn-ru.bitrix24.ru/b29138824/crm/site_button/loader_1_btsosa.js');`,
+      })(window,document,'https://cdn-ru.bitrix24.ru/b29346204/crm/site_button/loader_10_0sttfx.js');`,
           }}
         />
         <script

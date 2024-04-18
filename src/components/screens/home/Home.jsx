@@ -353,9 +353,9 @@ const Home = ({ data, servicesCards }) => {
           </div>
           <div className={styles.intro_actions}>
             <script
-              data-b24-form='click/1/jge3m7'
+              data-b24-form='click/18/tj6irf'
               data-skip-moving='true'
-            ></script>
+            />
             <Button
               type={'button'}
               icon={true}
@@ -785,8 +785,8 @@ const Home = ({ data, servicesCards }) => {
                 ymGoalId='cta-form'
               /> */}
               <BitrixForm
-                b24='inline/15/v0h2dl'
-                url='https://cdn-ru.bitrix24.ru/b29138824/crm/form/loader_15.js'
+                b24='inline/20/su7d9z'
+                url='https://cdn-ru.bitrix24.ru/b29346204/crm/form/loader_20.js'
               />
             </div>
           </div>
@@ -944,9 +944,9 @@ const Home = ({ data, servicesCards }) => {
             </div>
             <div className={styles.come_actions}>
               <script
-                data-b24-form='click/1/jge3m7'
+                data-b24-form='click/18/tj6irf'
                 data-skip-moving='true'
-              ></script>
+              />
               <Button
                 type='button'
                 // onClick={comeButtonHandler}
@@ -980,8 +980,8 @@ const Home = ({ data, servicesCards }) => {
             ymGoalId='callback-form'
           /> */}
           <BitrixForm
-            b24='inline/3/xihwgm'
-            url='https://cdn-ru.bitrix24.ru/b29138824/crm/form/loader_3.js'
+            b24='inline/22/mc3vd5'
+            url='https://cdn-ru.bitrix24.ru/b29346204/crm/form/loader_22.js'
           />
         </div>
       </section>

@@ -15,7 +15,7 @@ const BitrixForm = ({ b24, url }) => {
     <script
       data-b24-form={b24}
       data-skip-moving='true'
-    ></script>
+    />
   )
 }
 

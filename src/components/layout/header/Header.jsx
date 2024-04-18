@@ -98,10 +98,11 @@ const Header = ({ headerRef, sticky, className }) => {
           >
             +7 (499) 286-95-54
           </a> */}
+
           <script
-            data-b24-form='click/1/jge3m7'
+            data-b24-form='click/18/tj6irf'
             data-skip-moving='true'
-          ></script>
+          />
           <a
             className={styles.callBack}
             // onClick={() => setShowModal(true)}

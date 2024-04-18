@@ -85,8 +85,8 @@ const Contacts = () => {
             ymGoalId='callback-form'
           /> */}
           <BitrixForm
-            b24='inline/3/xihwgm'
-            url='https://cdn-ru.bitrix24.ru/b29138824/crm/form/loader_3.js'
+            b24='inline/22/mc3vd5'
+            url='https://cdn-ru.bitrix24.ru/b29346204/crm/form/loader_22.js'
           />
         </div>
       </section>
