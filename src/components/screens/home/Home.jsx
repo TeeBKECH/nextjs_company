@@ -384,10 +384,10 @@ const Home = ({ data, servicesCards }) => {
                   src={experineceIcon}
                   width={70}
                   height={70}
-                  alt='8 лет на рынке'
+                  alt='9 лет на рынке'
                 />
               </div>
-              <h4>8 лет на рынке</h4>
+              <h4>9 лет на рынке</h4>
             </div>
             <div className={styles.experience_card}>
               <div className={styles.experience_icon}>
@@ -395,10 +395,10 @@ const Home = ({ data, servicesCards }) => {
                   src={hotelsIcon}
                   width={70}
                   height={70}
-                  alt='Запущены 15 отелей'
+                  alt='Запущены 16 отелей'
                 />
               </div>
-              <h4>Запущены 15 отелей</h4>
+              <h4>Запущены 16 отелей</h4>
             </div>
             <div className={styles.experience_card}>
               <div className={styles.experience_icon}>
@@ -406,10 +406,10 @@ const Home = ({ data, servicesCards }) => {
                   src={brandedIcon}
                   width={70}
                   height={70}
-                  alt='4 отеля работает под брендом Friendly Inn'
+                  alt='5 отелей работает под брендом Friendly Inn'
                 />
               </div>
-              <h4>4 отеля работает под брендом Friendly Inn</h4>
+              <h4>5 отелей работает под брендом Friendly Inn</h4>
             </div>
           </div>
           <div className={styles.experience_actions}>
