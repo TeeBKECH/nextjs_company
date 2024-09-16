@@ -916,18 +916,15 @@
   &_item {
     display: flex;
     flex-direction: column;
+    height: auto;
     gap: 40px;
-
-    @media (max-width: 991px) {
-      min-height: 520px;
-    }
 
     @media (max-width: 700px) {
       min-height: unset;
     }
 
     @media (max-width: 550px) {
-      gap: 15px;
+      gap: 10px;
     }
   }
   &_img {
@@ -972,9 +969,9 @@
     }
   }
   &_actions {
-    @media (max-width: 991px) {
-      margin-top: auto;
-    }
+    margin-top: auto;
+    // @media (max-width: 991px) {
+    // }
   }
 
   .pagination {
@@ -1008,97 +1005,6 @@
         display: none;
       }
     }
-  }
-}
-
-.come {
-  width: 100%;
-  padding: 80px 0 50px;
-  background: #fafafa;
-  display: flex;
-  justify-content: center;
-
-  @media (max-width: 768px) {
-    padding: 60px 0 20px;
-  }
-
-  .container {
-    width: 100%;
-    max-width: 1170px;
-    display: flex;
-    align-items: center;
-    gap: 110px;
-    padding: 40px 80px 40px 40px;
-    border-radius: 30px;
-    background: #fff;
-
-    @media (max-width: 1100px) {
-      gap: 50px;
-      padding: 40px;
-    }
-
-    @media (max-width: 991px) {
-      flex-direction: column-reverse;
-    }
-
-    @media (max-width: 550px) {
-      padding: 30px 25px;
-    }
-  }
-
-  &_img {
-    width: 500px;
-    height: 460px;
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-
-    @media (max-width: 991px) {
-      width: 100%;
-      height: 460px;
-    }
-
-    @media (max-width: 550px) {
-      height: 260px;
-    }
-
-    @media (max-width: 450px) {
-      height: 200px;
-    }
-
-    img {
-      object-fit: cover;
-    }
-  }
-  &_info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-
-    @media (max-width: 991px) {
-      align-items: center;
-      gap: 25px;
-    }
-  }
-  &_title {
-  }
-  &_description {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-
-    @media (max-width: 991px) {
-      text-align: center;
-      gap: 15px;
-    }
-
-    p {
-      line-height: 1.6;
-      font-size: 16px;
-    }
-  }
-  &_actions {
   }
 }
 

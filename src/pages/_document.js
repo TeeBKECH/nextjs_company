@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 import dns from 'node:dns'
 dns.setDefaultResultOrder('ipv4first')
 
@@ -19,14 +20,6 @@ export default function Document() {
         <script
           async
           src='https://www.googletagmanager.com/gtag/js?id=G-8MZ5TB1PJ9'
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,u){
-              var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
-              var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-              })(window,document,'https://cdn-ru.bitrix24.ru/b29346204/crm/form/loader_18.js');`,
-          }}
         />
         <script
           dangerouslySetInnerHTML={{

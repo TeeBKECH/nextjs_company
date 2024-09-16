@@ -85,42 +85,6 @@ const Service = ({ data }) => {
           </div>
         </div>
       </section>
-
-      {/* <section className={styles.come}>
-        <div className={styles.container}>
-          <div className={styles.come_img}>
-            <Image
-              src='/main_img_1.jpg'
-              fill={true}
-              alt='FriendlyInn Group'
-            />
-          </div>
-          <div className={styles.come_info}>
-            <div className={styles.come_title}>
-              <TitleSec
-                title='Приезжайте в гости'
-                align='left'
-                className={styles.title}
-              />
-            </div>
-            <div className={styles.come_description}>
-              <p>
-                Приглашаем вас посетить любой из наших отелей и ресторанов, где мы в реальном
-                времени покажем, как у нас все работает.
-              </p>
-              <p>Познакомим с нашей командой и ответим на ваши вопросы</p>
-            </div>
-            <div className={styles.come_actions}>
-              <Button
-                type='button'
-                onClick={() => setShowModal(true)}
-              >
-                Хочу в гости
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section> */}
       {/* <Modal
         onClose={() => setShowModal(false)}
         show={showModal}

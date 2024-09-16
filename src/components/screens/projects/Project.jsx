@@ -10,6 +10,10 @@ import TitleSec from '@/components/ui/title'
 import Modal from '@/components/ui/modal'
 import FormComponent from '@/components/ui/form'
 
+const ComeSectionNoSSR = dynamic(() => import('@/components/ui/come'), {
+  ssr: false,
+})
+
 import main_1 from '@/assets/img/main_1.svg'
 import main_2 from '@/assets/img/main_2.svg'
 import main_3 from '@/assets/img/main_3.svg'
@@ -154,45 +158,9 @@ const Project = ({ data }) => {
           </div>
         </div>
       </section>
-      <section className={styles.come}>
-        <div className={styles.container}>
-          <div className={styles.come_img}>
-            <Image
-              src='/main_img_1.jpg'
-              fill={true}
-              alt='FriendlyInn Group'
-            />
-          </div>
-          <div className={styles.come_info}>
-            <div className={styles.come_title}>
-              <TitleSec
-                title='Приезжайте в гости'
-                align='left'
-                className={styles.title}
-              />
-            </div>
-            <div className={styles.come_description}>
-              <p>
-                Приглашаем Вас посетить любой из наших отелей и ресторанов, где мы в реальном
-                времени покажем, как у нас все работает.
-              </p>
-              <p>Познакомим с нашей командой и ответим на Ваши вопросы</p>
-            </div>
-            <div className={styles.come_actions}>
-              <script
-                data-b24-form='click/18/tj6irf'
-                data-skip-moving='true'
-              />
-              <Button
-                type='button'
-                // onClick={() => setShowModal(true)}
-              >
-                Хочу в гости
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+
+      {/* Come Section */}
+      <ComeSectionNoSSR />
       <Modal
         onClose={() => setShowModal(false)}
         show={showModal}
