@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import clsx from 'clsx'
+import dynamic from 'next/dynamic'
 
 import Layout from '@/components/layout/Layout'
 import Button from '@/components/ui/button'
